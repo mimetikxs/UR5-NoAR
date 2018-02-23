@@ -27,10 +27,16 @@ public class Controller : MonoBehaviour
 	{		
 		// user input
 		// --------------
-		if (Input.GetKey ("space")) {
+		if (Input.GetKey ("space")) 
+		{
 			windRig.SwitchOn ();
 		} else {
 			windRig.SwitchOff ();
+		}
+
+		if (Input.GetKey ("h")) 
+		{
+			robot.goHome ();
 		}
 
 		if (Input.GetMouseButtonDown (0)) 

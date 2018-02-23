@@ -64,8 +64,8 @@ public class UR5Controller : MonoBehaviour {
 		oscIn = gameObject.GetComponent<OscIn>();
 		oscOut = gameObject.GetComponent<OscOut>();
 
-//		oscIn.Open (9000);
-//		oscOut.Open (9000, "192.168.1.85");	
+		oscIn.Open (9000);
+		oscOut.Open (9000, "192.168.1.85");	
 
 		// cached to avoid constantly creating the message on update
 		poseMessage = new OscMessage ("/setAndGoTarget", 0f, 0f, 0f, 0f, 0f, 0f, 0f);	  // moves the robot to the position 
@@ -128,6 +128,11 @@ public class UR5Controller : MonoBehaviour {
      */
 	private void sendTargetTCP () 
 	{
+		// set robot vel/acc
+		velocityMessage.args [0] = velocity;
+		velocityMessage.args [0] = acceleration;
+		oscOut.Send( velocityMessage);
+
 		// transform relative to "robotOffset"
 		Quaternion rootRotation = robotOffset.rotation;
 		Vector3 p = robotOffset.InverseTransformPoint(targetTCP.position);		// world to local position	
@@ -176,6 +181,12 @@ public class UR5Controller : MonoBehaviour {
 		targetTCP.rotation = globalOrientation;
 
 		sendTargetTCP ();
+	}
+		
+
+	public void goHome()
+	{
+		oscOut.Send (new OscMessage ("/goHome"));
 	}
 
 
