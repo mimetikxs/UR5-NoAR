@@ -294,6 +294,11 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1738276054}
+    - target: {fileID: 114438531260863902, guid: 625788af4dc6945caad6de729fb4f0e3,
+        type: 2}
+      propertyPath: strength
+      value: 0.05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 625788af4dc6945caad6de729fb4f0e3, type: 2}
   m_IsPrefabParent: 0
@@ -472,7 +477,7 @@ Prefab:
     - target: {fileID: 114957592392681242, guid: 0691e869f52334a39b8cc28eaefbcfd3,
         type: 2}
       propertyPath: _dirtyMappings
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1854788041786780, guid: 0691e869f52334a39b8cc28eaefbcfd3, type: 2}
       propertyPath: m_Name
@@ -522,17 +527,17 @@ Prefab:
     - target: {fileID: 114957592392681242, guid: 0691e869f52334a39b8cc28eaefbcfd3,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114937753507468146, guid: 0691e869f52334a39b8cc28eaefbcfd3,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114781990952015578, guid: 0691e869f52334a39b8cc28eaefbcfd3,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1227036860545236, guid: 0691e869f52334a39b8cc28eaefbcfd3, type: 2}
       propertyPath: m_IsActive
