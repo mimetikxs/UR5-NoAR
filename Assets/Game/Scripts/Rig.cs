@@ -18,6 +18,7 @@ public class Rig : MonoBehaviour
 	private Collider worldSphere;
 	private Vector3 topPoint;		// top point of the player
 	private Vector3 force;
+	private Transform groundPlane;
 
 	private bool isOn;
 
@@ -27,6 +28,7 @@ public class Rig : MonoBehaviour
 		emitter = transform.Find ("Tool");
 		target = transform.Find ("Target");
 		worldSphere = transform.Find ("WorldSphere").GetComponent<Collider> ();
+		groundPlane = transform.Find("GroundPlane").transform;
 
 		isOn = false;
 	}
@@ -48,7 +50,7 @@ public class Rig : MonoBehaviour
 
 			// avoids player moving back and forth when reaching target
 			Vector3 emitterFloor = emitter.position;
-			emitterFloor.y = 1; //TODO: Fix magic number. Has to be the Y of GameWorld origin
+			emitterFloor.y = groundPlane.position.y;
 
 			force = Vector3.Normalize (target.position - emitterFloor) * strength;
 		} else {

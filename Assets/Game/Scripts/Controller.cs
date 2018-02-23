@@ -18,7 +18,7 @@ public class Controller : MonoBehaviour
 
 	void Start () 
 	{
-		groundPlane = new Plane (Vector3.up, windRig.transform.parent.Find("Ground").transform.position);
+		groundPlane = new Plane (Vector3.up, windRig.transform.Find("GroundPlane").transform.position);
 		Debug.Log (groundPlane);
 	}
 	
