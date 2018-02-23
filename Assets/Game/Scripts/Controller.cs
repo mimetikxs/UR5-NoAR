@@ -18,7 +18,7 @@ public class Controller : MonoBehaviour
 
 	void Start () 
 	{
-		groundPlane = new Plane (Vector3.up, windRig.transform.parent.Find("Ground").transform.position);
+		groundPlane = new Plane (Vector3.up, windRig.transform.Find("GroundPlane").transform.position);
 		Debug.Log (groundPlane);
 	}
 	
@@ -27,10 +27,16 @@ public class Controller : MonoBehaviour
 	{		
 		// user input
 		// --------------
-		if (Input.GetKey ("space")) {
+		if (Input.GetKey ("space")) 
+		{
 			windRig.SwitchOn ();
 		} else {
 			windRig.SwitchOff ();
+		}
+
+		if (Input.GetKey ("h")) 
+		{
+			robot.goHome ();
 		}
 
 		if (Input.GetMouseButtonDown (0)) 

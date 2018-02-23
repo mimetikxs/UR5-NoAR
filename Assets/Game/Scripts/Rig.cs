@@ -18,6 +18,7 @@ public class Rig : MonoBehaviour
 	private Collider worldSphere;
 	private Vector3 topPoint;		// top point of the player
 	private Vector3 force;
+	private Transform groundPlane;
 
 	private bool isOn;
 
@@ -27,6 +28,7 @@ public class Rig : MonoBehaviour
 		emitter = transform.Find ("Tool");
 		target = transform.Find ("Target");
 		worldSphere = transform.Find ("WorldSphere").GetComponent<Collider> ();
+		groundPlane = transform.Find("GroundPlane").transform;
 
 		isOn = false;
 	}
@@ -48,7 +50,7 @@ public class Rig : MonoBehaviour
 
 			// avoids player moving back and forth when reaching target
 			Vector3 emitterFloor = emitter.position;
-			emitterFloor.y = 1; //TODO: Fix magic number. Has to be the Y of GameWorld origin
+			emitterFloor.y = groundPlane.position.y;
 
 			force = Vector3.Normalize (target.position - emitterFloor) * strength;
 		} else {
@@ -57,17 +59,17 @@ public class Rig : MonoBehaviour
 
 		// debug draw
 		transform.Find("SphereTop (debug)").transform.position = topPoint;
-		Debug.DrawLine (playerPos, topPoint, Color.yellow);				// min height point
-		Debug.DrawLine (emitter.position, target.position, Color.red);	// TCP to target
+		Debug.DrawLine (playerPos, topPoint, Color.yellow);					// min height point
+		Debug.DrawLine (emitter.position, target.position, Color.red);		// TCP to target
 		Debug.DrawLine (playerPos, playerPos + (force * 20f), Color.red);   // force vector
 	}
 
 
-	void OnDrawGizmos() 
-	{
+//	void OnDrawGizmos() 
+//	{
 //		Gizmos.color = Color.green;
 //		Gizmos.DrawWireSphere (worldSphere.transform.position, worldSphere.bounds.extents.x);
-	}
+//	}
 
 
 	public void setTarget(Vector3 targetPoint) 
@@ -84,9 +86,8 @@ public class Rig : MonoBehaviour
 		// calculate emitter position and orientation
 		Vector3 dir = Vector3.Normalize (topPoint - targetPoint);
 		Ray ray = new Ray (targetPoint, dir);
-		// Raycast does not work if casting from inside sphere
+		// Raycast does not work if casting from inside sphere. Reverse the ray as a workarround
 		//https://answers.unity.com/questions/129715/collision-detection-if-raycast-source-is-inside-a.html
-		// Workarround is to reverse the ray
 		ray.origin = ray.GetPoint(1000f);
 		ray.direction = -ray.direction;
 		//
@@ -95,6 +96,7 @@ public class Rig : MonoBehaviour
 			emitter.position = hit.point;
 			emitter.LookAt (target); 	// z axys (forward) points to target
 			emitter.Rotate(90f, 0, 0);	// y axys points to target
+			emitter.Rotate(0, -90f, 0);	// x axys points up
 		}
 	}
 
