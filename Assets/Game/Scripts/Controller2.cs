@@ -5,21 +5,24 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 
-public class Controller : MonoBehaviour 
+// Control TCP selecting hotspots in the rig
+
+public class Controller2 : MonoBehaviour 
 {
-	public Rig windRig;
+	public Rig2 rig;
 	public PlayerBehaviour player;
 	public UR5Controller robot;
 	public ParticleSystem particleSystem;
 	public Camera camera;
 
-	private Plane groundPlane;
+//	private Plane groundPlane;
+
+	private LayerMask layerHostpots;
 
 
 	void Start () 
 	{
-		groundPlane = new Plane (Vector3.up, windRig.transform.Find("GroundPlane").transform.position);
-		Debug.Log (groundPlane);
+		layerHostpots = 1 << LayerMask.NameToLayer("Hotspots");
 	}
 	
 
@@ -29,12 +32,12 @@ public class Controller : MonoBehaviour
 		// --------------
 		if (Input.GetKey ("space")) 
 		{
-			windRig.SwitchOn ();
+			rig.SwitchOn ();
 			particleSystem.Emit (1);
 		} 
 		else
 		{
-			windRig.SwitchOff ();
+			rig.SwitchOff ();
 		}
 
 		if (Input.GetKey ("h")) 
@@ -44,29 +47,28 @@ public class Controller : MonoBehaviour
 
 		if (Input.GetMouseButtonDown (0)) 
 		{
-			IntersectPlane (Input.mousePosition);
+			IntersectHotspots (Input.mousePosition);
 		}
 
 		// update player
 		// -------------
-		Vector3 windForce = windRig.GetForce();
+		Vector3 windForce = rig.GetForce();
 
 		player.addForce (windForce);
 	}
 
 
-	private void IntersectPlane(Vector3 sreenPosition) 
+	private void IntersectHotspots(Vector3 sreenPosition) 
 	{		
+//		Ray ray = Camera.main.ScreenPointToRay(sreenPosition);
 		Ray ray = camera.ScreenPointToRay(sreenPosition);
+		RaycastHit hit;
 
-		float enter = 0.0f;
-		if (groundPlane.Raycast (ray, out enter)) 
-		{			
-			Vector3 hitPos = ray.GetPoint(enter);	//Get the point that is clicked
+		if (Physics.Raycast (ray, out hit, 1000f, layerHostpots))
+		{
+			rig.setHotspot (hit.transform);
 
-			windRig.setTarget (hitPos);
-
-			robot.setTarget (windRig.GetToolPosition(), windRig.GetToolOrientation ());
+			robot.setTarget (hit.transform.position, hit.transform.rotation);
 		}
 	}
 }
