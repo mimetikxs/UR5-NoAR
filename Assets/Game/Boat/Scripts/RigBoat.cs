@@ -14,7 +14,7 @@ using UnityEngine;
 
 public class RigBoat : MonoBehaviour 
 {
-	public float strength = 0.005f; 	// magnitude of wind force
+	public float strength = 0.015f; 	// magnitude of wind force
 
 	//public float sphereScale = 10f;
 
@@ -30,7 +30,7 @@ public class RigBoat : MonoBehaviour
 
 
 
-	void Start () 
+	private void Start() 
 	{
 		tool = transform.Find ("Tool");
 		toolTarget = transform.Find ("ToolTarget");
@@ -42,15 +42,12 @@ public class RigBoat : MonoBehaviour
 	}
 
 
-	void Update () 
+	private void Update() 
 	{
 		// update sphere scale
 		//worldSphere.transform.localScale = new Vector3 (sphereScale, sphereScale, sphereScale);
 
 		if (isOn) {
-			// emit particles
-			particleSystem.Emit (20);
-
 			// update force
 			Vector3 emitterFloor = toolTarget.position;
 			emitterFloor.y = groundPlane.position.y;
@@ -62,6 +59,34 @@ public class RigBoat : MonoBehaviour
 	}
 
 
+	private void OnEnable() 
+	{
+		
+	}
+
+
+	private void OnDisable() 
+	{
+		
+	}
+
+
+	private void OnDestroy()
+	{
+		
+	}
+
+
+	private IEnumerator ParticleBurst()
+	{
+		while (true)
+		{
+			particleSystem.Emit (20);
+			yield return new WaitForSeconds(0.3f);
+		}
+	}
+
+
 	public void SetToolTransform(Vector3 globalPosition, Quaternion globalRotation) 
 	{
 		toolTarget.position = globalPosition;
@@ -69,26 +94,30 @@ public class RigBoat : MonoBehaviour
 	}
 
 
-	public Transform GetToolTransform ()
+	public Transform GetToolTransform()
 	{
 		return toolTarget.transform;
 	}
 
 
-	public Vector3 GetForce () 
+	public Vector3 GetForce() 
 	{
 		return force;
 	}
 
 
-	public void SwitchOn () 
+	public void SwitchOn() 
 	{
 		isOn = true;
+
+		StartCoroutine("ParticleBurst");
 	}
 
 
-	public void SwitchOff () 
+	public void SwitchOff() 
 	{
 		isOn = false;
+
+		StopCoroutine("ParticleBurst");
 	}
 }

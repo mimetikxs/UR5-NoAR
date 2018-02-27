@@ -37,11 +37,11 @@ public class ControllerBoatPc : MonoBehaviour
 	{		
 		// user input
 		// --------------
-		if (Input.GetKey ("space")) 
+		if (Input.GetKeyDown ("space")) 
 		{
 			rig.SwitchOn ();
 		} 
-		else
+		else if (Input.GetKeyUp ("space")) 
 		{
 			rig.SwitchOff ();
 		}
