@@ -2,15 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Controls the position of the virtual tool.
+ * Controls the state of the virtual tool.
+ * Renders the virtual tool.
+ * Calculates the force that affects the boat.
+ */
 
-public class Rig2 : MonoBehaviour 
+
+public class RigBoat : MonoBehaviour 
 {
 	public float strength = 0.005f; 	// magnitude of wind force
 
 	// tool pose calculation
 	//public float sphereScale = 10f;
 
-	private Transform emitter;
+	private Transform toolTarget;
 	private Collider worldSphere;
 	private Transform groundPlane;
 	private Vector3 force;
@@ -20,7 +27,7 @@ public class Rig2 : MonoBehaviour
 
 	void Start () 
 	{
-		emitter = transform.Find ("Tool");
+		toolTarget = transform.Find ("ToolTarget");
 		worldSphere = transform.Find ("WorldSphere").GetComponent<Collider> ();
 		groundPlane = transform.Find("GroundPlane").transform;
 
@@ -46,10 +53,10 @@ public class Rig2 : MonoBehaviour
 	}
 
 
-	public void setHotspot(Transform spot) 
+	public void SetToolTransform(Transform t) 
 	{
-		emitter.position = spot.position;
-		emitter.rotation = spot.rotation;
+		emitter.position = t.position;
+		emitter.rotation = t.rotation;
 	}
 
 

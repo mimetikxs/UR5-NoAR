@@ -7,10 +7,10 @@ using UnityEngine.EventSystems;
 
 // Control TCP selecting hotspots in the rig
 
-public class Controller2 : MonoBehaviour 
+public class ControllerBoatPc : MonoBehaviour 
 {
-	public Rig2 rig;
-	public PlayerBehaviour player;
+	public RigBoat rig;
+	public PlayerBoatBehaviour player;
 	public UR5Controller robot;
 	public ParticleSystem particleSystem;
 	public Camera camera;

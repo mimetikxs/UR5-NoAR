@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBehaviour : MonoBehaviour {
+public class PlayerBoatBehaviour : MonoBehaviour {
 	
 	private Vector3 heading;
 	public Vector3 force;		// force accumulator
 	public Vector3 velocity;	// current velocity
 	private Vector3 position;
-//	private float angle;		// current angle
-//	private float angleSpeed;	// rate of cange in angle
 
 
 	void Start () {

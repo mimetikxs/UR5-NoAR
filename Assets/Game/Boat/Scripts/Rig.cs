@@ -5,7 +5,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class Rig : MonoBehaviour 
 {
-	public PlayerBehaviour player;
+	public PlayerBoatBehaviour player;
 
 	public float strength = 0.005f; 	// magnitude of wind force
 

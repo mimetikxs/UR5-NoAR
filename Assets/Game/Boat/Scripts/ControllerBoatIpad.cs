@@ -5,10 +5,10 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 
-public class Controller : MonoBehaviour 
+public class ControllerBoatIpad : MonoBehaviour 
 {
 	public Rig windRig;
-	public PlayerBehaviour player;
+	public PlayerBoatBehaviour player;
 	public UR5Controller robot;
 	public ParticleSystem particleSystem;
 	public Camera camera;
