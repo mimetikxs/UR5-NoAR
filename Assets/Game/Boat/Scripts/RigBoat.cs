@@ -7,6 +7,8 @@ using UnityEngine;
  * Controls the state of the virtual tool.
  * Renders the virtual tool.
  * Calculates the force that affects the boat.
+ * 
+ * TODO: control position of hotspots
  */
 
 
@@ -14,22 +16,27 @@ public class RigBoat : MonoBehaviour
 {
 	public float strength = 0.005f; 	// magnitude of wind force
 
-	// tool pose calculation
 	//public float sphereScale = 10f;
 
+	private Transform tool;
 	private Transform toolTarget;
 	private Collider worldSphere;
 	private Transform groundPlane;
 	private Vector3 force;
 
+	private ParticleSystem particleSystem;
+
 	private bool isOn;
+
 
 
 	void Start () 
 	{
+		tool = transform.Find ("Tool");
 		toolTarget = transform.Find ("ToolTarget");
 		worldSphere = transform.Find ("WorldSphere").GetComponent<Collider> ();
 		groundPlane = transform.Find("GroundPlane").transform;
+		particleSystem = transform.Find("Tool/ParticleSystem").GetComponent<ParticleSystem> ();
 
 		isOn = false;
 	}
@@ -40,10 +47,12 @@ public class RigBoat : MonoBehaviour
 		// update sphere scale
 		//worldSphere.transform.localScale = new Vector3 (sphereScale, sphereScale, sphereScale);
 
-		// update force
 		if (isOn) {
-			// avoids player moving back and forth when reaching target
-			Vector3 emitterFloor = emitter.position;
+			// emit particles
+			particleSystem.Emit (20);
+
+			// update force
+			Vector3 emitterFloor = toolTarget.position;
 			emitterFloor.y = groundPlane.position.y;
 
 			force = Vector3.Normalize (groundPlane.position - emitterFloor) * strength;
@@ -53,42 +62,32 @@ public class RigBoat : MonoBehaviour
 	}
 
 
-	public void SetToolTransform(Transform t) 
+	public void SetToolTransform(Vector3 globalPosition, Quaternion globalRotation) 
 	{
-		emitter.position = t.position;
-		emitter.rotation = t.rotation;
+		toolTarget.position = globalPosition;
+		toolTarget.rotation = globalRotation;
 	}
 
 
-	/*
-	 * Returns tool global position
-	 */
-	public Vector3 GetToolPosition() {
-		return emitter.transform.position;
+	public Transform GetToolTransform ()
+	{
+		return toolTarget.transform;
 	}
 
 
-	/*
-	 * Returns tool global orientation
-	 */
-	public Quaternion GetToolOrientation() {
-		return emitter.transform.rotation;
-	}
-
-
-	public Vector3 GetForce() 
+	public Vector3 GetForce () 
 	{
 		return force;
 	}
 
 
-	public void SwitchOn() 
+	public void SwitchOn () 
 	{
 		isOn = true;
 	}
 
 
-	public void SwitchOff() 
+	public void SwitchOff () 
 	{
 		isOn = false;
 	}

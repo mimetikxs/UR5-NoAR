@@ -9,20 +9,27 @@ using UnityEngine.EventSystems;
 
 public class ControllerBoatPc : MonoBehaviour 
 {
-	public RigBoat rig;
-	public PlayerBoatBehaviour player;
+	public Transform gameWorld;
 	public UR5Controller robot;
-	public ParticleSystem particleSystem;
 	public Camera camera;
 
-//	private Plane groundPlane;
+	private RigBoat rig;
+	private PlayerBoatBehaviour player;
 
 	private LayerMask layerHostpots;
 
 
+	void Awake ()
+	{
+		rig = gameWorld.Find ("Rig").GetComponent<RigBoat> ();
+		player = gameWorld.Find ("Player").GetComponent<PlayerBoatBehaviour> ();
+
+		layerHostpots = 1 << LayerMask.NameToLayer ("Hotspots");	
+	}
+
+
 	void Start () 
 	{
-		layerHostpots = 1 << LayerMask.NameToLayer("Hotspots");
 	}
 	
 
@@ -33,16 +40,10 @@ public class ControllerBoatPc : MonoBehaviour
 		if (Input.GetKey ("space")) 
 		{
 			rig.SwitchOn ();
-			particleSystem.Emit (1);
 		} 
 		else
 		{
 			rig.SwitchOff ();
-		}
-
-		if (Input.GetKey ("h")) 
-		{
-			robot.goHome ();
 		}
 
 		if (Input.GetMouseButtonDown (0)) 
@@ -58,17 +59,18 @@ public class ControllerBoatPc : MonoBehaviour
 	}
 
 
-	private void IntersectHotspots(Vector3 sreenPosition) 
+	private void IntersectHotspots (Vector3 sreenPosition) 
 	{		
-//		Ray ray = Camera.main.ScreenPointToRay(sreenPosition);
 		Ray ray = camera.ScreenPointToRay(sreenPosition);
 		RaycastHit hit;
-
 		if (Physics.Raycast (ray, out hit, 1000f, layerHostpots))
 		{
-			rig.setHotspot (hit.transform);
+			Vector3 p = hit.transform.position;
+			Quaternion r = hit.transform.rotation;
 
-			robot.setTarget (hit.transform.position, hit.transform.rotation);
+			rig.SetToolTransform (p, r);
+
+			robot.setTargetTransform (p, r);
 		}
 	}
 }

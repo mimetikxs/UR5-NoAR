@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 
 public class ControllerBoatIpad : MonoBehaviour 
 {
-	public Rig windRig;
+	public RigBoat rig;
 	public PlayerBoatBehaviour player;
 	public UR5Controller robot;
 	public ParticleSystem particleSystem;
@@ -18,7 +18,7 @@ public class ControllerBoatIpad : MonoBehaviour
 
 	void Start () 
 	{
-		groundPlane = new Plane (Vector3.up, windRig.transform.Find("GroundPlane").transform.position);
+		groundPlane = new Plane (Vector3.up, rig.transform.Find("GroundPlane").transform.position);
 		Debug.Log (groundPlane);
 	}
 	
@@ -29,12 +29,12 @@ public class ControllerBoatIpad : MonoBehaviour
 		// --------------
 		if (Input.GetKey ("space")) 
 		{
-			windRig.SwitchOn ();
+			rig.SwitchOn ();
 			particleSystem.Emit (1);
 		} 
 		else
 		{
-			windRig.SwitchOff ();
+			rig.SwitchOff ();
 		}
 
 		if (Input.GetKey ("h")) 
@@ -49,7 +49,7 @@ public class ControllerBoatIpad : MonoBehaviour
 
 		// update player
 		// -------------
-		Vector3 windForce = windRig.GetForce();
+		Vector3 windForce = rig.GetForce();
 
 		player.addForce (windForce);
 	}
@@ -57,16 +57,6 @@ public class ControllerBoatIpad : MonoBehaviour
 
 	private void IntersectPlane(Vector3 sreenPosition) 
 	{		
-		Ray ray = camera.ScreenPointToRay(sreenPosition);
-
-		float enter = 0.0f;
-		if (groundPlane.Raycast (ray, out enter)) 
-		{			
-			Vector3 hitPos = ray.GetPoint(enter);	//Get the point that is clicked
-
-			windRig.setTarget (hitPos);
-
-			robot.setTarget (windRig.GetToolPosition(), windRig.GetToolOrientation ());
-		}
+		
 	}
 }

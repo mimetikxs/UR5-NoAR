@@ -53,7 +53,6 @@ public class UR5Controller : MonoBehaviour {
 
 	private void Update () 
 	{
-//		sendTargetTCP ();
 	}
 
 
@@ -123,10 +122,7 @@ public class UR5Controller : MonoBehaviour {
 	}
 
 
-	/* 
-     * Sends message to robot with targetTPC transform (position and orientation) 
-     */
-	private void sendTargetTCP () 
+	private void sendTargetTcpMessage () 
 	{
 		// set robot vel/acc
 		velocityMessage.args [0] = velocity;
@@ -154,9 +150,6 @@ public class UR5Controller : MonoBehaviour {
 	}
 
 
-    /* 
-     * Create the list of GameObjects that represent each joint of the robot
-     */
     private void initializeJoints () 
 	{
 		robotBase = this.transform.Find ("shoulder_pan_joint").gameObject;
@@ -172,15 +165,21 @@ public class UR5Controller : MonoBehaviour {
     }
 
 
-	/*
-	 * Set targetTCP pose (in global space)
-	 */
-	public void setTarget (Vector3 globalPosition, Quaternion globalOrientation)
+	public void setTargetTransform (Transform t)
+	{
+		targetTCP.position = t.position;
+		targetTCP.rotation = t.rotation;
+
+		sendTargetTcpMessage ();
+	}
+
+
+	public void setTargetTransform (Vector3 globalPosition, Quaternion globalRotation)
 	{
 		targetTCP.position = globalPosition;
-		targetTCP.rotation = globalOrientation;
+		targetTCP.rotation = globalRotation;
 
-		sendTargetTCP ();
+		sendTargetTcpMessage ();
 	}
 		
 
