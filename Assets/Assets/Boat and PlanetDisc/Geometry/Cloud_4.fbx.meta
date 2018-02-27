@@ -6,11 +6,25 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Cloud_4
+    100004: Object001
+    100006: Object004
     400000: //RootNode
+    400002: Cloud_4
+    400004: Object001
+    400006: Object004
     2100000: No Name
     2300000: //RootNode
+    2300002: Cloud_4
+    2300004: Object001
+    2300006: Object004
     3300000: //RootNode
+    3300002: Cloud_4
+    3300004: Object001
+    3300006: Object004
     4300000: Cloud_4
+    4300002: Object001
+    4300004: Object004
   externalObjects: {}
   materials:
     importMaterials: 1
