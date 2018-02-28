@@ -4,12 +4,10 @@ using UnityEngine;
 
 
 /*
- * Controls the position of the virtual tool.
- * Controls the state of the virtual tool.
- * Renders the virtual tool.
  * Calculates the force that affects the boat.
+ * Controls the state of the virtual tool.
  * 
- * TODO: control position of hotspots
+ * TODO: control position of hotspots with sphere scale?
  */
 
 public class RigBoat : MonoBehaviour 

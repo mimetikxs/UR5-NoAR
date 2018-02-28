@@ -2,6 +2,10 @@
 using System.Collections;
 
 
+/*
+ * Handles communication with robot and renders the model.
+ */
+
 public class UR5Controller : MonoBehaviour {
 
 	[Range(0.1f, 1.0f)] public float velocity = 0.1f;
@@ -189,25 +193,25 @@ public class UR5Controller : MonoBehaviour {
 	}
 
 
-	void OnGUI() 
-	{
-        int boundary = 20;
-	#if UNITY_EDITOR
-	    int labelHeight = 12;
-	    GUI.skin.label.fontSize = GUI.skin.box.fontSize = GUI.skin.button.fontSize = 20;
-	#else
-        int labelHeight = 40;
-        GUI.skin.label.fontSize = GUI.skin.box.fontSize = GUI.skin.button.fontSize = 40;
-	#endif
-		GUI.skin.label.alignment = TextAnchor.MiddleLeft;
-        for (int i = 0; i < 7; i++) {
-			if(poseMessage != null && poseMessage.args.Count == 7)
-				GUI.Label(new Rect(boundary, boundary + ( i * 2 + 1 ) * labelHeight, labelHeight * 8, labelHeight), i + ": " +  (float) poseMessage.args [i]);
-	     }
-
+//	void OnGUI() 
+//	{
+//        int boundary = 20;
+//	#if UNITY_EDITOR
+//	    int labelHeight = 12;
+//	    GUI.skin.label.fontSize = GUI.skin.box.fontSize = GUI.skin.button.fontSize = 20;
+//	#else
+//        int labelHeight = 40;
+//        GUI.skin.label.fontSize = GUI.skin.box.fontSize = GUI.skin.button.fontSize = 40;
+//	#endif
+//		GUI.skin.label.alignment = TextAnchor.MiddleLeft;
+//        for (int i = 0; i < 7; i++) {
+//			if(poseMessage != null && poseMessage.args.Count == 7)
+//				GUI.Label(new Rect(boundary, boundary + ( i * 2 + 1 ) * labelHeight, labelHeight * 8, labelHeight), i + ": " +  (float) poseMessage.args [i]);
+//	     }
+//
 //		GUI.Label (new Rect(boundary, boundary + ( 6 * 2 + 1 ) * labelHeight, 300, labelHeight), "IsOpen:" + oscIn.isOpen);
 //		GUI.Label (new Rect(boundary, boundary + ( 7 * 2 + 1 ) * labelHeight, 300, labelHeight), "Port:" + oscIn.port);
 //		GUI.Label (new Rect(boundary, boundary + ( 8 * 2 + 1 ) * labelHeight, 300, labelHeight), "IP:" + OscOut.ipAddress);
 //		GUI.Label (new Rect(boundary, boundary + ( 9 * 2 + 1 ) * labelHeight, 300, labelHeight), "IsReceiving:" + isReceiving);
-	}
+//	}
 }

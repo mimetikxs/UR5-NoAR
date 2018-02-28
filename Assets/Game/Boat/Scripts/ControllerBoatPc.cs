@@ -5,7 +5,9 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 
-// Control TCP selecting hotspots in the rig
+/*
+ * Handles user input when testing on pc (no Vuforia).
+ */
 
 public class ControllerBoatPc : MonoBehaviour 
 {

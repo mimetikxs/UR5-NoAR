@@ -4,7 +4,9 @@ using UnityEngine;
 
 
 /*
- * Controls the rendering.
+ * Controls the rendering of the virtual tool.
+ * Updates position of the virtual tool.
+ * Holds state of the virtual tool.
  */
 
 public class WindTool : MonoBehaviour {
