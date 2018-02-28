@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 /*
  * Controls the position of the virtual tool.
  * Controls the state of the virtual tool.
@@ -11,33 +12,31 @@ using UnityEngine;
  * TODO: control position of hotspots
  */
 
-
 public class RigBoat : MonoBehaviour 
 {
 	public float strength = 0.015f; 	// magnitude of wind force
-
 	//public float sphereScale = 10f;
 
-	private Transform tool;
+	//private Collider worldSphere;
 	private Transform toolTarget;
-	private Collider worldSphere;
 	private Transform groundPlane;
 	private Vector3 force;
-
-	private ParticleSystem particleSystem;
+	private WindTool windTool;
 
 	private bool isOn;
 
 
+	private void Awake()
+	{
+		windTool = transform.Find ("Tool").GetComponent<WindTool> ();
+		toolTarget = transform.Find ("ToolTarget");
+		//worldSphere = transform.Find ("WorldSphere").GetComponent<Collider> ();
+		groundPlane = transform.Find("GroundPlane").transform;
+	}
+
 
 	private void Start() 
 	{
-		tool = transform.Find ("Tool");
-		toolTarget = transform.Find ("ToolTarget");
-		worldSphere = transform.Find ("WorldSphere").GetComponent<Collider> ();
-		groundPlane = transform.Find("GroundPlane").transform;
-		particleSystem = transform.Find("Tool/ParticleSystem").GetComponent<ParticleSystem> ();
-
 		isOn = false;
 	}
 
@@ -49,40 +48,12 @@ public class RigBoat : MonoBehaviour
 
 		if (isOn) {
 			// update force
-			Vector3 emitterFloor = toolTarget.position;
-			emitterFloor.y = groundPlane.position.y;
+			Vector3 toolFloor = toolTarget.position;
+			toolFloor.y = groundPlane.position.y;
 
-			force = Vector3.Normalize (groundPlane.position - emitterFloor) * strength;
+			force = Vector3.Normalize (groundPlane.position - toolFloor) * strength;
 		} else {
 			force = Vector3.zero;
-		}
-	}
-
-
-	private void OnEnable() 
-	{
-		
-	}
-
-
-	private void OnDisable() 
-	{
-		
-	}
-
-
-	private void OnDestroy()
-	{
-		
-	}
-
-
-	private IEnumerator ParticleBurst()
-	{
-		while (true)
-		{
-			particleSystem.Emit (20);
-			yield return new WaitForSeconds(0.3f);
 		}
 	}
 
@@ -110,14 +81,14 @@ public class RigBoat : MonoBehaviour
 	{
 		isOn = true;
 
-		StartCoroutine("ParticleBurst");
+		windTool.SwitchOn ();
 	}
 
 
 	public void SwitchOff() 
 	{
 		isOn = false;
-
-		StopCoroutine("ParticleBurst");
+	
+		windTool.SwitchOff ();
 	}
 }
