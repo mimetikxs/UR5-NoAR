@@ -1,17 +1,18 @@
 fileFormatVersion: 2
-guid: f3f72bfacd10ada47b742e608c52f952
-timeCreated: 1519646340
+guid: 9fa03bedc05db3a43a733b03ca8675bb
+timeCreated: 1519923516
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: 02 - Default
+    2100000: magnet
+    2100002: 'Material #75'
+    2100004: metal
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Ventilador
-    7400000: Take 001
+    4300000: Picker
     9500000: //RootNode
   externalObjects: {}
   materials:

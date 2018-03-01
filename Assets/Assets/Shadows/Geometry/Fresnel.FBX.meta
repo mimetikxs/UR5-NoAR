@@ -1,16 +1,22 @@
 fileFormatVersion: 2
-guid: f3f72bfacd10ada47b742e608c52f952
-timeCreated: 1519646340
+guid: 7bcf6815e50651e4fa18df4472bd3047
+timeCreated: 1519923515
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Fresnel
+    100004: Magnet
     400000: //RootNode
-    2100000: 02 - Default
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Ventilador
+    400002: Fresnel
+    400004: Magnet
+    2100000: magnet
+    2100002: 'Material #75'
+    2100004: metal
+    2300000: Fresnel
+    3300000: Fresnel
+    4300000: Fresnel
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
