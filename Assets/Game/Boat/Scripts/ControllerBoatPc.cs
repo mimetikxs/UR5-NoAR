@@ -13,15 +13,17 @@ public class ControllerBoatPc : MonoBehaviour
 {
 	public Transform gameWorld;
 	public UR5Controller robot;
+	public ItemCounter counter;
 	public Camera camera;
 
 	private RigBoat rig;
 	private BoatBehaviour player;
-
 	private LayerMask layerHostpots;
 
+	private 
 
-	void Awake ()
+
+	void Awake()
 	{
 		rig = gameWorld.Find ("Rig").GetComponent<RigBoat> ();
 		player = gameWorld.Find ("Player").GetComponent<BoatBehaviour> ();
@@ -30,12 +32,12 @@ public class ControllerBoatPc : MonoBehaviour
 	}
 
 
-	void Start () 
+	void Start() 
 	{
 	}
 	
 
-	void Update () 
+	void Update() 
 	{		
 		// user input
 		// --------------
@@ -61,7 +63,7 @@ public class ControllerBoatPc : MonoBehaviour
 	}
 
 
-	private void IntersectHotspots (Vector3 sreenPosition) 
+	private void IntersectHotspots(Vector3 sreenPosition) 
 	{		
 		Ray ray = camera.ScreenPointToRay(sreenPosition);
 		RaycastHit hit;
@@ -74,5 +76,23 @@ public class ControllerBoatPc : MonoBehaviour
 
 			robot.setTargetTransform (p, r);
 		}
+	}
+
+
+	private void IncreaseCount()
+	{
+		Debug.Log ("Item collected");
+	}
+
+
+	void OnEnable()
+	{
+		player.OnWasteCollected += IncreaseCount;
+	}
+
+
+	void OnDisable()
+	{
+		player.OnWasteCollected -= IncreaseCount;
 	}
 }

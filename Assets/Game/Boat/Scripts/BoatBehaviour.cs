@@ -5,31 +5,24 @@ using UnityEngine;
 public class BoatBehaviour : MonoBehaviour 
 {
 	public float windScale = 5f;
-	public float resistanceScale = 0f;
 
 	private Vector3 force;			// force accumulator
 	private Transform forcePoint;	// force applied to this point
 	private Rigidbody rb;
 
+	// delegated actions:
+	// triggered when waste is collected
+	public delegate void WasteCollectAction();			
+	public event WasteCollectAction OnWasteCollected;
 
 
-	void Awake()
+	private void Awake()
 	{
 		rb = GetComponent<Rigidbody> ();
 
 		forcePoint = this.transform.Find ("ForcePoint").transform;
 
 		force = Vector3.zero;
-	}
-
-
-	void Start() 
-	{
-	}
-
-
-	void Update() 
-	{
 	}
 
 
@@ -41,7 +34,18 @@ public class BoatBehaviour : MonoBehaviour
 	}
 
 
-	// Normalized force
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.tag == "Waste")
+			other.GetComponent<WasteBehaviour>().Remove ();
+
+		// trigger delegated 
+		if (OnWasteCollected != null)
+			OnWasteCollected();
+	}
+
+
+	// Normalized force (we only need direction)
 	public void addForce (Vector3 f) 
 	{
 		force += f;
