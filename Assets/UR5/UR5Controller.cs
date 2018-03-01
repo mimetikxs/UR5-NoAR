@@ -3,7 +3,7 @@ using System.Collections;
 
 
 /*
- * Handles communication with robot and renders the model.
+ * Handles communication with robot and renders the 3d model.
  */
 
 public class UR5Controller : MonoBehaviour {

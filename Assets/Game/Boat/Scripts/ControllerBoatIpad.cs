@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 public class ControllerBoatIpad : MonoBehaviour 
 {
 	public RigBoat rig;
-	public PlayerBoatBehaviour player;
+	public BoatBehaviour player;
 	public UR5Controller robot;
 	public ParticleSystem particleSystem;
 	public Camera camera;
@@ -49,7 +49,7 @@ public class ControllerBoatIpad : MonoBehaviour
 
 		// update player
 		// -------------
-		Vector3 windForce = rig.GetForce();
+		Vector3 windForce = rig.GetWindDirection();
 
 		player.addForce (windForce);
 	}

@@ -12,7 +12,6 @@ using UnityEngine;
 
 public class RigBoat : MonoBehaviour 
 {
-	public float strength = 0.015f; 	// magnitude of wind force
 	//public float sphereScale = 10f;
 
 	//private Collider worldSphere;
@@ -49,7 +48,7 @@ public class RigBoat : MonoBehaviour
 			Vector3 toolFloor = toolTarget.position;
 			toolFloor.y = groundPlane.position.y;
 
-			force = Vector3.Normalize (groundPlane.position - toolFloor) * strength;
+			force = Vector3.Normalize (groundPlane.position - toolFloor);
 		} else {
 			force = Vector3.zero;
 		}
@@ -69,7 +68,7 @@ public class RigBoat : MonoBehaviour
 	}
 
 
-	public Vector3 GetForce() 
+	public Vector3 GetWindDirection() 
 	{
 		return force;
 	}
