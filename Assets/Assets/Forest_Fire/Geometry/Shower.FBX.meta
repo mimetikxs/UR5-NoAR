@@ -1,16 +1,24 @@
 fileFormatVersion: 2
-guid: f3f72bfacd10ada47b742e608c52f952
-timeCreated: 1519646340
+guid: ce3b9a02a54e88b4a9ba36104d970e71
+timeCreated: 1519923516
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
+    100000: Cylinder001
+    100002: //RootNode
+    100004: Ventilador
+    400000: Cylinder001
+    400002: //RootNode
+    400004: Ventilador
     2100000: 02 - Default
-    2300000: //RootNode
-    3300000: //RootNode
+    2100002: 01 - Default
+    2300000: Cylinder001
+    2300002: Ventilador
+    3300000: Cylinder001
+    3300002: Ventilador
     4300000: Ventilador
+    4300002: Cylinder001
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
