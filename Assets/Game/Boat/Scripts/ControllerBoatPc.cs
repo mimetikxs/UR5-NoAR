@@ -16,7 +16,7 @@ public class ControllerBoatPc : MonoBehaviour
 	public Camera camera;
 
 	private RigBoat rig;
-	private PlayerBoatBehaviour player;
+	private BoatBehaviour player;
 
 	private LayerMask layerHostpots;
 
@@ -24,7 +24,7 @@ public class ControllerBoatPc : MonoBehaviour
 	void Awake ()
 	{
 		rig = gameWorld.Find ("Rig").GetComponent<RigBoat> ();
-		player = gameWorld.Find ("Player").GetComponent<PlayerBoatBehaviour> ();
+		player = gameWorld.Find ("Player").GetComponent<BoatBehaviour> ();
 
 		layerHostpots = 1 << LayerMask.NameToLayer ("Hotspots");	
 	}
@@ -55,9 +55,9 @@ public class ControllerBoatPc : MonoBehaviour
 
 		// update player
 		// -------------
-		Vector3 windForce = rig.GetForce();
+		Vector3 windDir = rig.GetWindDirection();
 
-		player.addForce (windForce);
+		player.addForce (windDir);
 	}
 
 
