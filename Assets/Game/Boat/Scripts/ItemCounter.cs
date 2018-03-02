@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class ItemCounter : MonoBehaviour {
 
-	private int _count = 0;
+	private int m_count = 0;
 
 	public int count
 	{
-		get {
-			return _count;
+		get { 
+			return m_count; 
 		}
-
-		set {
-			_count = value;
-
+		set { 
+			m_count = value; 
 		}
 	}
 
