@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43667564, g: 0.48427147, b: 0.56452364, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -870,7 +870,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 535443182}
-  - component: {fileID: 535443183}
   m_Layer: 0
   m_Name: Tool
   m_TagString: Untagged
@@ -893,19 +892,6 @@ Transform:
   m_Father: {fileID: 704368472}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &535443183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114358026048675392, guid: 79146bfac0ab847f1a7daed93b00fb53,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 535443181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93524c18783af4b35bb348255c894b53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tcp: {fileID: 1865480984}
 --- !u!1001 &559198959
 Prefab:
   m_ObjectHideFlags: 0
@@ -3376,7 +3362,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1738276053}
-  - component: {fileID: 1738276054}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3398,18 +3383,6 @@ Transform:
   m_Father: {fileID: 1079346353}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1738276054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1738276052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0562ff881b864e85ba74d5944f18b6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  windScale: 5
 --- !u!1001 &1835902726
 Prefab:
   m_ObjectHideFlags: 0
@@ -3476,11 +3449,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0c5dcbfb5b06acb4eb288dd0b09435c8, type: 3}
   m_IsPrefabParent: 0
---- !u!4 &1865480984 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4756937803968444, guid: 0691e869f52334a39b8cc28eaefbcfd3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1363546601}
 --- !u!1001 &1949473397
 Prefab:
   m_ObjectHideFlags: 0
