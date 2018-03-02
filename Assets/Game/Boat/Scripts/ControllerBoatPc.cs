@@ -81,7 +81,7 @@ public class ControllerBoatPc : MonoBehaviour
 
 	private void IncreaseCount()
 	{
-		Debug.Log ("Item collected");
+		counter.count += 1;
 	}
 
 
