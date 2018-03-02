@@ -6,10 +6,14 @@ using TMPro;
 
 public class CountDown : MonoBehaviour 
 {
-	public int maxCount = 60;
-
+	private int _startCount = 60;
 	private int _count;
 	private TextMeshProUGUI m_text; 
+
+	// delegated:
+	// triggered when countdown finishes
+	public delegate void CountdownFinishedAction();			
+	public event CountdownFinishedAction OnCountdownFinished;
 
 
 	void Awake()
@@ -17,7 +21,6 @@ public class CountDown : MonoBehaviour
 		m_text = GetComponent<TextMeshProUGUI> ();
 
 		Reset ();
-		Play ();
 	}
 
 
@@ -33,7 +36,7 @@ public class CountDown : MonoBehaviour
 	}
 
 
-	IEnumerator DecreaseCounter() 
+	private IEnumerator DecreaseCounter() 
 	{
 		while (_count > 0) 
 		{
@@ -47,13 +50,11 @@ public class CountDown : MonoBehaviour
 			yield return new WaitForSeconds(1f);
 		}
 
+		// trigger delegated 
+		if (OnCountdownFinished != null)
+			OnCountdownFinished();
+
 		Pause ();
-	}
-
-
-	public void Reset() 
-	{
-		_count = maxCount;
 	}
 
 
@@ -69,16 +70,10 @@ public class CountDown : MonoBehaviour
 	}
 
 
-//	public int maxCount
-//	{
-//		get { return _maxCount; }
-//
-//		set {
-//			_maxCount = value;
-//			if (_maxCount < _count)
-//				_count = _maxCount;
-//		}
-//	}
+	public void Reset() 
+	{
+		_count = _startCount;
+	}
 
 
 	public int GetCount()
@@ -87,7 +82,17 @@ public class CountDown : MonoBehaviour
 	}
 
 
-	public bool IsFinished() {
-		return _count == 0;
+//	public bool IsFinished() {
+//		return _count == 0;
+//	}
+
+
+	public int startCount {
+		get { return _startCount; }
+		set {
+			_startCount = value;
+			if (_count > _startCount)
+				_count = _startCount;
+		}
 	}
 }

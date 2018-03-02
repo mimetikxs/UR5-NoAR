@@ -10,7 +10,7 @@ public class BoatBehaviour : MonoBehaviour
 	private Transform forcePoint;	// force applied to this point
 	private Rigidbody rb;
 
-	// delegated actions:
+	// delegated:
 	// triggered when waste is collected
 	public delegate void WasteCollectAction();			
 	public event WasteCollectAction OnWasteCollected;
