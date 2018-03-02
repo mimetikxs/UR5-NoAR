@@ -85,4 +85,9 @@ public class CountDown : MonoBehaviour
 	{
 		return 	_count;
 	}
+
+
+	public bool IsFinished() {
+		return _count == 0;
+	}
 }
