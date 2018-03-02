@@ -46,18 +46,12 @@ public class WindTool : MonoBehaviour {
 		while (true)
 		{
 			particleSystem.Emit (20);
-			yield return new WaitForSeconds(0.3f);
+			yield return new WaitForSeconds(0.4f);
 		}
 	}
 
 
 	private void OnDisable() 
-	{
-		StopCoroutine("ParticleBurst");
-	}
-
-
-	private void OnDestroy()
 	{
 		StopCoroutine("ParticleBurst");
 	}

@@ -347,19 +347,6 @@ Prefab:
       propertyPath: tcp
       value: 
       objectReference: {fileID: 1865480984}
-    - target: {fileID: 1921236158275198, guid: 571fe760f4b884afc980c1c0ee5f65a2, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1625206691978760, guid: 571fe760f4b884afc980c1c0ee5f65a2, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114544209570359620, guid: 571fe760f4b884afc980c1c0ee5f65a2,
-        type: 2}
-      propertyPath: strength
-      value: 1.07
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 571fe760f4b884afc980c1c0ee5f65a2, type: 2}
   m_IsPrefabParent: 0
@@ -435,7 +422,7 @@ MonoBehaviour:
   robot: {fileID: 724310228}
   gameUI: {fileID: 55666626}
   camera: {fileID: 1618961462}
-  startTime: 10
+  startTime: 60
 --- !u!4 &736244406
 Transform:
   m_ObjectHideFlags: 0
