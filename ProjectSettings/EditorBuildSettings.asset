@@ -14,3 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Javi/Forest_Fire_Javi.unity
     guid: fe86dfa024c2b114bb8bdd22c943c0fb
+  - enabled: 1
+    path: Assets/Scenes/Javi/Shadows_Javi.unity
+    guid: 21a73afedcd28b34996f8722600c341c
+  - enabled: 1
+    path: Assets/Scenes/Javi/TrashPlanet_javi.unity
+    guid: 67d2de878c44ec24780f5a8cf3b7994e
+  - enabled: 1
+    path: Assets/Scenes/Javi/RecycleMachine.unity
+    guid: cb37080545fac9e459bf61d1de11e348
