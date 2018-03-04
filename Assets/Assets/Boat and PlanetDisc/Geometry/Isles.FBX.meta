@@ -1,0 +1,192 @@
+fileFormatVersion: 2
+guid: 9e6373cd89b9c46469452a6a16d603bf
+timeCreated: 1520191089
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Cliffs_A
+    100002: Cliffs_B
+    100004: Cliffs_C
+    100006: Cliffs_D
+    100008: //RootNode
+    100010: Object001
+    100012: Sphere076
+    100014: Sphere094
+    100016: Sphere242
+    100018: Sphere251
+    100020: Sphere479
+    100022: Green_A
+    100024: Green_B
+    100026: Green_C
+    100028: Green_D
+    100030: Green_E
+    100032: Isle_A
+    100034: Isle_B
+    100036: Isle_C
+    100038: Isle_D
+    100040: Isle_E
+    400000: Cliffs_A
+    400002: Cliffs_B
+    400004: Cliffs_C
+    400006: Cliffs_D
+    400008: //RootNode
+    400010: Object001
+    400012: Sphere076
+    400014: Sphere094
+    400016: Sphere242
+    400018: Sphere251
+    400020: Sphere479
+    400022: Green_A
+    400024: Green_B
+    400026: Green_C
+    400028: Green_D
+    400030: Green_E
+    400032: Isle_A
+    400034: Isle_B
+    400036: Isle_C
+    400038: Isle_D
+    400040: Isle_E
+    2100000: 02 - Default
+    2300000: Cliffs_A
+    2300002: Cliffs_B
+    2300004: Cliffs_C
+    2300006: Cliffs_D
+    2300008: Object001
+    2300010: Sphere076
+    2300012: Sphere094
+    2300014: Sphere242
+    2300016: Sphere251
+    2300018: Sphere479
+    2300020: Green_A
+    2300022: Green_B
+    2300024: Green_C
+    2300026: Green_D
+    2300028: Green_E
+    2300030: Isle_A
+    2300032: Isle_B
+    2300034: Isle_C
+    2300036: Isle_D
+    2300038: Isle_E
+    3300000: Cliffs_A
+    3300002: Cliffs_B
+    3300004: Cliffs_C
+    3300006: Cliffs_D
+    3300008: Object001
+    3300010: Sphere076
+    3300012: Sphere094
+    3300014: Sphere242
+    3300016: Sphere251
+    3300018: Sphere479
+    3300020: Green_A
+    3300022: Green_B
+    3300024: Green_C
+    3300026: Green_D
+    3300028: Green_E
+    3300030: Isle_A
+    3300032: Isle_B
+    3300034: Isle_C
+    3300036: Isle_D
+    3300038: Isle_E
+    4300000: Cliffs_A
+    4300002: Cliffs_B
+    4300004: Cliffs_C
+    4300006: Cliffs_D
+    4300008: Sphere076
+    4300010: Sphere094
+    4300012: Sphere242
+    4300014: Sphere251
+    4300016: Sphere479
+    4300018: Object001
+    4300020: Isle_A
+    4300022: Isle_E
+    4300024: Isle_B
+    4300026: Isle_D
+    4300028: Green_E
+    4300030: Green_D
+    4300032: Green_B
+    4300034: Green_C
+    4300036: Green_A
+    4300038: Isle_C
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
