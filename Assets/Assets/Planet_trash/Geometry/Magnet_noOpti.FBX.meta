@@ -1,27 +1,19 @@
 fileFormatVersion: 2
-guid: a90a37b657e9f0d48b329977e8414288
-timeCreated: 1519923516
+guid: 8524ad2e4340da148a8b2a61e2a9e536
+timeCreated: 1520182462
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Cylinder001
+    100000: magnet
     100002: //RootNode
-    100004: Magnet
-    100006: magnet
-    400000: Cylinder001
+    400000: magnet
     400002: //RootNode
-    400004: Magnet
-    400006: magnet
-    2100000: 01 - Default
-    2100002: magnet
-    2100004: metal
-    2300000: Cylinder001
-    2300002: magnet
-    3300000: Cylinder001
-    3300002: magnet
-    4300000: Cylinder001
-    4300002: magnet
+    2100000: magnet
+    2100002: metal
+    2300000: magnet
+    3300000: magnet
+    4300000: magnet
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
@@ -51,10 +43,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.1
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -79,7 +71,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -98,7 +90,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
