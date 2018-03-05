@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Javi/MainMenu.unity
     guid: 0662b2a2146b54a19b364193b0a6fc08
   - enabled: 0
@@ -24,8 +24,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Javi/RecycleMachine.unity
     guid: cb37080545fac9e459bf61d1de11e348
   - enabled: 1
-    path: Assets/Scenes/Javi/MainMenuAR.unity
-    guid: e5d68e1be58544902a6b5950b99af9b6
-  - enabled: 1
     path: Assets/Scenes/Javi/boat_javi_AR.unity
     guid: 8e9bccea239354b6d9e76f552ef06e90
+  - enabled: 1
+    path: Assets/Scenes/Javi/Forest_Fire_Javi_AR.unity
+    guid: 0ed90e3fd845c461393c68cbff64ef7e

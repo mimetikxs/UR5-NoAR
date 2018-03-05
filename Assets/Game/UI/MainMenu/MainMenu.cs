@@ -6,10 +6,15 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour {
 
+	public bool useAR = false;
+
 	private string scenesPath = "Scenes/Javi/";
 
 	public void LoadLevel(string sceneName)
 	{
-		SceneManager.LoadScene (scenesPath + sceneName);
+		string sufix = "";
+		if (useAR) sufix = "_AR";
+			
+		SceneManager.LoadScene (scenesPath + sceneName + sufix);
 	}
 }

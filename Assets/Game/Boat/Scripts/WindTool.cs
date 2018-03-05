@@ -14,14 +14,16 @@ public class WindTool : MonoBehaviour {
 	public Transform tcp;
 
 	private Transform fan;
-	private ParticleSystem particleSystem;
+	private ParticleSystem fxRays;
+	private ParticleSystem fxSpikes;
 	private bool isOn;
 
 
 	private void Awake()
 	{
 		fan = this.transform.Find ("Fan");
-		particleSystem = this.transform.Find ("ParticleSystem").GetComponent<ParticleSystem> ();
+		fxRays = this.transform.Find ("Fan_Wind/FX_Rays").GetComponent<ParticleSystem> ();
+		fxSpikes = this.transform.Find ("Fan_Wind/FX_Spikes").GetComponent<ParticleSystem> ();
 	}
 
 
@@ -45,7 +47,8 @@ public class WindTool : MonoBehaviour {
 	{
 		while (true)
 		{
-			particleSystem.Emit (20);
+			fxRays.Emit (10);
+			//fxSpikes.Emit (200);
 			yield return new WaitForSeconds(0.4f);
 		}
 	}
