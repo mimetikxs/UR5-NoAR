@@ -17,8 +17,6 @@ public class ControllerBoatIpad : MonoBehaviour
 	public Transform gameUI;
 	public Camera camera;
 
-	private ButtonHold buttonAction;
-
 	// game parameters
 	private int itemCountGoal;
 	public int startTime = 60;
@@ -33,7 +31,7 @@ public class ControllerBoatIpad : MonoBehaviour
 	private GameObject bottomBar;
 	private ItemCounter itemCounter;
 	private CountDown countDown;
-
+	private ButtonHold buttonAction;
 
 	private void Awake()
 	{
@@ -48,6 +46,8 @@ public class ControllerBoatIpad : MonoBehaviour
 		bottomBar = gameUI.Find ("BottomBar").gameObject;
 		itemCounter = bottomBar.transform.Find ("ItemCounter").GetComponent<ItemCounter> ();
 		countDown = bottomBar.transform.Find ("CountDown").GetComponent<CountDown> ();
+
+		buttonAction = gameUI.Find ("BottomBar/ButtonAction").GetComponent<ButtonHold> ();
 	}
 
 
@@ -63,21 +63,26 @@ public class ControllerBoatIpad : MonoBehaviour
 
 
 	private void Update() 
-	{		
+	{	
 		// user input
 		// --------------
-		if (Input.GetKeyDown ("space")) 
+		if (buttonAction.isPressed) 
 		{
 			rig.SwitchOn ();
 		} 
-		else if (Input.GetKeyUp ("space")) 
+		else 
 		{
 			rig.SwitchOff ();
-		}
 
-		if (Input.GetMouseButtonDown (0)) 
-		{
-			IntersectHotspots (Input.mousePosition);
+			if (Input.touchCount > 0) 
+			{
+				Touch touch = Input.GetTouch (0);
+
+				if (touch.phase == TouchPhase.Began) {
+					Vector3 screenPos = new Vector3 (touch.position.x, touch.position.y, 0f);
+					IntersectHotspots (screenPos);
+				}
+			}
 		}
 
 		// update player
