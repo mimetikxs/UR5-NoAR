@@ -55,8 +55,6 @@ public class ControllerBoatPc : MonoBehaviour
 
 		countDown.startCount = startTime;
 		countDown.Play ();
-
-		//Resources.UnloadUnusedAssets ();
 	}
 	
 
