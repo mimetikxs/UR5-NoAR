@@ -4034,6 +4034,19 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 23399663707419132, guid: 625788af4dc6945caad6de729fb4f0e3,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1685245913286390, guid: 625788af4dc6945caad6de729fb4f0e3, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1665112253467666, guid: 625788af4dc6945caad6de729fb4f0e3, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114438531260863902, guid: 625788af4dc6945caad6de729fb4f0e3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 625788af4dc6945caad6de729fb4f0e3, type: 2}
