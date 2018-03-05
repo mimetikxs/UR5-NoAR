@@ -1,19 +1,17 @@
 fileFormatVersion: 2
-guid: f3f72bfacd10ada47b742e608c52f952
-timeCreated: 1519646340
+guid: 0ec0fb6efc152684fbaf7f5aef32efe5
+timeCreated: 1520158927
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: 02 - Default
-    2100002: 01 - Default
+    2100000: Tree low_Material__49
+    2100002: Tree low_wire_224086086
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Ventilador
-    4300002: Object001
-    7400000: Take 001
+    4300000: Tree_twist
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -45,7 +43,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.1
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

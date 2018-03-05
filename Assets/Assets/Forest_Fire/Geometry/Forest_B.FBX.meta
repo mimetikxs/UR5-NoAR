@@ -1,23 +1,29 @@
 fileFormatVersion: 2
-guid: f3f72bfacd10ada47b742e608c52f952
-timeCreated: 1519646340
+guid: 733fda0403719e24c9f5e220728115ca
+timeCreated: 1520074441
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: cascada
+    100004: Forest_B
     400000: //RootNode
-    2100000: 02 - Default
-    2100002: 01 - Default
+    400002: cascada
+    400004: Forest_B
+    2100000: 01 - Default
     2300000: //RootNode
+    2300002: cascada
+    2300004: Forest_B
     3300000: //RootNode
-    4300000: Ventilador
-    4300002: Object001
-    7400000: Take 001
+    3300002: cascada
+    3300004: Forest_B
+    4300000: Forest_B
+    4300002: cascada
     9500000: //RootNode
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -42,10 +48,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.1
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

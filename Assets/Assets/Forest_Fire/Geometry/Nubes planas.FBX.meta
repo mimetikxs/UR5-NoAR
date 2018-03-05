@@ -1,23 +1,37 @@
 fileFormatVersion: 2
-guid: f3f72bfacd10ada47b742e608c52f952
-timeCreated: 1519646340
+guid: 4afc7b773debee74e94d404fb02029c4
+timeCreated: 1520073413
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: 02 - Default
-    2100002: 01 - Default
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Ventilador
-    4300002: Object001
-    7400000: Take 001
+    100000: Nube_Plana_A
+    100002: Nube_Plana_B
+    100004: Nube_Plana_C
+    100006: Nube_Plana_D
+    100008: //RootNode
+    400000: Nube_Plana_A
+    400002: Nube_Plana_B
+    400004: Nube_Plana_C
+    400006: Nube_Plana_D
+    400008: //RootNode
+    2100000: No Name
+    2300000: Nube_Plana_A
+    2300002: Nube_Plana_B
+    2300004: Nube_Plana_C
+    2300006: Nube_Plana_D
+    3300000: Nube_Plana_A
+    3300002: Nube_Plana_B
+    3300004: Nube_Plana_C
+    3300006: Nube_Plana_D
+    4300000: Nube_Plana_D
+    4300002: Nube_Plana_C
+    4300004: Nube_Plana_B
+    4300006: Nube_Plana_A
     9500000: //RootNode
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -45,7 +59,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.1
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -53,9 +67,9 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
+    optimizeMeshForGPU: 0
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
@@ -86,7 +100,7 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0
