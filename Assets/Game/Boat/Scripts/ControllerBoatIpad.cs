@@ -5,58 +5,172 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 
+/*
+ * Handles user input for an iPad device with Vuforia enabled.
+ * Manages the main game logic.
+ */
+
 public class ControllerBoatIpad : MonoBehaviour 
 {
-	public RigBoat rig;
-	public BoatBehaviour player;
+	public Transform gameWorld;
 	public UR5Controller robot;
-	public ParticleSystem particleSystem;
+	public Transform gameUI;
 	public Camera camera;
 
-	private Plane groundPlane;
+	private ButtonHold buttonAction;
+
+	// game parameters
+	private int itemCountGoal;
+	public int startTime = 60;
+
+	private RigBoat rig;
+	private BoatBehaviour player;
+	private LayerMask layerHostpots;
+
+	// UI
+	private GameObject scorePopup;
+	private GameObject lostTrackingPopup;
+	private GameObject bottomBar;
+	private ItemCounter itemCounter;
+	private CountDown countDown;
 
 
-	void Start () 
+	private void Awake()
 	{
-		groundPlane = new Plane (Vector3.up, rig.transform.Find("GroundPlane").transform.position);
-		Debug.Log (groundPlane);
-	}
-	
+		rig = gameWorld.Find ("Rig").GetComponent<RigBoat> ();
+		player = gameWorld.Find ("Player").GetComponent<BoatBehaviour> ();
 
-	void Update () 
+		layerHostpots = 1 << LayerMask.NameToLayer ("Hotspots");	
+
+		// ui references
+		scorePopup = gameUI.Find("ScorePopup").gameObject;
+		lostTrackingPopup = gameUI.Find ("LostTrackingPopup").gameObject;
+		bottomBar = gameUI.Find ("BottomBar").gameObject;
+		itemCounter = bottomBar.transform.Find ("ItemCounter").GetComponent<ItemCounter> ();
+		countDown = bottomBar.transform.Find ("CountDown").GetComponent<CountDown> ();
+	}
+
+
+	private void Start() 
+	{
+		itemCountGoal = gameWorld.Find ("Waste").childCount;
+
+		countDown.startCount = startTime;
+		countDown.Play ();
+
+		//Resources.UnloadUnusedAssets ();
+	}
+
+
+	private void Update() 
 	{		
 		// user input
 		// --------------
-		if (Input.GetKey ("space")) 
+		if (Input.GetKeyDown ("space")) 
 		{
 			rig.SwitchOn ();
-			particleSystem.Emit (1);
 		} 
-		else
+		else if (Input.GetKeyUp ("space")) 
 		{
 			rig.SwitchOff ();
 		}
 
-		if (Input.GetKey ("h")) 
-		{
-			robot.goHome ();
-		}
-
 		if (Input.GetMouseButtonDown (0)) 
 		{
-			IntersectPlane (Input.mousePosition);
+			IntersectHotspots (Input.mousePosition);
 		}
 
 		// update player
 		// -------------
-		Vector3 windForce = rig.GetWindDirection();
+		Vector3 windDir = rig.GetWindDirection();
 
-		player.addForce (windForce);
+		player.addForce (windDir);
 	}
 
 
-	private void IntersectPlane(Vector3 sreenPosition) 
+	private void OnEnable()
+	{
+		AddListeners ();
+	}
+
+
+	private void OnDisable()
+	{
+		RemoveListeners ();
+	}
+
+
+	private void AddListeners()
+	{
+		player.OnWasteCollected += IncreaseCount;
+		countDown.OnCountdownFinished += FinishGame;
+	}
+
+
+	private void RemoveListeners()
+	{
+		player.OnWasteCollected -= IncreaseCount;
+		countDown.OnCountdownFinished -= FinishGame;
+	}
+
+
+	private void IntersectHotspots(Vector3 sreenPosition) 
 	{		
-		
+		Ray ray = camera.ScreenPointToRay(sreenPosition);
+		RaycastHit hit;
+		if (Physics.Raycast (ray, out hit, 1000f, layerHostpots))
+		{
+			Vector3 p = hit.transform.position;
+			Quaternion r = hit.transform.rotation;
+
+			rig.SetToolTransform (p, r);
+
+			robot.setTargetTransform (p, r);
+		}
+	}
+
+
+	private void IncreaseCount()
+	{
+		itemCounter.count += 1;
+
+		if (itemCounter.count == itemCountGoal)
+			FinishGame ();
+	}
+
+
+	private void FinishGame()
+	{
+		enabled = false; // stop updates
+
+		rig.SwitchOff ();
+
+		RemoveListeners ();
+
+		bottomBar.SetActive (false);
+
+		ShowScorePopup ();
+	}
+
+
+	private void ShowScorePopup()
+	{
+		ScorePopup popup = scorePopup.GetComponent<ScorePopup> ();
+
+		//set the score
+		float timeWeight = 0.2f;
+		float collectionWeight = 0.8f;
+		float timePerformance = countDown.GetCount() / countDown.startCount;
+		float collectionPerformance = itemCounter.count / itemCountGoal;
+		float score = timePerformance * timeWeight + collectionPerformance * collectionWeight;
+
+		// TODO: logic to set the text based on score. Read text from an xml
+		string title;
+		string message;
+
+		popup.SetScore (score);
+		//		popup.SetTitle();
+		//		popup.SetMessage();
+		popup.Show ();
 	}
 }
