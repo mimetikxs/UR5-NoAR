@@ -1065,11 +1065,6 @@ Prefab:
       propertyPath: tcp
       value: 
       objectReference: {fileID: 1409940432}
-    - target: {fileID: 23335704379132330, guid: 80c3d3603592c4280b1d7ff0151eb7e3,
-        type: 2}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 80c3d3603592c4280b1d7ff0151eb7e3, type: 2}
   m_IsPrefabParent: 0
