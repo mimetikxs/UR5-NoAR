@@ -6,11 +6,11 @@ using UnityEngine.EventSystems;
 
 
 /*
- * Handles user input for an iPad device with Vuforia enabled.
+ * Handles user input when testing on pc (no Vuforia).
  * Manages the main game logic.
  */
 
-public class ControllerLightIpad : MonoBehaviour 
+public class ControllerLightPc : MonoBehaviour 
 {
 	public Transform gameWorld;
 	public UR5Controller robot;
@@ -22,7 +22,7 @@ public class ControllerLightIpad : MonoBehaviour
 	public int startTime = 60;
 
 	private RigLight rig;
-//	private LanderBehaviour player;
+	//private LanderBehaviour player;
 	private LayerMask layerHostpots;
 
 	// UI
@@ -31,7 +31,6 @@ public class ControllerLightIpad : MonoBehaviour
 	private GameObject bottomBar;
 	private ItemCounter itemCounter;
 	private CountDown countDown;
-	private ButtonHold buttonAction;
 
 
 	private void Awake()
@@ -47,42 +46,39 @@ public class ControllerLightIpad : MonoBehaviour
 		bottomBar = gameUI.Find ("BottomBar").gameObject;
 		itemCounter = bottomBar.transform.Find ("ItemCounter").GetComponent<ItemCounter> ();
 		countDown = bottomBar.transform.Find ("CountDown").GetComponent<CountDown> ();
-
-		buttonAction = gameUI.Find ("BottomBar/ButtonAction").GetComponent<ButtonHold> ();
 	}
 
 
 	private void Start() 
 	{
-		itemCountGoal = 5;//gameWorld.Find ("Waste").childCount;
+		itemCountGoal = 5; //gameWorld.Find ("Waste").childCount;
 
 		countDown.startCount = startTime;
 		countDown.Play ();
 	}
-
+	
 
 	private void Update() 
-	{	
+	{		
 		// user input
 		// --------------
-		if (buttonAction.isPressed) 
+		if (Input.GetKeyDown ("space")) 
 		{
 			rig.SwitchOn ();
 		} 
-		else 
+		else if (Input.GetKeyUp ("space")) 
 		{
 			rig.SwitchOff ();
-
-			if (Input.touchCount > 0) 
-			{
-				Touch touch = Input.GetTouch (0);
-
-				if (touch.phase == TouchPhase.Began) {
-					Vector3 screenPos = new Vector3 (touch.position.x, touch.position.y, 0f);
-					IntersectHotspots (screenPos);
-				}
-			}
 		}
+
+		if (Input.GetMouseButtonDown (0)) 
+		{
+			IntersectHotspots (Input.mousePosition);
+		}
+
+		// update player
+		// -------------
+		// TODO
 	}
 
 
@@ -167,8 +163,8 @@ public class ControllerLightIpad : MonoBehaviour
 		string message;
 
 		popup.SetScore (score);
-		//popup.SetTitle();
-		//popup.SetMessage();
+		//		popup.SetTitle();
+		//		popup.SetMessage();
 		popup.Show ();
 	}
 }
