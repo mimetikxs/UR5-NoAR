@@ -21,8 +21,7 @@ public class ControllerFireIpad : MonoBehaviour
 	private int itemCountGoal;
 	public int startTime = 60;
 
-	private RigBoat rig;
-	private BoatBehaviour player;
+	private RigShower rig;
 	private LayerMask layerHostpots;
 
 	// UI
@@ -33,10 +32,10 @@ public class ControllerFireIpad : MonoBehaviour
 	private CountDown countDown;
 	private ButtonHold buttonAction;
 
+
 	private void Awake()
 	{
-		rig = gameWorld.Find ("Rig").GetComponent<RigBoat> ();
-		player = gameWorld.Find ("Player").GetComponent<BoatBehaviour> ();
+		rig = gameWorld.Find ("RigShower").GetComponent<RigShower> ();
 
 		layerHostpots = 1 << LayerMask.NameToLayer ("Hotspots");	
 
@@ -57,8 +56,6 @@ public class ControllerFireIpad : MonoBehaviour
 
 		countDown.startCount = startTime;
 		countDown.Play ();
-
-		//Resources.UnloadUnusedAssets ();
 	}
 
 
@@ -84,12 +81,6 @@ public class ControllerFireIpad : MonoBehaviour
 				}
 			}
 		}
-
-		// update player
-		// -------------
-		Vector3 windDir = rig.GetWindDirection();
-
-		player.addForce (windDir);
 	}
 
 
@@ -107,14 +98,12 @@ public class ControllerFireIpad : MonoBehaviour
 
 	private void AddListeners()
 	{
-		player.OnWasteCollected += IncreaseCount;
 		countDown.OnCountdownFinished += FinishGame;
 	}
 
 
 	private void RemoveListeners()
 	{
-		player.OnWasteCollected -= IncreaseCount;
 		countDown.OnCountdownFinished -= FinishGame;
 	}
 
