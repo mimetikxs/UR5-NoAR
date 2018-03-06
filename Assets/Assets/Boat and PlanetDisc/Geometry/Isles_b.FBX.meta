@@ -1,16 +1,96 @@
 fileFormatVersion: 2
-guid: 5cd49b93148730b44aefed3130d36895
-timeCreated: 1520264064
+guid: 0dd5f3c1224f7314bb41b7958f039ece
+timeCreated: 1520349019
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: No Name
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: tire
+    100000: FallingWater
+    100002: Foam_1
+    100004: Foam_2
+    100006: Foam_3
+    100008: Foam_4
+    100010: Foam_5
+    100012: Foam_6
+    100014: Foam_7
+    100016: Isle_A
+    100018: Isle_B
+    100020: Isle_C
+    100022: Isle_D
+    100024: Isle_D001
+    100026: Isle_E
+    100028: //RootNode
+    100030: Planet_Disc001
+    100032: Vegetacion
+    400000: FallingWater
+    400002: Foam_1
+    400004: Foam_2
+    400006: Foam_3
+    400008: Foam_4
+    400010: Foam_5
+    400012: Foam_6
+    400014: Foam_7
+    400016: Isle_A
+    400018: Isle_B
+    400020: Isle_C
+    400022: Isle_D
+    400024: Isle_D001
+    400026: Isle_E
+    400028: //RootNode
+    400030: Planet_Disc001
+    400032: Vegetacion
+    2100000: 02 - Default
+    2100002: 01 - Default
+    2100004: No Name
+    2300000: FallingWater
+    2300002: Foam_1
+    2300004: Foam_2
+    2300006: Foam_3
+    2300008: Foam_4
+    2300010: Foam_5
+    2300012: Foam_6
+    2300014: Foam_7
+    2300016: Isle_A
+    2300018: Isle_B
+    2300020: Isle_C
+    2300022: Isle_D
+    2300024: Isle_D001
+    2300026: Isle_E
+    2300028: Planet_Disc001
+    2300030: Vegetacion
+    3300000: FallingWater
+    3300002: Foam_1
+    3300004: Foam_2
+    3300006: Foam_3
+    3300008: Foam_4
+    3300010: Foam_5
+    3300012: Foam_6
+    3300014: Foam_7
+    3300016: Isle_A
+    3300018: Isle_B
+    3300020: Isle_C
+    3300022: Isle_D
+    3300024: Isle_D001
+    3300026: Isle_E
+    3300028: Planet_Disc001
+    3300030: Vegetacion
+    4300000: Isle_A
+    4300002: Isle_E
+    4300004: Isle_B
+    4300006: Isle_D
+    4300008: Isle_C
+    4300010: Planet_Disc001
+    4300012: Isle_D001
+    4300014: Foam_1
+    4300016: Foam_5
+    4300018: Foam_2
+    4300020: Foam_4
+    4300022: Foam_3
+    4300024: Foam_6
+    4300026: Foam_7
+    4300028: FallingWater
+    4300030: Vegetacion
+    7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -50,7 +130,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
@@ -67,7 +147,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -83,7 +163,7 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0
