@@ -14,19 +14,17 @@ public class RigShower : MonoBehaviour
 {
 	//private Collider worldSphere;
 	private Transform toolTarget;
-	private Transform groundPlane;
 	private Vector3 force;
-	private WindTool windTool;
+	private ShowerTool showerTool;
 
 	private bool isOn;
 
 
 	private void Awake()
 	{
-		windTool = transform.Find ("Tool").GetComponent<WindTool> ();
+		showerTool = transform.Find ("Tool").GetComponent<ShowerTool> ();
 		toolTarget = transform.Find ("ToolTarget");
 		//worldSphere = transform.Find ("WorldSphere").GetComponent<Collider> ();
-		groundPlane = transform.Find("GroundPlane").transform;
 	}
 
 
@@ -42,8 +40,8 @@ public class RigShower : MonoBehaviour
 		//worldSphere.transform.localScale = new Vector3 (sphereScale, sphereScale, sphereScale);
 
 		if (isOn) {
-			// detect collision of water stream with a fire
-			// if colliding, balance hot/cold balance
+			// detect collision of water stream with a fire cluster
+			// if colliding, begin substracting damage from tree
 		} 
 	}
 
@@ -65,7 +63,7 @@ public class RigShower : MonoBehaviour
 	{
 		isOn = true;
 
-		windTool.SwitchOn ();
+		showerTool.SwitchOn ();
 	}
 
 
@@ -73,6 +71,6 @@ public class RigShower : MonoBehaviour
 	{
 		isOn = false;
 
-		windTool.SwitchOff ();
+		showerTool.SwitchOff ();
 	}
 }
