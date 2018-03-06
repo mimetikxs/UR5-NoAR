@@ -46,13 +46,15 @@ public class ControllerFireIpad : MonoBehaviour
 		itemCounter = bottomBar.transform.Find ("ItemCounter").GetComponent<ItemCounter> ();
 		countDown = bottomBar.transform.Find ("CountDown").GetComponent<CountDown> ();
 
+		Debug.Log (countDown);
+
 		buttonAction = gameUI.Find ("BottomBar/ButtonAction").GetComponent<ButtonHold> ();
 	}
 
 
 	private void Start() 
 	{
-		itemCountGoal = gameWorld.Find ("Waste").childCount;
+		itemCountGoal = 5;//gameWorld.Find ("Waste").childCount;
 
 		countDown.startCount = startTime;
 		countDown.Play ();

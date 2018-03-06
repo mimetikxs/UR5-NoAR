@@ -13,17 +13,15 @@ public class ShowerTool : MonoBehaviour {
 
 	public Transform tcp;
 
-	private Transform fan;
-	private ParticleSystem fxRays;
-	private ParticleSystem fxSpikes;
+	private Transform shower;
+	private ParticleSystem particles;
 	private bool isOn;
 
 
 	private void Awake()
 	{
-		fan = this.transform.Find ("Fan");
-		fxRays = this.transform.Find ("Fan_Wind/FX_Rays").GetComponent<ParticleSystem> ();
-		fxSpikes = this.transform.Find ("Fan_Wind/FX_Spikes").GetComponent<ParticleSystem> ();
+		shower = this.transform.Find ("Shower");
+		particles = this.transform.Find ("Particles").GetComponent<ParticleSystem> ();
 	}
 
 
@@ -37,9 +35,6 @@ public class ShowerTool : MonoBehaviour {
 	{
 		this.transform.position = tcp.position;
 		this.transform.rotation = tcp.rotation;
-
-		if (isOn)
-			fan.transform.Rotate (0f, 0f, 20f);
 	}
 
 
@@ -47,16 +42,15 @@ public class ShowerTool : MonoBehaviour {
 	{
 		while (true)
 		{
-			fxRays.Emit (10);
-			//fxSpikes.Emit (200);
-			yield return new WaitForSeconds(0.4f);
+			particles.Emit (1);
+			yield return new WaitForSeconds(1f);
 		}
 	}
 
 
 	private void OnDisable() 
 	{
-		StopCoroutine("ParticleBurst");
+		SwitchOff ();
 	}
 
 

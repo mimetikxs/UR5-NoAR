@@ -56,7 +56,7 @@ public class WindTool : MonoBehaviour {
 
 	private void OnDisable() 
 	{
-		StopCoroutine("ParticleBurst");
+		SwitchOff ();
 	}
 
 
