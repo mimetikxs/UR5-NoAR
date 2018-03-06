@@ -29,7 +29,7 @@ public class RigLight : MonoBehaviour
 
 	private void Start() 
 	{
-		isOn = false;
+		SwitchOff ();
 	}
 
 
