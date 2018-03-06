@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[RequireComponent(typeof(AudioSource))]
 public class BoatBehaviour : MonoBehaviour 
 {
 	public float windScale = 5f;
@@ -9,6 +11,7 @@ public class BoatBehaviour : MonoBehaviour
 	private Vector3 force;			// force accumulator
 	private Transform forcePoint;	// force applied to this point
 	private Rigidbody rb;
+	private AudioSource collectedSound;
 
 	// delegated:
 	// triggered when waste is collected
@@ -23,6 +26,8 @@ public class BoatBehaviour : MonoBehaviour
 		forcePoint = this.transform.Find ("ForcePoint").transform;
 
 		force = Vector3.zero;
+
+		collectedSound = GetComponent<AudioSource>();
 	}
 
 
@@ -36,8 +41,12 @@ public class BoatBehaviour : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.tag == "Waste")
-			other.GetComponent<WasteBehaviour>().Remove ();
+		if (other.tag == "Waste") 
+		{
+			other.GetComponent<WasteBehaviour> ().Remove ();
+
+			collectedSound.Play ();
+		}
 
 		// trigger delegated 
 		if (OnWasteCollected != null)

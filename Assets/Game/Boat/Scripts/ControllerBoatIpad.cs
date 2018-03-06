@@ -33,6 +33,7 @@ public class ControllerBoatIpad : MonoBehaviour
 	private CountDown countDown;
 	private ButtonHold buttonAction;
 
+
 	private void Awake()
 	{
 		rig = gameWorld.Find ("Rig").GetComponent<RigBoat> ();
@@ -66,22 +67,14 @@ public class ControllerBoatIpad : MonoBehaviour
 	{	
 		// user input
 		// --------------
-		if (buttonAction.isPressed) 
+		if (Input.touchCount > 0 
+			&& !buttonAction.isPressed) 
 		{
-			rig.SwitchOn ();
-		} 
-		else 
-		{
-			rig.SwitchOff ();
+			Touch touch = Input.GetTouch (0);
 
-			if (Input.touchCount > 0) 
-			{
-				Touch touch = Input.GetTouch (0);
-
-				if (touch.phase == TouchPhase.Began) {
-					Vector3 screenPos = new Vector3 (touch.position.x, touch.position.y, 0f);
-					IntersectHotspots (screenPos);
-				}
+			if (touch.phase == TouchPhase.Began) {
+				Vector3 screenPos = new Vector3 (touch.position.x, touch.position.y, 0f);
+				IntersectHotspots (screenPos);
 			}
 		}
 
@@ -109,6 +102,8 @@ public class ControllerBoatIpad : MonoBehaviour
 	{
 		player.OnWasteCollected += IncreaseCount;
 		countDown.OnCountdownFinished += FinishGame;
+		buttonAction.OnDown += OnActionButtonDown;
+		buttonAction.OnUp += OnActionButtonUp;
 	}
 
 
@@ -116,6 +111,20 @@ public class ControllerBoatIpad : MonoBehaviour
 	{
 		player.OnWasteCollected -= IncreaseCount;
 		countDown.OnCountdownFinished -= FinishGame;
+		buttonAction.OnDown -= OnActionButtonDown;
+		buttonAction.OnUp -= OnActionButtonUp;
+	}
+
+
+	private void OnActionButtonDown() 
+	{
+		rig.SwitchOn ();
+	}
+
+
+	private void OnActionButtonUp() 
+	{
+		rig.SwitchOff ();
 	}
 
 

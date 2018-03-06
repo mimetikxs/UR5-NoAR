@@ -11,7 +11,7 @@ public class WasteBehaviour : MonoBehaviour
 
 	private void Awake()
 	{
-		model = transform.Find ("Sphere").gameObject;
+		model = transform.GetChild (0).gameObject;
 	}
 
 

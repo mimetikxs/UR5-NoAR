@@ -9,6 +9,7 @@ using UnityEngine;
  * Holds state of the virtual tool.
  */
 
+[RequireComponent(typeof(AudioSource))]
 public class WindTool : MonoBehaviour {
 
 	public Transform tcp;
@@ -17,6 +18,7 @@ public class WindTool : MonoBehaviour {
 	private ParticleSystem fxRays;
 	private ParticleSystem fxSpikes;
 	private bool isOn;
+	private AudioSource windSound;
 
 
 	private void Awake()
@@ -24,6 +26,8 @@ public class WindTool : MonoBehaviour {
 		fan = this.transform.Find ("Fan");
 		fxRays = this.transform.Find ("Fan_Wind/FX_Rays").GetComponent<ParticleSystem> ();
 		fxSpikes = this.transform.Find ("Fan_Wind/FX_Spikes").GetComponent<ParticleSystem> ();
+
+		windSound = GetComponent<AudioSource>();
 	}
 
 
@@ -38,7 +42,7 @@ public class WindTool : MonoBehaviour {
 		this.transform.position = tcp.position;
 		this.transform.rotation = tcp.rotation;
 
-		if (isOn)
+		if (isOn) 
 			fan.transform.Rotate (0f, 0f, 20f);
 	}
 
@@ -57,6 +61,8 @@ public class WindTool : MonoBehaviour {
 	private void OnDisable() 
 	{
 		SwitchOff ();
+
+		windSound.Stop ();
 	}
 
 
@@ -64,6 +70,7 @@ public class WindTool : MonoBehaviour {
 	{
 		isOn = true;
 		StartCoroutine("ParticleBurst");
+		windSound.Play ();
 	}
 
 
@@ -71,5 +78,6 @@ public class WindTool : MonoBehaviour {
 	{
 		isOn = false;
 		StopCoroutine("ParticleBurst");
+		windSound.Pause ();
 	}
 }
