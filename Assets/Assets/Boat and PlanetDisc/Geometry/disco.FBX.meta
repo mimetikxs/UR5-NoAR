@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 5cd49b93148730b44aefed3130d36895
-timeCreated: 1520264064
+guid: adbe4c42701c18243b3e494430089554
+timeCreated: 1520350453
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -10,7 +10,7 @@ ModelImporter:
     2100000: No Name
     2300000: //RootNode
     3300000: //RootNode
-    4300000: tire
+    4300000: disco
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -67,7 +67,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
