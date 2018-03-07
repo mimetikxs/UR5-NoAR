@@ -1318,6 +1318,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198211672368825134, guid: 374b0955393fe40c88963d9fe0b01f4f,
+        type: 2}
+      propertyPath: randomSeed
+      value: 1927207080
+      objectReference: {fileID: 0}
+    - target: {fileID: 198211672368825134, guid: 374b0955393fe40c88963d9fe0b01f4f,
+        type: 2}
+      propertyPath: ColorModule.gradient.maxGradient.key2.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 374b0955393fe40c88963d9fe0b01f4f, type: 2}
   m_IsPrefabParent: 0
