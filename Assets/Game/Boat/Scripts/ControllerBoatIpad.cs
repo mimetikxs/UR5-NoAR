@@ -80,7 +80,7 @@ public class ControllerBoatIpad : MonoBehaviour
 				if (!intersectedHotspot)
 					OnActionButtonDown ();				
 			} 
-			else if (touch.phase == TouchPhase.Began) 
+			else if (touch.phase == TouchPhase.Ended) 
 			{
 				OnActionButtonUp ();
 			}
