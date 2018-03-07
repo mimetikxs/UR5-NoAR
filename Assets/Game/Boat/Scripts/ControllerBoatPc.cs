@@ -159,13 +159,13 @@ public class ControllerBoatPc : MonoBehaviour
 		float timePerformance = countDown.GetCount() / countDown.startCount;
 		float collectionPerformance = itemCounter.count / itemCountGoal;
 		float score = timePerformance * timeWeight + collectionPerformance * collectionWeight;
-
+		int stars = (int) (5f * score);
 		// TODO: logic to set the text based on score. Read text from an xml
 		string title;
 		string message;
 
-		popup.SetScore (score);
-		//		popup.SetTitle();
+		popup.SetScore (stars);
+		popup.SetTitle(FeedbackCopies.GetTitle(stars));
 		//		popup.SetMessage();
 		popup.Show ();
 	}
