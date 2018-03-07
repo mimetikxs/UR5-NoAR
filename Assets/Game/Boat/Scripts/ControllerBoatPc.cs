@@ -165,7 +165,7 @@ public class ControllerBoatPc : MonoBehaviour
 		string message;
 
 		popup.SetScore (stars);
-		popup.SetTitle(FeedbackCopies.GetTitle(stars));
+//		popup.SetTitle(FeedbackCopies.GetTitle(stars));
 		//		popup.SetMessage();
 		popup.Show ();
 	}
