@@ -137,15 +137,15 @@ public class ControllerBoatPc : MonoBehaviour
 
 	private void FinishGame()
 	{
-		enabled = false; // stop updates
-
-		rig.SwitchOff ();
-
-		RemoveListeners ();
-
-		bottomBar.SetActive (false);
-
-		ShowScorePopup ();
+//		enabled = false; // stop updates
+//
+//		rig.SwitchOff ();
+//
+//		RemoveListeners ();
+//
+//		bottomBar.SetActive (false);
+//
+//		ShowScorePopup ();
 	}
 
 
