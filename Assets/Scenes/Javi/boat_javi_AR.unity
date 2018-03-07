@@ -1166,7 +1166,13 @@ Prefab:
       propertyPath: m_Name
       value: Rig
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 23209720063511646, guid: 571fe760f4b884afc980c1c0ee5f65a2,
+        type: 2}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 23670391830629918, guid: 571fe760f4b884afc980c1c0ee5f65a2, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 571fe760f4b884afc980c1c0ee5f65a2, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1891457719 stripped
