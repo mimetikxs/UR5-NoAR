@@ -74,8 +74,17 @@ public class ControllerBoatIpad : MonoBehaviour
 
 			if (touch.phase == TouchPhase.Began) {
 				Vector3 screenPos = new Vector3 (touch.position.x, touch.position.y, 0f);
-				IntersectHotspots (screenPos);
+
+				bool intersectedHotspot = IntersectHotspots (screenPos);
+
+				if (!intersectedHotspot)
+					OnActionButtonDown ();				
+			} 
+			else if (touch.phase == TouchPhase.Began) 
+			{
+				OnActionButtonUp ();
 			}
+				
 		}
 
 		// update player
@@ -128,7 +137,7 @@ public class ControllerBoatIpad : MonoBehaviour
 	}
 
 
-	private void IntersectHotspots(Vector3 sreenPosition) 
+	private bool IntersectHotspots(Vector3 sreenPosition) 
 	{		
 		Ray ray = camera.ScreenPointToRay(sreenPosition);
 		RaycastHit hit;
@@ -140,7 +149,11 @@ public class ControllerBoatIpad : MonoBehaviour
 			rig.SetToolTransform (p, r);
 
 			robot.setTargetTransform (p, r);
+
+			return true;
 		}
+
+		return false;
 	}
 
 
