@@ -1456,7 +1456,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 232ee107a7cf84a38b848f8bef09d250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wasteExplosion: {fileID: 0}
+  wasteExplosion: {fileID: 198379236604805406, guid: e9ca415ff06ba4c68ab32d301b51f5ef,
+    type: 2}
 --- !u!114 &114070610296545628
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1468,7 +1469,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 232ee107a7cf84a38b848f8bef09d250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wasteExplosion: {fileID: 0}
+  wasteExplosion: {fileID: 198379236604805406, guid: e9ca415ff06ba4c68ab32d301b51f5ef,
+    type: 2}
 --- !u!114 &114323046702423594
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1480,7 +1482,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 232ee107a7cf84a38b848f8bef09d250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wasteExplosion: {fileID: 0}
+  wasteExplosion: {fileID: 198379236604805406, guid: e9ca415ff06ba4c68ab32d301b51f5ef,
+    type: 2}
 --- !u!114 &114625467520681060
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1492,7 +1495,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 232ee107a7cf84a38b848f8bef09d250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wasteExplosion: {fileID: 0}
+  wasteExplosion: {fileID: 198379236604805406, guid: e9ca415ff06ba4c68ab32d301b51f5ef,
+    type: 2}
 --- !u!114 &114870343255592280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1504,7 +1508,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 232ee107a7cf84a38b848f8bef09d250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wasteExplosion: {fileID: 0}
+  wasteExplosion: {fileID: 198379236604805406, guid: e9ca415ff06ba4c68ab32d301b51f5ef,
+    type: 2}
 --- !u!114 &114891519722329732
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1516,7 +1521,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 232ee107a7cf84a38b848f8bef09d250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wasteExplosion: {fileID: 0}
+  wasteExplosion: {fileID: 198379236604805406, guid: e9ca415ff06ba4c68ab32d301b51f5ef,
+    type: 2}
 --- !u!114 &114900686324699304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1528,7 +1534,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 232ee107a7cf84a38b848f8bef09d250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wasteExplosion: {fileID: 0}
+  wasteExplosion: {fileID: 198379236604805406, guid: e9ca415ff06ba4c68ab32d301b51f5ef,
+    type: 2}
 --- !u!135 &135278824956728198
 SphereCollider:
   m_ObjectHideFlags: 1

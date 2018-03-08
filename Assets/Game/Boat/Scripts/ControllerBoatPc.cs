@@ -53,6 +53,8 @@ public class ControllerBoatPc : MonoBehaviour
 	{
 		itemCountGoal = gameWorld.Find ("Waste").childCount;
 
+		itemCounter.count = 0;
+
 		countDown.startCount = startTime;
 		countDown.Play ();
 	}

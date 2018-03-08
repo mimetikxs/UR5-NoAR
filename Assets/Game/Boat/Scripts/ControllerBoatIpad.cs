@@ -56,6 +56,8 @@ public class ControllerBoatIpad : MonoBehaviour
 	{
 		itemCountGoal = gameWorld.Find ("Waste").childCount;
 
+		itemCounter.count = 0;
+
 		countDown.startCount = startTime;
 		countDown.Play ();
 

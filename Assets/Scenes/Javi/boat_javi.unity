@@ -354,6 +354,18 @@ Prefab:
       propertyPath: m_Name
       value: Rig
       objectReference: {fileID: 0}
+    - target: {fileID: 4498282396259008, guid: 571fe760f4b884afc980c1c0ee5f65a2, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 10.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4498282396259008, guid: 571fe760f4b884afc980c1c0ee5f65a2, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 10.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4498282396259008, guid: 571fe760f4b884afc980c1c0ee5f65a2, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 10.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 571fe760f4b884afc980c1c0ee5f65a2, type: 2}
   m_IsPrefabParent: 0
@@ -798,7 +810,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4737672971093760, guid: 374b0955393fe40c88963d9fe0b01f4f, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -1.96
+      value: -2.13
       objectReference: {fileID: 0}
     - target: {fileID: 4737672971093760, guid: 374b0955393fe40c88963d9fe0b01f4f, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1230,6 +1242,10 @@ Prefab:
     - target: {fileID: 4963463851599544, guid: 217fbafb72ed540c497aed14b66252a6, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1951253764670046, guid: 217fbafb72ed540c497aed14b66252a6, type: 2}
+      propertyPath: m_TagString
+      value: Waste
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 217fbafb72ed540c497aed14b66252a6, type: 2}

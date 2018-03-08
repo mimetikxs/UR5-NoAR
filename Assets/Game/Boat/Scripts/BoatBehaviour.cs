@@ -58,11 +58,11 @@ public class BoatBehaviour : MonoBehaviour
 			other.GetComponent<WasteBehaviour> ().Remove ();
 
 			collectedSound.Play ();
-		}
 
-		// trigger delegated 
-		if (OnWasteCollected != null)
-			OnWasteCollected();
+			// trigger delegated 
+			if (OnWasteCollected != null) 
+				OnWasteCollected();
+		}
 	}
 
 
