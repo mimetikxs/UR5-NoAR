@@ -19,12 +19,16 @@ ModelImporter:
     400010: Sphere_oceans
     2100000: Oceans
     2100002: Land Masses
+    2100004: No Name
     2300000: Land_
     2300002: Sphere_oceans
+    2300004: //RootNode
     3300000: Land_
     3300002: Sphere_oceans
+    3300004: //RootNode
     4300000: Sphere_oceans
     4300002: Land_
+    4300004: Circle001
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
