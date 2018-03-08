@@ -1,26 +1,16 @@
 fileFormatVersion: 2
-guid: ce3b9a02a54e88b4a9ba36104d970e71
-timeCreated: 1519923516
+guid: 9b39aa51a3be48149a28a4d4f4a06f28
+timeCreated: 1520490692
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Cylinder001
-    100002: //RootNode
-    100004: Ventilador
-    400000: Cylinder001
-    400002: //RootNode
-    400004: Ventilador
-    2100000: 02 - Default
-    2100002: 01 - Default
-    2300000: Cylinder001
-    2300002: Ventilador
-    2300004: //RootNode
-    3300000: Cylinder001
-    3300002: Ventilador
-    3300004: //RootNode
-    4300000: Ventilador
-    4300002: Cylinder001
+    100000: //RootNode
+    400000: //RootNode
+    2100000: 01 - Default
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Abedul_quemado
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
@@ -50,7 +40,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -78,7 +68,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -97,7 +87,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
