@@ -44,6 +44,8 @@ public class SpaceObject : MonoBehaviour
 		_object = this.transform.Find ("Object");
 		_anchor = this.transform.Find ("Wrapper/Anchor");
 
+		_object.gameObject.AddComponent<ChildTrigger> ();
+
 		prevRotOffset = rotOffset;
 
 		velocity = Vector3.zero;
