@@ -96,7 +96,7 @@ Transform:
   m_GameObject: {fileID: 1198479484187176}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.0187101, y: 1.0187103, z: 1.0187103}
   m_Children:
   - {fileID: 4133982835622578}
   - {fileID: 4146531003574416}
@@ -143,7 +143,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1198479484187176}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: d855eaa9b8db0844eb499d2105c6c905, type: 3}
 --- !u!108 &108587273321529250
 Light:
   m_ObjectHideFlags: 1
@@ -252,7 +252,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1269348431
+  randomSeed: 1311560301
   InitialModule:
     serializedVersion: 3
     enabled: 1
