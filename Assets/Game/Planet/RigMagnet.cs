@@ -39,8 +39,7 @@ public class RigMagnet : MonoBehaviour
 		//worldSphere.transform.localScale = new Vector3 (sphereScale, sphereScale, sphereScale);
 
 		if (isOn) {
-			// detect collision of water stream with a fire cluster
-			// if colliding, begin substracting damage from tree
+			
 		} 
 	}
 
@@ -63,6 +62,8 @@ public class RigMagnet : MonoBehaviour
 		isOn = true;
 
 		magnetTool.SwitchOn ();
+
+//		TODO: apply attraction force to space object
 	}
 
 
