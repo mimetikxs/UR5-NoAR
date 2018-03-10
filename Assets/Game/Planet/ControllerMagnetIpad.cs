@@ -21,7 +21,6 @@ public class ControllerMagnetIpad : MonoBehaviour
 	private int itemCountGoal;
 	public int startTime = 60;
 
-	private RigMagnet rig;
 //	private LanderBehaviour player;
 	private LayerMask layerHostpots;
 
@@ -36,7 +35,6 @@ public class ControllerMagnetIpad : MonoBehaviour
 
 	private void Awake()
 	{
-		rig = gameWorld.Find ("RigMagnet").GetComponent<RigMagnet> ();
 		//player = gameWorld.Find ("Player").GetComponent<LanderBehaviour> ();
 
 		layerHostpots = 1 << LayerMask.NameToLayer ("Hotspots");	
@@ -67,11 +65,11 @@ public class ControllerMagnetIpad : MonoBehaviour
 		// --------------
 		if (buttonAction.isPressed) 
 		{
-			rig.SwitchOn ();
+			
 		} 
 		else 
 		{
-			rig.SwitchOff ();
+			
 
 			if (Input.touchCount > 0) 
 			{
@@ -121,7 +119,7 @@ public class ControllerMagnetIpad : MonoBehaviour
 			Vector3 p = hit.transform.position;
 			Quaternion r = hit.transform.rotation;
 
-			rig.SetToolTransform (p, r);
+			//rig.SetToolTransform (p, r);
 
 			robot.setTargetTransform (p, r);
 		}
@@ -141,7 +139,7 @@ public class ControllerMagnetIpad : MonoBehaviour
 	{
 		enabled = false; // stop updates
 
-		rig.SwitchOff ();
+		//rig.SwitchOff ();
 
 		RemoveListeners ();
 

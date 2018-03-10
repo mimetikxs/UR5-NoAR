@@ -17,12 +17,21 @@ public class ControllerMagnetPc : MonoBehaviour
 	public Transform gameUI;
 	public Camera camera;
 
-	// game parameters
-	private int itemCountGoal;
-	public int startTime = 60;
+	// physics parameters
+	[Range (0f, 1f)] public float springStrength = 0.082f;
+	[Range (0f, 1f)] public float springDamping = 0.894f;
+	public float attractorStrength = 0.5f;
+	public float attractorMinDist = 2f;
+	public float attractorMaxDist = 10f;
 
-	private RigMagnet rig;
-	private BoatBehaviour player;
+
+	// game parameters
+	public int startTime = 60;
+	private int itemCountGoal;
+
+	private MagnetTool magnetTool;
+	private Transform spaceObjects;
+
 	private LayerMask layerHostpots;
 
 	// UI
@@ -35,8 +44,8 @@ public class ControllerMagnetPc : MonoBehaviour
 
 	private void Awake()
 	{
-		rig = gameWorld.Find ("RigMagnet").GetComponent<RigMagnet> ();
-		player = gameWorld.Find ("Player").GetComponent<BoatBehaviour> ();
+		magnetTool = gameWorld.Find ("RigMagnet/Tool").GetComponent<MagnetTool> ();
+		spaceObjects = gameWorld.Find ("SpaceObjects");
 
 		layerHostpots = 1 << LayerMask.NameToLayer ("Hotspots");	
 
@@ -51,7 +60,7 @@ public class ControllerMagnetPc : MonoBehaviour
 
 	private void Start() 
 	{
-		itemCountGoal = gameWorld.Find ("Waste").childCount;
+		itemCountGoal = 5;//gameWorld.Find ("Waste").childCount;
 
 		itemCounter.count = 0;
 
@@ -62,27 +71,41 @@ public class ControllerMagnetPc : MonoBehaviour
 
 	private void Update() 
 	{		
-		// user input
-		// --------------
 		if (Input.GetKeyDown ("space")) 
 		{
-			rig.SwitchOn ();
+			magnetTool.SwitchOn ();
 		} 
 		else if (Input.GetKeyUp ("space")) 
 		{
-			rig.SwitchOff ();
+			magnetTool.SwitchOff ();
 		}
 
 		if (Input.GetMouseButtonDown (0)) 
 		{
 			IntersectHotspots (Input.mousePosition);
 		}
-
-		// update player
-		// -------------
-
 	}
 
+
+	private void FixedUpdate()
+	{
+		if (magnetTool.IsOn ()) 
+		{		
+			Attractor attractor = magnetTool.GetComponent<Attractor> ();
+			attractor.strength = attractorStrength;
+			attractor.minDist = attractorMinDist;
+			attractor.maxDist = attractorMaxDist;
+
+			foreach (Transform spaceObject in spaceObjects) {
+				SpaceObject obj = spaceObject.GetComponent<SpaceObject> ();
+
+				obj.springStrength = springStrength;
+				obj.damping = springDamping;
+				obj.AttractTo (attractor);
+			}
+		}
+	}
+		
 
 	private void OnEnable()
 	{
@@ -98,14 +121,14 @@ public class ControllerMagnetPc : MonoBehaviour
 
 	private void AddListeners()
 	{
-//		player.OnWasteCollected += IncreaseCount;
+		magnetTool.OnWasteCollected += IncreaseCount;
 		countDown.OnCountdownFinished += FinishGame;
 	}
 
 
 	private void RemoveListeners()
 	{
-//		player.OnWasteCollected -= IncreaseCount;
+		magnetTool.OnWasteCollected -= IncreaseCount;
 		countDown.OnCountdownFinished -= FinishGame;
 	}
 
@@ -114,12 +137,15 @@ public class ControllerMagnetPc : MonoBehaviour
 	{		
 		Ray ray = camera.ScreenPointToRay(sreenPosition);
 		RaycastHit hit;
+
 		if (Physics.Raycast (ray, out hit, 1000f, layerHostpots))
 		{
+			Debug.Log ("ay!");
+				
 			Vector3 p = hit.transform.position;
 			Quaternion r = hit.transform.rotation;
 
-			rig.SetToolTransform (p, r);
+			//rig.SetToolTransform (p, r);
 
 			robot.setTargetTransform (p, r);
 		}
@@ -137,15 +163,6 @@ public class ControllerMagnetPc : MonoBehaviour
 
 	private void FinishGame()
 	{
-//		enabled = false; // stop updates
-//
-//		rig.SwitchOff ();
-//
-//		RemoveListeners ();
-//
-//		bottomBar.SetActive (false);
-//
-//		ShowScorePopup ();
 	}
 
 

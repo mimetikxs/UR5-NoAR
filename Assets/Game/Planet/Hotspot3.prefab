@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4487836923066062}
   m_Layer: 8
-  m_Name: Hotspot2
+  m_Name: Hotspot3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

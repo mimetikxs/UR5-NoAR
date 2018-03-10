@@ -8,34 +8,17 @@ public class SpaceObject : MonoBehaviour
 	public float radius = 32f;
 	public float speed = 2f;
 	public float rotOffset = 0f;
-	public bool reverseRotation = false;
-	public bool isGood = false;
+	public bool isGoodGuy = false;
+
+	public float springStrength = 0.082f;
+	public float damping = 0.894f;
+
+	private Vector3 velocity;
+	private Vector3 forceAccumulator;
 
 	private Transform _wrapper;
 	private Transform _object;
 	private Transform _anchor;
-//	private float _rotDirection = 1f;
-//	private bool _reverseRotation = false;
-
-	private float prevRotOffset;
-
-	// cheap spring dynamics
-	// working in local space
-	[Range (0f, 1f)] public float springStrength = 0.082f;
-	[Range (0f, 1f)] public float damping = 0.894f;
-	private Vector3 attractionForce;
-	private Vector3 velocity;
-	private Vector3 forceAccumulator;
-
-	public float attractorStrength = 0.5f;
-	public float attractorMinDist = 2f;
-	public float attractorMaxDist = 10f; // don't apply force from this distance
-
-	// testing...
-	public Transform attractor;
-	public bool doAttraction = false;
-
-	public bool hasCollided = false;
 
 
 	private void Awake()
@@ -44,59 +27,31 @@ public class SpaceObject : MonoBehaviour
 		_object = this.transform.Find ("Object");
 		_anchor = this.transform.Find ("Wrapper/Anchor");
 
-		_object.gameObject.AddComponent<ChildTrigger> ();
-
-		prevRotOffset = rotOffset;
-
 		velocity = Vector3.zero;
-		attractionForce = Vector3.zero;
 		forceAccumulator = Vector3.zero;
-	}
-
-
-	private void Start() 
-	{
-	}
-	
-
-	private void Update() 
-	{
 	}
 
 
 	private void FixedUpdate()
 	{
+		// position anchot (TODO: do anli on Awake)
 		_anchor.localPosition = new Vector3 (0f, 0f, radius);
+		_anchor.localRotation = Quaternion.Euler (0f, rotOffset, 0f);
 
-		if (!hasCollided) {
-			RotateAnchor ();
+		// rotate anchor
+		_wrapper.transform.Rotate (0f, speed, 0f);
 
-			// forces
-			CalculateAttractionForce ();
-			CalculateSpringForce ();
+		// forces
+		CalculateSpringForce ();
 
-			// integrate
-			velocity += forceAccumulator;
-			velocity *= damping;
+		// integrate
+		velocity += forceAccumulator;
+		velocity *= damping;
 
-			forceAccumulator = Vector3.zero;
+		forceAccumulator = Vector3.zero;
 
-			// apply
-			_object.transform.position += velocity;
-		}
-	}
-
-
-	private void RotateAnchor()
-	{
-		if (rotOffset != prevRotOffset) 
-		{
-			_wrapper.transform.Rotate (0f, rotOffset, 0f);
-			prevRotOffset = rotOffset;
-		}
-
-		float rotDirection = reverseRotation ? -1f : 1f;
-		_wrapper.transform.Rotate (0f, speed * rotDirection, 0f);
+		// apply
+		_object.transform.position += velocity;
 	}
 
 
@@ -112,21 +67,16 @@ public class SpaceObject : MonoBehaviour
 	}
 
 
-	private void CalculateAttractionForce()
+	public void AttractTo(Attractor attractor)
 	{
-		if (!doAttraction)
-			return;
-
-		Vector3 attractorPosition = attractor.position;
-
-		Vector3 delta = attractorPosition - _object.position;
+		Vector3 delta = attractor.transform.position - _object.position;
 		float distance = Vector3.Magnitude (delta);
 
-		if (distance > attractorMaxDist)
+		if (distance > attractor.maxDist)
 			return;
 
-		distance = Mathf.Clamp(distance, attractorMinDist, 100f);
-		float attractionStrength = (attractorStrength * 1 * 1) / (distance * distance);
+		distance = Mathf.Clamp(distance, attractor.minDist, attractor.maxDist);
+		float attractionStrength = attractor.strength / (distance * distance);
 		Vector3 direction = Vector3.Normalize (delta);
 		Vector3 force = direction * attractionStrength;
 
@@ -134,11 +84,9 @@ public class SpaceObject : MonoBehaviour
 	}
 
 
-	public void OnCollisionWithMagnet()
+	public void Remove()
 	{
-		hasCollided = true;
-
-		// TODO: destroy on collision
+		Destroy (gameObject);
 	}
 
 

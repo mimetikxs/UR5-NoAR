@@ -10,17 +10,14 @@ using UnityEngine;
  */
 
 public class MagnetTool : MonoBehaviour {
-
+	
 	public Transform tcp;
 
-	private Transform fresnel;
 	private bool isOn;
 
-
-	private void Awake()
-	{
-		fresnel = this.transform.Find ("Fresnel");
-	}
+	// delegated (triggered when waste is collected)
+	public delegate void WasteCollectAction();			
+	public event WasteCollectAction OnWasteCollected;
 
 
 	void Start() 
@@ -31,8 +28,20 @@ public class MagnetTool : MonoBehaviour {
 
 	void Update() 
 	{
-		this.transform.position = tcp.position;
-		this.transform.rotation = tcp.rotation;
+//		this.transform.position = tcp.position;
+//		this.transform.rotation = tcp.rotation;
+	}
+
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.tag == "Waste") 
+		{
+			other.transform.parent.GetComponent<SpaceObject> ().Remove ();
+
+			if (OnWasteCollected != null) 
+				OnWasteCollected ();
+		}
 	}
 
 
@@ -53,5 +62,11 @@ public class MagnetTool : MonoBehaviour {
 	{
 		isOn = false;
 		// TODO disable fx
+	}
+
+
+	public bool IsOn()
+	{
+		return isOn;
 	}
 }
