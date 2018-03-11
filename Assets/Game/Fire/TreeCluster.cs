@@ -1,18 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TreeCluster : MonoBehaviour 
 {
 	public float temp = 0f;		// 0..1
 	public float heatingSpeed = 0.01f;  // 0..1 // how much the temp rises
 
+	public Slider sliderPrefab;
+
 	private GameObject fine;
 	private GameObject burnt;
 	private GameObject fires;
+	private Slider slider;
 
+	// light intensisty control
 	private Light fxLight;
-	public float lightIntensity;
+	private float lightIntensity;
 	private float initialLightIntensity;
 
 	private enum State {Fine, Burning, Burnt};
@@ -26,6 +31,10 @@ public class TreeCluster : MonoBehaviour
 		fine = this.transform.Find ("Fine").gameObject;
 		burnt = this.transform.Find ("Burnt").gameObject;
 		fires = this.transform.Find ("Fires").gameObject;
+		//slider = this.transform.Find ("Canvas/TemperatureSlider").GetComponent<Slider> ();
+
+		Transform canvas = this.transform.Find ("Canvas");
+		slider = Instantiate (sliderPrefab, canvas);
 
 		fxLight = fires.transform.Find ("Light").GetComponent<Light> ();
 		initialLightIntensity = fxLight.intensity;
@@ -35,6 +44,8 @@ public class TreeCluster : MonoBehaviour
 
 	private void Update()
 	{
+		slider.value = temp;
+
 		if (currentState != State.Burnt)
 			CheckTemp ();
 

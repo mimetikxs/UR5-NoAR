@@ -11,7 +11,7 @@ using UnityEngine;
 
 public class ShowerTool : MonoBehaviour {
 
-	public float coolingPower = 0.02f; // 0..1 //how much the temp drops per cluster update
+	public float coolingPower = 0.04f; // 0..1 //how much the temp drops per cluster update
 
 	public Transform tcp;
 
