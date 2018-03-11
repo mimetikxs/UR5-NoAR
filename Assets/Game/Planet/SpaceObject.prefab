@@ -37,14 +37,13 @@ GameObject:
   - component: {fileID: 4208488892860092}
   - component: {fileID: 33280755061376070}
   - component: {fileID: 23153265612243802}
-  - component: {fileID: 95936117043430304}
   m_Layer: 0
   m_Name: Orbit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1184845117576118
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +310,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: cd9c42cf42f874f039e07ac03d0a38e9, type: 2}
+  - {fileID: 2100000, guid: 52bfe56f5fa444fd281f8ca1560675b4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -359,23 +358,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1184845117576118}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!95 &95936117043430304
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1082072409590966}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: b71d18e5455644d1686ea12e0b4c2fcf, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114935285388990900
 MonoBehaviour:
   m_ObjectHideFlags: 1

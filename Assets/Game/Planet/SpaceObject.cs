@@ -21,13 +21,15 @@ public class SpaceObject : MonoBehaviour
 	private Transform _wrapper;
 	private Transform _object;
 	private Transform _anchor;
+	private Transform _orbit;
 
 
 	private void Awake()
 	{
-		_wrapper = this.transform.Find ("Wrapper");
 		_object = this.transform.Find ("Object");
+		_wrapper = this.transform.Find ("Wrapper");
 		_anchor = this.transform.Find ("Wrapper/Anchor");
+		_orbit = this.transform.Find ("Wrapper/Orbit");
 
 		velocity = Vector3.zero;
 		forceAccumulator = Vector3.zero;
@@ -36,9 +38,15 @@ public class SpaceObject : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		// position anchot (TODO: do anli on Awake)
+		// position anchot (TODO: do only on Awake)
 		_anchor.localPosition = new Vector3 (0f, 0f, radius);
 		_anchor.localRotation = Quaternion.Euler (0f, rotOffset, 0f);
+
+		// debug: scale orbit
+		float s = 10f * (radius / 32f);
+		Vector3 scale = _orbit.localScale;
+		scale.Set (s, s, s);
+		_orbit.localScale = scale;
 
 		// rotate anchor
 		_wrapper.transform.Rotate (0f, speed, 0f);
