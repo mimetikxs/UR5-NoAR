@@ -24,6 +24,7 @@ public class SpaceObject : MonoBehaviour
 	private Transform _orbit;
 
 
+	#if UNITY_EDITOR
 	void OnValidate()
 	{
 		_object = this.transform.Find ("Object");
@@ -42,6 +43,7 @@ public class SpaceObject : MonoBehaviour
 
 		_object.transform.position = _anchor.position;
 	}
+	#endif
 
 
 	private void Awake()
@@ -53,6 +55,12 @@ public class SpaceObject : MonoBehaviour
 
 		velocity = Vector3.zero;
 		forceAccumulator = Vector3.zero;
+
+		// position anchor (TODO: do only on Awake)
+		_anchor.localPosition = new Vector3 (0f, 0f, radius);
+		_anchor.localRotation = Quaternion.Euler (0f, rotOffset, 0f);
+
+		_object.transform.position = _anchor.position;
 	}
 
 
