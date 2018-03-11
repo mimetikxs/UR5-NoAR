@@ -8,8 +8,12 @@ public class TreeCluster : MonoBehaviour
 	public float temp = 0f;		// 0..1
 	public float heatingSpeed = 0.01f;  // 0..1 // how much the temp rises
 
+	// slider 
 	public Slider sliderPrefab;
-
+	public Color lowTempColor = Color.blue;  
+	public Color highTempColor = Color.red;
+	private Image sliderImage;
+	
 	private GameObject fine;
 	private GameObject burnt;
 	private GameObject fires;
@@ -31,20 +35,21 @@ public class TreeCluster : MonoBehaviour
 		fine = this.transform.Find ("Fine").gameObject;
 		burnt = this.transform.Find ("Burnt").gameObject;
 		fires = this.transform.Find ("Fires").gameObject;
-		//slider = this.transform.Find ("Canvas/TemperatureSlider").GetComponent<Slider> ();
 
 		Transform canvas = this.transform.Find ("Canvas");
 		slider = Instantiate (sliderPrefab, canvas);
+		sliderImage = slider.transform.Find ("FillArea/Fill").GetComponent<Image> ();
 
 		fxLight = fires.transform.Find ("Light").GetComponent<Light> ();
 		initialLightIntensity = fxLight.intensity;
 		lightIntensity = 0f;
 	}
-
+		
 
 	private void Update()
 	{
 		slider.value = temp;
+		sliderImage.color = Color.Lerp (lowTempColor, highTempColor, temp);
 
 		if (currentState != State.Burnt)
 			CheckTemp ();

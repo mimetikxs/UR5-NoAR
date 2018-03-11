@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224940790386293786}
   m_Layer: 5
-  m_Name: Fill Area
+  m_Name: FillArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 7e628691cbdcd4391a3cbde3ec3fd01d, type: 2}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.503}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.334}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 0.64
-  m_FillClockwise: 1
+  m_FillClockwise: 0
   m_FillOrigin: 2
 --- !u!222 &222040985557165278
 CanvasRenderer:
