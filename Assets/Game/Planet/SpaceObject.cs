@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class SpaceObject : MonoBehaviour 
 {
+	public ParticleSystem wasteExplosion;
+
 	public float radius = 32f;
 	public float speed = 2f;
 	public float rotOffset = 0f;
@@ -86,6 +88,8 @@ public class SpaceObject : MonoBehaviour
 
 	public void Remove()
 	{
+		ParticleSystem explosion = (ParticleSystem)Instantiate (wasteExplosion, _object.transform.position, _object.transform.rotation);
+
 		Destroy (gameObject);
 	}
 
