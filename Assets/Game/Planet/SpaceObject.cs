@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+[ExecuteInEditMode]
 public class SpaceObject : MonoBehaviour 
 {
 	public ParticleSystem wasteExplosion;
@@ -24,6 +24,22 @@ public class SpaceObject : MonoBehaviour
 	private Transform _orbit;
 
 
+	void OnValidate()
+	{
+		// debug: scale orbit
+		float s = 10f * (radius / 32f);
+		Vector3 scale = _orbit.localScale;
+		scale.Set (s, s, s);
+		_orbit.localScale = scale;
+
+		// position anchor (TODO: do only on Awake)
+		_anchor.localPosition = new Vector3 (0f, 0f, radius);
+		_anchor.localRotation = Quaternion.Euler (0f, rotOffset, 0f);
+
+		_object.transform.position = _anchor.position;
+	}
+
+
 	private void Awake()
 	{
 		_object = this.transform.Find ("Object");
@@ -38,16 +54,6 @@ public class SpaceObject : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		// position anchot (TODO: do only on Awake)
-		_anchor.localPosition = new Vector3 (0f, 0f, radius);
-		_anchor.localRotation = Quaternion.Euler (0f, rotOffset, 0f);
-
-		// debug: scale orbit
-		float s = 10f * (radius / 32f);
-		Vector3 scale = _orbit.localScale;
-		scale.Set (s, s, s);
-		_orbit.localScale = scale;
-
 		// rotate anchor
 		_wrapper.transform.Rotate (0f, speed, 0f);
 
