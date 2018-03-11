@@ -26,6 +26,10 @@ public class SpaceObject : MonoBehaviour
 
 	void OnValidate()
 	{
+		_object = this.transform.Find ("Object");
+		_anchor = this.transform.Find ("Wrapper/Anchor");
+		_orbit = this.transform.Find ("Wrapper/Orbit");
+
 		// debug: scale orbit
 		float s = 10f * (radius / 32f);
 		Vector3 scale = _orbit.localScale;
