@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4290242735429204}
   - component: {fileID: 33762210317509394}
   - component: {fileID: 23083583358267054}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tree_01 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4231860079392198}
   - component: {fileID: 33955083107548394}
   - component: {fileID: 23808520087069104}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tree_06 (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4963158523440622}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 4441443670627542}
   - component: {fileID: 33869658589246172}
   - component: {fileID: 23437597242318694}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tree_04 (271)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,9 +86,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4195312775331002}
   - component: {fileID: 135595956717888886}
-  m_Layer: 0
+  - component: {fileID: 114079691436123322}
+  m_Layer: 10
   m_Name: Cluster_2
-  m_TagString: Untagged
+  m_TagString: Cluster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,8 +104,8 @@ GameObject:
   - component: {fileID: 4383086377261174}
   - component: {fileID: 198992017384514106}
   - component: {fileID: 199434945848040990}
-  m_Layer: 8
-  m_Name: FireBasic (2)
+  m_Layer: 10
+  m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,7 +121,7 @@ GameObject:
   - component: {fileID: 4002395712194134}
   - component: {fileID: 33882457226572246}
   - component: {fileID: 23220023984988728}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tree_04 (286)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,8 +138,8 @@ GameObject:
   - component: {fileID: 4649969283273220}
   - component: {fileID: 198727771052428304}
   - component: {fileID: 199712616354136400}
-  m_Layer: 8
-  m_Name: FireBasic (1)
+  m_Layer: 10
+  m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,7 +155,7 @@ GameObject:
   - component: {fileID: 4817543338897476}
   - component: {fileID: 33882711298628514}
   - component: {fileID: 23882840533167370}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tree_06 (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,8 +172,8 @@ GameObject:
   - component: {fileID: 4318760481717798}
   - component: {fileID: 198624564073687454}
   - component: {fileID: 199742182370350368}
-  m_Layer: 8
-  m_Name: SmokeBasic (4)
+  m_Layer: 10
+  m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -188,7 +189,7 @@ GameObject:
   - component: {fileID: 4510918986360176}
   - component: {fileID: 33816829832176948}
   - component: {fileID: 23088524735932592}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tree_06 (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +204,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4030558965708298}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fires
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +221,7 @@ GameObject:
   - component: {fileID: 4982967431681772}
   - component: {fileID: 33692411448505690}
   - component: {fileID: 23803131800297054}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tree_04 (271)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +238,7 @@ GameObject:
   - component: {fileID: 4601058178307176}
   - component: {fileID: 33304487593442492}
   - component: {fileID: 23363251124105446}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tree_01 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +255,7 @@ GameObject:
   - component: {fileID: 4504063256352854}
   - component: {fileID: 33460224110144330}
   - component: {fileID: 23215914922263874}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tree_02 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +272,7 @@ GameObject:
   - component: {fileID: 4536847074085668}
   - component: {fileID: 33065283361482706}
   - component: {fileID: 23802533233157140}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tree_04 (276)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -287,7 +288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4594266124097996}
   - component: {fileID: 108988006066065324}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,7 +305,7 @@ GameObject:
   - component: {fileID: 4882611520631088}
   - component: {fileID: 33840008118835430}
   - component: {fileID: 23174702999003960}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tree_04 (276)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -321,8 +322,8 @@ GameObject:
   - component: {fileID: 4393225288596116}
   - component: {fileID: 198407409182291076}
   - component: {fileID: 199584870060209992}
-  m_Layer: 8
-  m_Name: SmokeBasic (3)
+  m_Layer: 10
+  m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -338,7 +339,7 @@ GameObject:
   - component: {fileID: 4472784796359040}
   - component: {fileID: 33108124014782966}
   - component: {fileID: 23830421665643076}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tree_02 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -353,7 +354,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4412302592135006}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Burnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,7 +371,7 @@ GameObject:
   - component: {fileID: 4381858475450948}
   - component: {fileID: 33162050540649652}
   - component: {fileID: 23208253958846060}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tree_04 (286)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,7 +388,7 @@ GameObject:
   - component: {fileID: 4982031479283948}
   - component: {fileID: 33649800894025028}
   - component: {fileID: 23606498300578872}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tree_06 (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1338,6 +1339,19 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114079691436123322
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1233228757140566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abb9699d4fce84069b72c5fe6e8a27fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  temp: 0
+  heatingSpeed: 0.01
 --- !u!135 &135595956717888886
 SphereCollider:
   m_ObjectHideFlags: 1

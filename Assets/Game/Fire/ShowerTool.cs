@@ -11,40 +11,61 @@ using UnityEngine;
 
 public class ShowerTool : MonoBehaviour {
 
+	public float coolingPower = 0.02f; // 0..1 //how much the temp drops per cluster update
+
 	public Transform tcp;
 
 	private Transform shower;
 	private ParticleSystem particles;
 	private bool isOn;
 
+	private LayerMask layerClusters;
+
 
 	private void Awake()
 	{
 		shower = this.transform.Find ("Shower");
 		particles = this.transform.Find ("Particles").GetComponent<ParticleSystem> ();
+
+		layerClusters = 1 << LayerMask.NameToLayer ("Clusters");
 	}
 
 
 	void Start() 
 	{
-		isOn = false;
+		SwitchOff ();
 	}
 	
 
 	void Update() 
 	{
-		this.transform.position = tcp.position;
-		this.transform.rotation = tcp.rotation;
+//		this.transform.position = tcp.position;
+//		this.transform.rotation = tcp.rotation;
+
+		if (isOn) 
+		{
+			particles.Emit (1);
+		}
 	}
 
 
-	private IEnumerator ParticleBurst()
+	public TreeCluster GetIntersectedCluster()
 	{
-		while (true)
+		TreeCluster cluster = null;
+
+		if (isOn) 
 		{
-			particles.Emit (1);
-			yield return new WaitForSeconds(1f);
+			Vector3 origin = this.transform.position;
+			Vector3 direction = this.transform.rotation * Vector3.up;
+			RaycastHit hit;
+
+			if (Physics.Raycast (origin, direction, out hit, 1000f, layerClusters)) 
+			{
+				cluster = hit.transform.GetComponent<TreeCluster> ();
+			}
 		}
+
+		return cluster;
 	}
 
 
@@ -57,13 +78,11 @@ public class ShowerTool : MonoBehaviour {
 	public void SwitchOn()
 	{
 		isOn = true;
-		StartCoroutine("ParticleBurst");
 	}
 
 
 	public void SwitchOff() 
 	{
 		isOn = false;
-		StopCoroutine("ParticleBurst");
 	}
 }

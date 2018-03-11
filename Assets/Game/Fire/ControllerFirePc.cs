@@ -6,11 +6,11 @@ using UnityEngine.EventSystems;
 
 
 /*
- * Handles user input for an iPad device with Vuforia enabled.
+ * Handles user input when testing on pc (no Vuforia).
  * Manages the main game logic.
  */
 
-public class ControllerFireIpad : MonoBehaviour 
+public class ControllerFirePc : MonoBehaviour 
 {
 	public Transform gameWorld;
 	public UR5Controller robot;
@@ -18,10 +18,12 @@ public class ControllerFireIpad : MonoBehaviour
 	public Camera camera;
 
 	// game parameters
-	private int itemCountGoal;
 	public int startTime = 60;
+	private int itemCountGoal;
 
-	private RigShower rig;
+	private ShowerTool showerTool;
+	private Transform clusters;
+
 	private LayerMask layerHostpots;
 
 	// UI
@@ -30,12 +32,12 @@ public class ControllerFireIpad : MonoBehaviour
 	private GameObject bottomBar;
 	private ItemCounter itemCounter;
 	private CountDown countDown;
-	private ButtonHold buttonAction;
 
 
 	private void Awake()
 	{
-		rig = gameWorld.Find ("RigShower").GetComponent<RigShower> ();
+		showerTool = gameWorld.Find ("RigShower/Tool").GetComponent<ShowerTool> ();
+		clusters = gameWorld.Find ("Clusters");
 
 		layerHostpots = 1 << LayerMask.NameToLayer ("Hotspots");	
 
@@ -45,67 +47,84 @@ public class ControllerFireIpad : MonoBehaviour
 		bottomBar = gameUI.Find ("BottomBar").gameObject;
 		itemCounter = bottomBar.transform.Find ("ItemCounter").GetComponent<ItemCounter> ();
 		countDown = bottomBar.transform.Find ("CountDown").GetComponent<CountDown> ();
-
-		Debug.Log (countDown);
-
-		buttonAction = gameUI.Find ("BottomBar/ButtonAction").GetComponent<ButtonHold> ();
 	}
 
 
 	private void Start() 
 	{
-		itemCountGoal = 5;//gameWorld.Find ("Waste").childCount;
+		itemCountGoal = clusters.childCount;
+		itemCounter.count = 0;
 
 		countDown.startCount = startTime;
 		countDown.Play ();
 	}
-
+	
 
 	private void Update() 
-	{	
-		// user input
-		// --------------
-		if (buttonAction.isPressed) 
+	{		
+		if (Input.GetKeyDown ("space")) 
 		{
-			rig.SwitchOn ();
+			showerTool.SwitchOn ();
 		} 
-		else 
+		else if (Input.GetKeyUp ("space")) 
 		{
-			rig.SwitchOff ();
+			showerTool.SwitchOff ();
+		}
 
-			if (Input.touchCount > 0) 
-			{
-				Touch touch = Input.GetTouch (0);
-
-				if (touch.phase == TouchPhase.Began) {
-					Vector3 screenPos = new Vector3 (touch.position.x, touch.position.y, 0f);
-					IntersectHotspots (screenPos);
-				}
-			}
+		if (Input.GetMouseButtonDown (0)) 
+		{
+			IntersectHotspots (Input.mousePosition);
 		}
 	}
 
 
+	private IEnumerator UpdateTemperataure()
+	{
+		while (true)
+		{
+			// heatup all clusters
+			foreach (Transform obj in clusters) 
+			{
+				TreeCluster cluster = obj.GetComponent<TreeCluster> ();
+				cluster.Heatup ();
+			}
+
+			// cooldown intersected cluster
+			TreeCluster intersectedCluster = showerTool.GetIntersectedCluster();
+			if (intersectedCluster != null) 
+			{
+				intersectedCluster.Cooldown (showerTool.coolingPower);
+			}
+
+			yield return new WaitForSeconds(0.3f);
+		}
+	} 
+			
+
 	private void OnEnable()
 	{
 		AddListeners ();
+		StartCoroutine("UpdateTemperataure");
 	}
 
 
 	private void OnDisable()
 	{
 		RemoveListeners ();
+		StopCoroutine ("UpdateTemperataure");
 	}
 
 
 	private void AddListeners()
 	{
+		//magnetTool.OnWasteCollected += IncreaseCount;
 		countDown.OnCountdownFinished += FinishGame;
 	}
 
 
 	private void RemoveListeners()
 	{
+		//magnetTool.OnWasteCollected -= IncreaseCount;
 		countDown.OnCountdownFinished -= FinishGame;
 	}
 
@@ -114,12 +133,11 @@ public class ControllerFireIpad : MonoBehaviour
 	{		
 		Ray ray = camera.ScreenPointToRay(sreenPosition);
 		RaycastHit hit;
+
 		if (Physics.Raycast (ray, out hit, 1000f, layerHostpots))
-		{
+		{				
 			Vector3 p = hit.transform.position;
 			Quaternion r = hit.transform.rotation;
-
-			rig.SetToolTransform (p, r);
 
 			robot.setTargetTransform (p, r);
 		}
@@ -137,15 +155,6 @@ public class ControllerFireIpad : MonoBehaviour
 
 	private void FinishGame()
 	{
-		enabled = false; // stop updates
-
-		rig.SwitchOff ();
-
-		RemoveListeners ();
-
-		bottomBar.SetActive (false);
-
-		ShowScorePopup ();
 	}
 
 
@@ -159,13 +168,13 @@ public class ControllerFireIpad : MonoBehaviour
 		float timePerformance = countDown.GetCount() / countDown.startCount;
 		float collectionPerformance = itemCounter.count / itemCountGoal;
 		float score = timePerformance * timeWeight + collectionPerformance * collectionWeight;
-
+		int stars = (int) (5f * score);
 		// TODO: logic to set the text based on score. Read text from an xml
 		string title;
 		string message;
 
-		popup.SetScore (score);
-		//		popup.SetTitle();
+		popup.SetScore (stars);
+//		popup.SetTitle(FeedbackCopies.GetTitle(stars));
 		//		popup.SetMessage();
 		popup.Show ();
 	}

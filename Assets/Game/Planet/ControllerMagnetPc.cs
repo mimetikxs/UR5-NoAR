@@ -96,7 +96,8 @@ public class ControllerMagnetPc : MonoBehaviour
 			attractor.minDist = attractorMinDist;
 			attractor.maxDist = attractorMaxDist;
 
-			foreach (Transform spaceObject in spaceObjects) {
+			foreach (Transform spaceObject in spaceObjects) 
+			{
 				SpaceObject obj = spaceObject.GetComponent<SpaceObject> ();
 
 				obj.springStrength = springStrength;
