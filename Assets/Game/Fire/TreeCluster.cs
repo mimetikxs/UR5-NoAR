@@ -48,12 +48,28 @@ public class TreeCluster : MonoBehaviour
 
 	private void Update()
 	{
-		slider.value = temp;
-		sliderImage.color = Color.Lerp (lowTempColor, highTempColor, temp);
+		UpdateSlider ();
 
 		if (currentState != State.Burnt)
 			CheckTemp ();
 
+		FadeFxLight ();
+	}
+
+
+	private void UpdateSlider()
+	{
+		slider.value = temp;
+		if (temp < 0.5f)
+			sliderImage.color = lowTempColor;
+		else
+			sliderImage.color = highTempColor;
+		//		sliderImage.color = Color.Lerp (lowTempColor, highTempColor, temp);
+	}
+
+
+	private void FadeFxLight()
+	{
 		// dirt-cheap way of fading fire light
 		float direction = (currentState == State.Burning) ? 1f : -1f;
 		lightIntensity +=  0.05f * direction;	
