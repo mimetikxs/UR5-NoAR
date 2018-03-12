@@ -509,6 +509,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198440922161568566, guid: b55173ebb52994e189f39d7b52654a2e,
+        type: 2}
+      propertyPath: EmissionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198440922161568566, guid: b55173ebb52994e189f39d7b52654a2e,
+        type: 2}
+      propertyPath: randomSeed
+      value: 1866863701
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b55173ebb52994e189f39d7b52654a2e, type: 2}
   m_IsPrefabParent: 0

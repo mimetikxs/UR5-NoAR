@@ -28,8 +28,8 @@ public class MagnetTool : MonoBehaviour {
 
 	void Update() 
 	{
-//		this.transform.position = tcp.position;
-//		this.transform.rotation = tcp.rotation;
+		this.transform.position = tcp.position;
+		this.transform.rotation = tcp.rotation;
 	}
 
 
