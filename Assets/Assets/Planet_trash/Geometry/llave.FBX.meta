@@ -1,33 +1,16 @@
 fileFormatVersion: 2
-guid: a90a37b657e9f0d48b329977e8414288
-timeCreated: 1519923516
+guid: be07ad1530620b541b23bb0baf65fd51
+timeCreated: 1520895179
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Cylinder001
-    100002: //RootNode
-    100004: Magnet
-    100006: magnet
-    100008: Magnet 1
-    400000: Cylinder001
-    400002: //RootNode
-    400004: Magnet
-    400006: magnet
-    400008: Magnet 1
-    2100000: 01 - Default
-    2100002: magnet
-    2100004: metal
-    2300000: Cylinder001
-    2300002: magnet
-    2300004: Magnet 1
-    3300000: Cylinder001
-    3300002: magnet
-    3300004: Magnet 1
-    4300000: Cylinder001
-    4300002: magnet
-    4300004: Magnet
-    7400000: Take 001
+    100000: //RootNode
+    400000: //RootNode
+    2100000: No Name
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Llave
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -56,10 +39,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.1
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
