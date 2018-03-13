@@ -10,12 +10,11 @@ using UnityEngine.EventSystems;
  * Manages the main game logic.
  */
 
-public class ControllerBoatIpad : MonoBehaviour 
+public class ControllerBoat : MonoBehaviour 
 {
 	public Transform gameWorld;
 	public UR5Controller robot;
 	public Transform gameUI;
-	public Camera camera;
 
 	// game parameters
 	private int itemCountGoal;
@@ -23,7 +22,6 @@ public class ControllerBoatIpad : MonoBehaviour
 
 	private RigBoat rig;
 	private BoatBehaviour player;
-	private LayerMask layerHostpots;
 
 	// UI
 	private GameObject scorePopup;
@@ -31,7 +29,6 @@ public class ControllerBoatIpad : MonoBehaviour
 	private GameObject bottomBar;
 	private ItemCounter itemCounter;
 	private CountDown countDown;
-	private ButtonHold buttonAction;
 
 
 	private void Awake()
@@ -39,16 +36,12 @@ public class ControllerBoatIpad : MonoBehaviour
 		rig = gameWorld.Find ("Rig").GetComponent<RigBoat> ();
 		player = gameWorld.Find ("Player").GetComponent<BoatBehaviour> ();
 
-		layerHostpots = 1 << LayerMask.NameToLayer ("Hotspots");	
-
 		// ui references
 		scorePopup = gameUI.Find("ScorePopup").gameObject;
 		lostTrackingPopup = gameUI.Find ("LostTrackingPopup").gameObject;
 		bottomBar = gameUI.Find ("BottomBar").gameObject;
 		itemCounter = bottomBar.transform.Find ("ItemCounter").GetComponent<ItemCounter> ();
 		countDown = bottomBar.transform.Find ("CountDown").GetComponent<CountDown> ();
-
-		buttonAction = gameUI.Find ("BottomBar/ButtonAction").GetComponent<ButtonHold> ();
 	}
 
 
@@ -66,34 +59,33 @@ public class ControllerBoatIpad : MonoBehaviour
 
 
 	private void Update() 
-	{	
-		// user input
-		// --------------
-		if (Input.touchCount > 0 
-			&& !buttonAction.isPressed) 
-		{
-			Touch touch = Input.GetTouch (0);
-
-			if (touch.phase == TouchPhase.Began) {
-				Vector3 screenPos = new Vector3 (touch.position.x, touch.position.y, 0f);
-
-				bool intersectedHotspot = IntersectHotspots (screenPos);
-
-				if (!intersectedHotspot)
-					OnActionButtonDown ();				
-			} 
-			else if (touch.phase == TouchPhase.Ended) 
-			{
-				OnActionButtonUp ();
-			}
-				
-		}
-
-		// update player
-		// -------------
+	{
 		Vector3 windDir = rig.GetWindDirection();
-
 		player.addForce (windDir);
+	}
+
+
+
+	public void OnActionDown()
+	{
+		rig.SwitchOn ();
+	}
+
+
+	public void OnActionUp()
+	{
+		rig.SwitchOff ();
+	}
+
+
+	public void OnHotspotClicked(Transform hotspotTransform)
+	{
+		Vector3 p = hotspotTransform.position;
+		Quaternion r = hotspotTransform.rotation;
+
+		rig.SetToolTransform (p, r);
+
+		robot.setTargetTransform (p, r);
 	}
 
 
@@ -113,8 +105,6 @@ public class ControllerBoatIpad : MonoBehaviour
 	{
 		player.OnWasteCollected += IncreaseCount;
 		countDown.OnCountdownFinished += FinishGame;
-		buttonAction.OnDown += OnActionButtonDown;
-		buttonAction.OnUp += OnActionButtonUp;
 	}
 
 
@@ -122,40 +112,6 @@ public class ControllerBoatIpad : MonoBehaviour
 	{
 		player.OnWasteCollected -= IncreaseCount;
 		countDown.OnCountdownFinished -= FinishGame;
-		buttonAction.OnDown -= OnActionButtonDown;
-		buttonAction.OnUp -= OnActionButtonUp;
-	}
-
-
-	private void OnActionButtonDown() 
-	{
-		rig.SwitchOn ();
-	}
-
-
-	private void OnActionButtonUp() 
-	{
-		rig.SwitchOff ();
-	}
-
-
-	private bool IntersectHotspots(Vector3 sreenPosition) 
-	{		
-		Ray ray = camera.ScreenPointToRay(sreenPosition);
-		RaycastHit hit;
-		if (Physics.Raycast (ray, out hit, 1000f, layerHostpots))
-		{
-			Vector3 p = hit.transform.position;
-			Quaternion r = hit.transform.rotation;
-
-			rig.SetToolTransform (p, r);
-
-			robot.setTargetTransform (p, r);
-
-			return true;
-		}
-
-		return false;
 	}
 
 
@@ -170,15 +126,15 @@ public class ControllerBoatIpad : MonoBehaviour
 
 	private void FinishGame()
 	{
-		enabled = false; // stop updates
-
-		rig.SwitchOff ();
-
-		RemoveListeners ();
-
-		bottomBar.SetActive (false);
-
-		ShowScorePopup ();
+//		enabled = false; // stop updates
+//
+//		rig.SwitchOff ();
+//
+//		RemoveListeners ();
+//
+//		bottomBar.SetActive (false);
+//
+//		ShowScorePopup ();
 	}
 
 

@@ -8,12 +8,23 @@ using UnityEngine;
 
 public class InteractionHandlerPC : MonoBehaviour 
 {
-	void Start () 
+	public Camera camera;
+
+	private LayerMask layerHostpots;
+
+
+	private void Awake()
+	{
+		layerHostpots = 1 << LayerMask.NameToLayer ("Hotspots");	
+	}
+
+
+	private void Start () 
 	{
 	}
 	
 
-	void Update () 
+	private void Update() 
 	{
 		if (Input.GetKeyDown ("space")) 
 		{
@@ -26,7 +37,22 @@ public class InteractionHandlerPC : MonoBehaviour
 
 		if (Input.GetMouseButtonDown (0)) 
 		{
-			gameObject.SendMessage("OnHotspotClicked", Input.mousePosition);
+			IntersectHotspots (Input.mousePosition);
 		}		
+	}
+
+
+	private bool IntersectHotspots(Vector3 sreenPosition) 
+	{		
+		Ray ray = camera.ScreenPointToRay(sreenPosition);
+		RaycastHit hit;
+		if (Physics.Raycast (ray, out hit, 1000f, layerHostpots))
+		{
+			gameObject.SendMessage ("OnHotspotClicked", hit.transform);
+
+			return true;
+		}
+
+		return false;
 	}
 }
