@@ -14,7 +14,6 @@ public class ControllerFire : MonoBehaviour
 	public Transform gameWorld;
 	public UR5Controller robot;
 	public Transform gameUI;
-	public Camera camera;
 
 	// game parameters
 	public int startTime = 60;
@@ -22,8 +21,6 @@ public class ControllerFire : MonoBehaviour
 
 	private ShowerTool showerTool;
 	private Transform clusters;
-
-	private LayerMask layerHostpots;
 
 	// UI
 	private GameObject scorePopup;
@@ -37,8 +34,6 @@ public class ControllerFire : MonoBehaviour
 	{
 		showerTool = gameWorld.Find ("RigShower/Tool").GetComponent<ShowerTool> ();
 		clusters = gameWorld.Find ("Clusters");
-
-		layerHostpots = 1 << LayerMask.NameToLayer ("Hotspots");	
 
 		// ui references
 		scorePopup = gameUI.Find("ScorePopup").gameObject;
@@ -56,24 +51,6 @@ public class ControllerFire : MonoBehaviour
 
 		countDown.startCount = startTime;
 		countDown.Play ();
-	}
-
-
-	public void OnHotspotClicked(Vector3 screenCoord)
-	{
-		IntersectHotspots (screenCoord);
-	}
-
-
-	public void OnActionDown()
-	{
-		showerTool.SwitchOn ();
-	}
-
-
-	public void OnActionUp()
-	{
-		showerTool.SwitchOff ();
 	}
 
 
@@ -128,21 +105,6 @@ public class ControllerFire : MonoBehaviour
 	}
 
 
-	private void IntersectHotspots(Vector3 sreenPosition) 
-	{		
-		Ray ray = camera.ScreenPointToRay(sreenPosition);
-		RaycastHit hit;
-
-		if (Physics.Raycast (ray, out hit, 1000f, layerHostpots))
-		{				
-			Vector3 p = hit.transform.position;
-			Quaternion r = hit.transform.rotation;
-
-			robot.setTargetTransform (p, r);
-		}
-	}
-
-
 	private void IncreaseCount()
 	{
 		itemCounter.count += 1;
@@ -154,6 +116,7 @@ public class ControllerFire : MonoBehaviour
 
 	private void FinishGame()
 	{
+		// TODO
 	}
 
 
@@ -168,7 +131,7 @@ public class ControllerFire : MonoBehaviour
 		float collectionPerformance = itemCounter.count / itemCountGoal;
 		float score = timePerformance * timeWeight + collectionPerformance * collectionWeight;
 		int stars = (int) (5f * score);
-		// TODO: logic to set the text based on score. Read text from an xml
+		// logic to set the text based on score.
 		string title;
 		string message;
 
@@ -176,5 +139,26 @@ public class ControllerFire : MonoBehaviour
 //		popup.SetTitle(FeedbackCopies.GetTitle(stars));
 		//		popup.SetMessage();
 		popup.Show ();
+	}
+
+
+	public void OnActionDown()
+	{
+		showerTool.SwitchOn ();
+	}
+
+
+	public void OnActionUp()
+	{
+		showerTool.SwitchOff ();
+	}
+
+
+	public void OnHotspotClicked(Transform hotspotTransform)
+	{
+		Vector3 p = hotspotTransform.position;
+		Quaternion r = hotspotTransform.rotation;
+
+		robot.setTargetTransform (p, r);
 	}
 }

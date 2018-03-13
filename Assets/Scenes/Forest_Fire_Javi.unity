@@ -28359,7 +28359,6 @@ MonoBehaviour:
   gameWorld: {fileID: 1079346353}
   robot: {fileID: 2132662508}
   gameUI: {fileID: 976800829}
-  camera: {fileID: 1618961462}
   startTime: 60
 --- !u!4 &736244406
 Transform:
@@ -28385,6 +28384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05d322a7a1a254484af7a8cf91356c34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera: {fileID: 1618961462}
 --- !u!1 &740623207
 GameObject:
   m_ObjectHideFlags: 0
