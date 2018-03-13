@@ -140,13 +140,9 @@ public class ControllerMagnetPc : MonoBehaviour
 		RaycastHit hit;
 
 		if (Physics.Raycast (ray, out hit, 1000f, layerHostpots))
-		{
-			Debug.Log ("ay!");
-				
+		{				
 			Vector3 p = hit.transform.position;
 			Quaternion r = hit.transform.rotation;
-
-			//rig.SetToolTransform (p, r);
 
 			robot.setTargetTransform (p, r);
 		}

@@ -26,7 +26,7 @@ public class MagnetTool : MonoBehaviour {
 	}
 	
 
-	void Update() 
+	void Update()
 	{
 		this.transform.position = tcp.position;
 		this.transform.rotation = tcp.rotation;

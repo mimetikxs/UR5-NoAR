@@ -6,11 +6,10 @@ using UnityEngine.EventSystems;
 
 
 /*
- * Handles user input when testing on pc (no Vuforia).
  * Manages the main game logic.
  */
 
-public class ControllerFirePc : MonoBehaviour 
+public class ControllerFire : MonoBehaviour 
 {
 	public Transform gameWorld;
 	public UR5Controller robot;
@@ -58,23 +57,23 @@ public class ControllerFirePc : MonoBehaviour
 		countDown.startCount = startTime;
 		countDown.Play ();
 	}
-	
 
-	private void Update() 
-	{		
-		if (Input.GetKeyDown ("space")) 
-		{
-			showerTool.SwitchOn ();
-		} 
-		else if (Input.GetKeyUp ("space")) 
-		{
-			showerTool.SwitchOff ();
-		}
 
-		if (Input.GetMouseButtonDown (0)) 
-		{
-			IntersectHotspots (Input.mousePosition);
-		}
+	public void OnHotspotClicked(Vector3 screenCoord)
+	{
+		IntersectHotspots (screenCoord);
+	}
+
+
+	public void OnActionDown()
+	{
+		showerTool.SwitchOn ();
+	}
+
+
+	public void OnActionUp()
+	{
+		showerTool.SwitchOff ();
 	}
 
 
