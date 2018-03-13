@@ -65,30 +65,6 @@ public class ControllerBoat : MonoBehaviour
 	}
 
 
-
-	public void OnActionDown()
-	{
-		rig.SwitchOn ();
-	}
-
-
-	public void OnActionUp()
-	{
-		rig.SwitchOff ();
-	}
-
-
-	public void OnHotspotClicked(Transform hotspotTransform)
-	{
-		Vector3 p = hotspotTransform.position;
-		Quaternion r = hotspotTransform.rotation;
-
-		rig.SetToolTransform (p, r);
-
-		robot.setTargetTransform (p, r);
-	}
-
-
 	private void OnEnable()
 	{
 		AddListeners ();
@@ -157,5 +133,28 @@ public class ControllerBoat : MonoBehaviour
 		//		popup.SetTitle();
 		//		popup.SetMessage();
 		popup.Show ();
+	}
+
+
+	public void OnActionDown()
+	{
+		rig.SwitchOn ();
+	}
+
+
+	public void OnActionUp()
+	{
+		rig.SwitchOff ();
+	}
+
+
+	public void OnHotspotClicked(Transform hotspotTransform)
+	{
+		Vector3 p = hotspotTransform.position;
+		Quaternion r = hotspotTransform.rotation;
+
+		rig.SetToolTransform (p, r);
+
+		robot.setTargetTransform (p, r);
 	}
 }

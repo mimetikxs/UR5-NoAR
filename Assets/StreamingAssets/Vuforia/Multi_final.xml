@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+    <Tracking>
+        <ImageTarget name="marker.Front" size="33.330002 70.021011"/>
+        <ImageTarget name="marker.Top" size="33.330002 70.021011"/>
+        <ImageTarget name="marker.Bottom" size="33.330002 70.021011"/>
+        <MultiTarget name="marker">
+            <Part name="marker.Front" translation="0 0 0" rotation="AD: 1 0 0 0"/>
+            <Part name="marker.Top" translation="-33.330002 0 0" rotation="AD: 1 0 0 0"/>
+            <Part name="marker.Bottom" translation="33.330002 0 0" rotation="AD: 1 0 0 0"/>
+        </MultiTarget>
+    </Tracking>
+</QCARConfig>
