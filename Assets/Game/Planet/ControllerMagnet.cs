@@ -10,12 +10,11 @@ using UnityEngine.EventSystems;
  * Manages the main game logic.
  */
 
-public class ControllerMagnetPc : MonoBehaviour 
+public class ControllerMagnet : MonoBehaviour 
 {
 	public Transform gameWorld;
 	public UR5Controller robot;
 	public Transform gameUI;
-	public Camera camera;
 
 	// physics parameters
 	[Range (0f, 1f)] public float springStrength = 0.082f;
@@ -24,15 +23,12 @@ public class ControllerMagnetPc : MonoBehaviour
 	public float attractorMinDist = 2f;
 	public float attractorMaxDist = 10f;
 
-
 	// game parameters
 	public int startTime = 60;
 	private int itemCountGoal;
 
 	private MagnetTool magnetTool;
 	private Transform spaceObjects;
-
-	private LayerMask layerHostpots;
 
 	// UI
 	private GameObject scorePopup;
@@ -47,8 +43,6 @@ public class ControllerMagnetPc : MonoBehaviour
 		magnetTool = gameWorld.Find ("RigMagnet/Tool").GetComponent<MagnetTool> ();
 		spaceObjects = gameWorld.Find ("SpaceObjects");
 
-		layerHostpots = 1 << LayerMask.NameToLayer ("Hotspots");	
-
 		// ui references
 		scorePopup = gameUI.Find("ScorePopup").gameObject;
 		lostTrackingPopup = gameUI.Find ("LostTrackingPopup").gameObject;
@@ -60,30 +54,22 @@ public class ControllerMagnetPc : MonoBehaviour
 
 	private void Start() 
 	{
-		itemCountGoal = 5;//gameWorld.Find ("Waste").childCount;
-
-		itemCounter.count = 0;
-
 		countDown.startCount = startTime;
 		countDown.Play ();
+	}
+
+
+	private void initItemCounter()
+	{
+		itemCounter.count = 0;	
+
+		foreach (Transform item in spaceObjects)
+			itemCountGoal += (item.GetComponent<SpaceObject> ().isGoodGuy) ? 0 : 1;
 	}
 	
 
 	private void Update() 
 	{		
-		if (Input.GetKeyDown ("space")) 
-		{
-			magnetTool.SwitchOn ();
-		} 
-		else if (Input.GetKeyUp ("space")) 
-		{
-			magnetTool.SwitchOff ();
-		}
-
-		if (Input.GetMouseButtonDown (0)) 
-		{
-			IntersectHotspots (Input.mousePosition);
-		}
 	}
 
 
@@ -134,21 +120,6 @@ public class ControllerMagnetPc : MonoBehaviour
 	}
 
 
-	private void IntersectHotspots(Vector3 sreenPosition) 
-	{		
-		Ray ray = camera.ScreenPointToRay(sreenPosition);
-		RaycastHit hit;
-
-		if (Physics.Raycast (ray, out hit, 1000f, layerHostpots))
-		{				
-			Vector3 p = hit.transform.position;
-			Quaternion r = hit.transform.rotation;
-
-			robot.setTargetTransform (p, r);
-		}
-	}
-
-
 	private void IncreaseCount()
 	{
 		itemCounter.count += 1;
@@ -182,5 +153,26 @@ public class ControllerMagnetPc : MonoBehaviour
 //		popup.SetTitle(FeedbackCopies.GetTitle(stars));
 		//		popup.SetMessage();
 		popup.Show ();
+	}
+
+
+	public void OnActionDown()
+	{
+		magnetTool.SwitchOn ();
+	}
+
+
+	public void OnActionUp()
+	{
+		magnetTool.SwitchOff ();
+	}
+
+
+	public void OnHotspotClicked(Transform hotspotTransform)
+	{
+		Vector3 p = hotspotTransform.position;
+		Quaternion r = hotspotTransform.rotation;
+
+		robot.setTargetTransform (p, r);
 	}
 }

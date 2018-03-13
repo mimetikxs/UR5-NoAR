@@ -6,7 +6,7 @@ using UnityEngine;
  * Handles user input when paying on Ipad.
  */
 
-public class InteractionHandlerIpad : MonoBehaviour 
+public class InteractionHandlerIPad : MonoBehaviour 
 {
 	public Camera camera;
 	public Transform gameUI;

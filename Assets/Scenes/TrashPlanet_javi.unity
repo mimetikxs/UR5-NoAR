@@ -1270,6 +1270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 736244406}
   - component: {fileID: 736244405}
+  - component: {fileID: 736244407}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1291,7 +1292,6 @@ MonoBehaviour:
   gameWorld: {fileID: 1079346353}
   robot: {fileID: 1808343230}
   gameUI: {fileID: 739094270}
-  camera: {fileID: 1618961462}
   springStrength: 0.082
   springDamping: 0.894
   attractorStrength: 115.2
@@ -1311,6 +1311,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &736244407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 736244404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05d322a7a1a254484af7a8cf91356c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 1618961462}
 --- !u!224 &739094270 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224273155281500472, guid: a7ddfa1fba0fd4adcae20f78987a1b19,
