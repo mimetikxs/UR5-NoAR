@@ -27,6 +27,11 @@ public class TreeCluster : MonoBehaviour
 	private enum State {Fine, Burning, Burnt};
 	private State currentState;
 
+	// delegated:
+	// triggered when waste is collected
+	public delegate void BurntAction();			
+	public event BurntAction OnBurnt;
+
 
 	private void Awake()
 	{
@@ -44,6 +49,9 @@ public class TreeCluster : MonoBehaviour
 		fxLight = fires.transform.Find ("Light").GetComponent<Light> ();
 		initialLightIntensity = fxLight.intensity;
 		lightIntensity = 0f;
+
+
+		slider.value = temp;
 	}
 		
 
@@ -60,12 +68,22 @@ public class TreeCluster : MonoBehaviour
 
 	private void UpdateSlider()
 	{
-		slider.value = temp;
-		if (temp < 0.5f)
+		slider.value += (temp - slider.value) * 0.1f;
+
+		if (temp < 0.4f) 
+		{
 			sliderImage.color = lowTempColor;
-		else
+		} 
+		else if (temp > 0.6f) 
+		{
 			sliderImage.color = highTempColor;
-		//		sliderImage.color = Color.Lerp (lowTempColor, highTempColor, temp);
+		} 
+		else 
+		{
+			float val = (temp - 0.4f) / 0.2f;
+			//val = Mathf.Clamp (val, 0f, 1f);
+			sliderImage.color = Color.Lerp (lowTempColor, highTempColor, val);
+		}
 	}
 
 
@@ -112,6 +130,12 @@ public class TreeCluster : MonoBehaviour
 				fine.SetActive (false);
 				burnt.SetActive (true);
 				StopFireFX ();
+
+				Destroy (slider.transform.parent.gameObject);
+
+				// trigger delegated 
+				if (OnBurnt != null) 
+					OnBurnt();
 			}
 		}
 	}

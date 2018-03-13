@@ -44,7 +44,7 @@ public class ShowerTool : MonoBehaviour {
 
 		if (isOn) 
 		{
-			particles.Emit (1);
+			particles.Emit (2);
 		}
 	}
 

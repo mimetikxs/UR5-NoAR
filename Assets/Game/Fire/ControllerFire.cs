@@ -17,7 +17,7 @@ public class ControllerFire : MonoBehaviour
 
 	// game parameters
 	public int startTime = 60;
-	private int itemCountGoal;
+	private int itemCountTotal;
 
 	private ShowerTool showerTool;
 	private Transform clusters;
@@ -46,8 +46,8 @@ public class ControllerFire : MonoBehaviour
 
 	private void Start() 
 	{
-		itemCountGoal = clusters.childCount;
-		itemCounter.count = 0;
+		itemCountTotal = clusters.childCount;
+		itemCounter.count = itemCountTotal;
 
 		countDown.startCount = startTime;
 		countDown.Play ();
@@ -93,23 +93,33 @@ public class ControllerFire : MonoBehaviour
 
 	private void AddListeners()
 	{
-		//magnetTool.OnWasteCollected += IncreaseCount;
 		countDown.OnCountdownFinished += FinishGame;
+
+		foreach (Transform item in clusters) 
+		{
+			TreeCluster cluster = item.GetComponent<TreeCluster> ();
+			cluster.OnBurnt += DecreaseCount;
+		}
 	}
 
 
 	private void RemoveListeners()
 	{
-		//magnetTool.OnWasteCollected -= IncreaseCount;
 		countDown.OnCountdownFinished -= FinishGame;
+
+		foreach (Transform item in clusters) 
+		{
+			TreeCluster cluster = item.GetComponent<TreeCluster> ();
+			cluster.OnBurnt -= DecreaseCount;
+		}
 	}
 
 
-	private void IncreaseCount()
+	private void DecreaseCount()
 	{
-		itemCounter.count += 1;
+		itemCounter.count -= 1;
 
-		if (itemCounter.count == itemCountGoal)
+		if (itemCounter.count < 1)
 			FinishGame ();
 	}
 
@@ -128,7 +138,7 @@ public class ControllerFire : MonoBehaviour
 		float timeWeight = 0.2f;
 		float collectionWeight = 0.8f;
 		float timePerformance = countDown.GetCount() / countDown.startCount;
-		float collectionPerformance = itemCounter.count / itemCountGoal;
+		float collectionPerformance = itemCounter.count / itemCountTotal;
 		float score = timePerformance * timeWeight + collectionPerformance * collectionWeight;
 		int stars = (int) (5f * score);
 		// logic to set the text based on score.
