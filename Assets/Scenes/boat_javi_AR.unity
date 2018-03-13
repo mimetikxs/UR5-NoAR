@@ -90,7 +90,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 0
-  m_LightingDataAsset: {fileID: 112000032, guid: 81a38cd23a59c54469473b1d8ef99736,
+  m_LightingDataAsset: {fileID: 112000030, guid: 81a38cd23a59c54469473b1d8ef99736,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -1002,6 +1002,22 @@ Prefab:
     - target: {fileID: 4963463851599544, guid: 217fbafb72ed540c497aed14b66252a6, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694711082382580, guid: 217fbafb72ed540c497aed14b66252a6, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694711082382580, guid: 217fbafb72ed540c497aed14b66252a6, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4687300622612072, guid: 217fbafb72ed540c497aed14b66252a6, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4687300622612072, guid: 217fbafb72ed540c497aed14b66252a6, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.46
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 217fbafb72ed540c497aed14b66252a6, type: 2}
@@ -6608,6 +6624,10 @@ Prefab:
       propertyPath: _dirtyMappings
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1854788041786780, guid: 0691e869f52334a39b8cc28eaefbcfd3, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0691e869f52334a39b8cc28eaefbcfd3, type: 2}
   m_IsPrefabParent: 0
@@ -7306,7 +7326,7 @@ Prefab:
     - target: {fileID: 2300026, guid: d057d706f0f63284cbee868617212ca1, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 5f33f62c41407df44b735b41ba210372, type: 2}
+      objectReference: {fileID: 2100000, guid: ebf2b3e548f9134438f8f8d2bea02252, type: 2}
     - target: {fileID: 100012, guid: d057d706f0f63284cbee868617212ca1, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
@@ -7367,6 +7387,10 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 2300028, guid: d057d706f0f63284cbee868617212ca1, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: b97203b60a02b2a43a31614faa946bb8, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d057d706f0f63284cbee868617212ca1, type: 3}
   m_IsPrefabParent: 0

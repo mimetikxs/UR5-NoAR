@@ -43,7 +43,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -802,8 +802,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 485894407}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.07800656, y: 0.47411522, z: 0.40170437}
-  m_LocalScale: {x: 0.09919728, y: 0.16243763, z: 0.09919748}
+  m_LocalPosition: {x: -0.07800656, y: 0.474, z: 0.43}
+  m_LocalScale: {x: 0.072584204, y: 0.118858166, z: 0.072584346}
   m_Children: []
   m_Father: {fileID: 1459642360}
   m_RootOrder: 5
@@ -852,7 +852,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.95
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &485894411
 MeshFilter:
@@ -860,7 +860,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 485894407}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: d855eaa9b8db0844eb499d2105c6c905, type: 3}
 --- !u!1001 &505428014
 Prefab:
   m_ObjectHideFlags: 0
@@ -2577,7 +2577,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
@@ -2909,27 +2909,27 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 57e69c52bd216114aa2370589489f547, type: 2}
     - target: {fileID: 100000, guid: 23ce744a4406f9c43887d28d600dbe4c, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 23ce744a4406f9c43887d28d600dbe4c, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100012, guid: 23ce744a4406f9c43887d28d600dbe4c, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: 23ce744a4406f9c43887d28d600dbe4c, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 23ce744a4406f9c43887d28d600dbe4c, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: 23ce744a4406f9c43887d28d600dbe4c, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300008, guid: 23ce744a4406f9c43887d28d600dbe4c, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3198,7 +3198,7 @@ Transform:
   m_GameObject: {fileID: 1647853781}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0.31375986, y: -0.36416388, z: 0.40170425}
-  m_LocalScale: {x: 0.09919728, y: 0.16243763, z: 0.09919748}
+  m_LocalScale: {x: 0.06960829, y: 0.11398504, z: 0.06960843}
   m_Children: []
   m_Father: {fileID: 1459642360}
   m_RootOrder: 4
@@ -3247,7 +3247,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.94
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1647853785
 MeshFilter:
@@ -3255,7 +3255,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1647853781}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: d855eaa9b8db0844eb499d2105c6c905, type: 3}
 --- !u!1 &1665317967
 GameObject:
   m_ObjectHideFlags: 0
