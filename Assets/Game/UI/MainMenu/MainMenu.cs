@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour {
 
 	public bool useAR = false;
 
-	private string scenesPath = "Scenes/Javi/";
+	private string scenesPath = "Scenes/";
 
 	public void LoadLevel(string sceneName)
 	{

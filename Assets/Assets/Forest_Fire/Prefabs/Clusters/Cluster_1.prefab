@@ -596,7 +596,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1201000020299808}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.989, y: 4.19, z: -2.521}
+  m_LocalPosition: {x: -9.989, y: 2.41, z: -2.521}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4391379054017844}
@@ -2040,7 +2040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   temp: 0
   heatingSpeed: 0.01
-  tempMeterPrefab: {fileID: 223038352033687440, guid: 860ce883232614f7da221fb229502be9,
+  tempMeterPrefab: {fileID: 223038352033687440, guid: 1cef03773f4794aa4a1475fa1e78ea21,
     type: 2}
   lowTempColor: {r: 0, g: 0.8275862, b: 1, a: 1}
   highTempColor: {r: 1, g: 0, b: 0, a: 1}

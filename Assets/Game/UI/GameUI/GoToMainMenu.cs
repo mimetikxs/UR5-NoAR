@@ -33,6 +33,6 @@ public class GoToMainMenu : MonoBehaviour
 
 	private void Go ()
 	{
-		SceneManager.LoadScene ("Scenes/Javi/MainMenu");
+		SceneManager.LoadScene ("Scenes/MainMenu");
 	}
 }
