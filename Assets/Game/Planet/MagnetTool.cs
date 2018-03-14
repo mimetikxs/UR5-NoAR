@@ -14,13 +14,20 @@ public class MagnetTool : MonoBehaviour {
 	public Transform tcp;
 
 	private bool isOn;
+	private ParticleSystem particles;
 
 	// delegated (triggered when waste is collected)
 	public delegate void WasteCollectAction();			
 	public event WasteCollectAction OnWasteCollected;
 
 
-	void Start() 
+	private void Awake()
+	{
+		particles = this.transform.Find ("FX magnet").GetComponent<ParticleSystem> ();
+	}
+
+
+	private void Start() 
 	{
 		isOn = false;
 	}
@@ -45,23 +52,41 @@ public class MagnetTool : MonoBehaviour {
 	}
 
 
+	private void OnEnable()
+	{
+		StartCoroutine("UpdateParticleFx");
+	}
+
+
 	private void OnDisable() 
 	{
+		StopCoroutine("UpdateParticleFx");
 		SwitchOff ();
 	}
+
+
+	private IEnumerator UpdateParticleFx()
+	{
+		while (true)
+		{
+			if (isOn) 
+			{
+				particles.Emit (2);
+			}
+			yield return new WaitForSeconds(0.3f);
+		}
+	} 
 
 
 	public void SwitchOn()
 	{
 		isOn = true;
-		// TODO enable fx
 	}
 
 
 	public void SwitchOff() 
 	{
 		isOn = false;
-		// TODO disable fx
 	}
 
 
