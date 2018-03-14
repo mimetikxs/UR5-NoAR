@@ -15,7 +15,6 @@ public class ShowerTool : MonoBehaviour {
 
 	public Transform tcp;
 
-	private Transform shower;
 	private ParticleSystem particles;
 	private bool isOn;
 
@@ -24,7 +23,6 @@ public class ShowerTool : MonoBehaviour {
 
 	private void Awake()
 	{
-		shower = this.transform.Find ("Shower");
 		particles = this.transform.Find ("Particles").GetComponent<ParticleSystem> ();
 
 		layerClusters = 1 << LayerMask.NameToLayer ("Clusters");

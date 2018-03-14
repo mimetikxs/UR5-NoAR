@@ -161,7 +161,7 @@ public class ControllerMagnet : MonoBehaviour
 		magnetTool.SwitchOn ();
 	}
 
-
+		
 	public void OnActionUp()
 	{
 		magnetTool.SwitchOff ();
