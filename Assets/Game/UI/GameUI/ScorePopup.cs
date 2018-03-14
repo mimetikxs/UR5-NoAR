@@ -10,14 +10,15 @@ using TMPro;
 
 public class ScorePopup : MonoBehaviour 
 {
-	public void SetTitle(string title)
-	{
-	}
+//	public void SetTitle(string title)
+//	{
+//	}
 
 
 	public void SetScore(float score)
 	{
 		// TODO: render stars based on score
+		// 		 set the title
 	}
 
 
@@ -30,6 +31,8 @@ public class ScorePopup : MonoBehaviour
 	public void Show() 
 	{
 		this.gameObject.SetActive (true);
+
+		// TODO: fadein
 	}
 
 
