@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45135516, g: 0.5009334, b: 0.5727816, a: 1}
+  m_IndirectSpecularColor: {r: 0.45135546, g: 0.5009339, b: 0.57278174, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -90,7 +90,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 0
-  m_LightingDataAsset: {fileID: 112000032, guid: 92c3ac8d7bed38444bf8af849cccd308,
+  m_LightingDataAsset: {fileID: 112000018, guid: 92c3ac8d7bed38444bf8af849cccd308,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -1390,6 +1390,69 @@ Prefab:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: b97203b60a02b2a43a31614faa946bb8, type: 2}
+    - target: {fileID: 23844118542768360, guid: 0ee381b7a58f59446a0156eeca60b1fe,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23954867603838666, guid: 0ee381b7a58f59446a0156eeca60b1fe,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23609564703606214, guid: 0ee381b7a58f59446a0156eeca60b1fe,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23030491144464004, guid: 0ee381b7a58f59446a0156eeca60b1fe,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23194997345938080, guid: 0ee381b7a58f59446a0156eeca60b1fe,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23064894206144362, guid: 0ee381b7a58f59446a0156eeca60b1fe,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23536812788424788, guid: 0ee381b7a58f59446a0156eeca60b1fe,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591717977985680, guid: 0ee381b7a58f59446a0156eeca60b1fe, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1218982594316854, guid: 0ee381b7a58f59446a0156eeca60b1fe, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011800308089086, guid: 0ee381b7a58f59446a0156eeca60b1fe, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462044827677918, guid: 0ee381b7a58f59446a0156eeca60b1fe, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758943496979272, guid: 0ee381b7a58f59446a0156eeca60b1fe, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537324877183648, guid: 0ee381b7a58f59446a0156eeca60b1fe, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595967888798088, guid: 0ee381b7a58f59446a0156eeca60b1fe, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ee381b7a58f59446a0156eeca60b1fe, type: 2}
   m_IsPrefabParent: 0
