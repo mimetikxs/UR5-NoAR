@@ -1,0 +1,283 @@
+fileFormatVersion: 2
+guid: 04da5e2947b392a42aa9e22706785e7f
+timeCreated: 1521118073
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Meseta Isla
+    100002: //RootNode
+    100004: mesetas
+    100006: Rock_Arch_005
+    100008: Rock_Arch_02
+    100010: Rock_Arch_04
+    100012: Rock_Flat_crk_m_005
+    100014: Rock_Flat_crk_m_006
+    100016: Rock_Flat_crk_m_007
+    100018: Rock_Flat_crk_m_008
+    100020: Rock_Flat_crk_s_006
+    100022: Rock_Flat_l_007
+    100024: Rock_Flat_l_008
+    100026: Rock_Flat_l_009
+    100028: Rock_Flat_l_010
+    100030: Rock_Flat_l_011
+    100032: Rock_Round_crk_m_006
+    100034: Rock_Round_crk_m_007
+    100036: Rock_Round_crk_m_008
+    100038: Rock_Round_l_009
+    100040: Rock_Round_l_010
+    100042: Rock_Round_l_011
+    100044: Rock_Round_l_012
+    100046: Rock_Round_l_013
+    100048: Rock_Round_l_014
+    100050: Rock_Round_l_015
+    100052: Rock_Round_l_016
+    100054: Rocks_Flat_m_004
+    100056: Rocks_Round_l_004
+    100058: Rocks_Round_l_005
+    100060: Rocks_Round_l_006
+    100062: Rocks_Round_l_007
+    100064: Rocks_Round_l_008
+    100066: Rocks_Round_l_009
+    100068: Rocks_Round_l_010
+    100070: Rocks_Round_l_011
+    100072: Rocks_Round_l_012
+    100074: Rocks_Round_s_006
+    100076: Rocks_Round_s_007
+    400000: Meseta Isla
+    400002: //RootNode
+    400004: mesetas
+    400006: Rock_Arch_005
+    400008: Rock_Arch_02
+    400010: Rock_Arch_04
+    400012: Rock_Flat_crk_m_005
+    400014: Rock_Flat_crk_m_006
+    400016: Rock_Flat_crk_m_007
+    400018: Rock_Flat_crk_m_008
+    400020: Rock_Flat_crk_s_006
+    400022: Rock_Flat_l_007
+    400024: Rock_Flat_l_008
+    400026: Rock_Flat_l_009
+    400028: Rock_Flat_l_010
+    400030: Rock_Flat_l_011
+    400032: Rock_Round_crk_m_006
+    400034: Rock_Round_crk_m_007
+    400036: Rock_Round_crk_m_008
+    400038: Rock_Round_l_009
+    400040: Rock_Round_l_010
+    400042: Rock_Round_l_011
+    400044: Rock_Round_l_012
+    400046: Rock_Round_l_013
+    400048: Rock_Round_l_014
+    400050: Rock_Round_l_015
+    400052: Rock_Round_l_016
+    400054: Rocks_Flat_m_004
+    400056: Rocks_Round_l_004
+    400058: Rocks_Round_l_005
+    400060: Rocks_Round_l_006
+    400062: Rocks_Round_l_007
+    400064: Rocks_Round_l_008
+    400066: Rocks_Round_l_009
+    400068: Rocks_Round_l_010
+    400070: Rocks_Round_l_011
+    400072: Rocks_Round_l_012
+    400074: Rocks_Round_s_006
+    400076: Rocks_Round_s_007
+    2100000: 01 - Default
+    2100002: No Name
+    2300000: Meseta Isla
+    2300002: mesetas
+    2300004: Rock_Arch_005
+    2300006: Rock_Arch_02
+    2300008: Rock_Arch_04
+    2300010: Rock_Flat_crk_m_005
+    2300012: Rock_Flat_crk_m_006
+    2300014: Rock_Flat_crk_m_007
+    2300016: Rock_Flat_crk_m_008
+    2300018: Rock_Flat_crk_s_006
+    2300020: Rock_Flat_l_007
+    2300022: Rock_Flat_l_008
+    2300024: Rock_Flat_l_009
+    2300026: Rock_Flat_l_010
+    2300028: Rock_Flat_l_011
+    2300030: Rock_Round_crk_m_006
+    2300032: Rock_Round_crk_m_007
+    2300034: Rock_Round_crk_m_008
+    2300036: Rock_Round_l_009
+    2300038: Rock_Round_l_010
+    2300040: Rock_Round_l_011
+    2300042: Rock_Round_l_012
+    2300044: Rock_Round_l_013
+    2300046: Rock_Round_l_014
+    2300048: Rock_Round_l_015
+    2300050: Rock_Round_l_016
+    2300052: Rocks_Flat_m_004
+    2300054: Rocks_Round_l_004
+    2300056: Rocks_Round_l_005
+    2300058: Rocks_Round_l_006
+    2300060: Rocks_Round_l_007
+    2300062: Rocks_Round_l_008
+    2300064: Rocks_Round_l_009
+    2300066: Rocks_Round_l_010
+    2300068: Rocks_Round_l_011
+    2300070: Rocks_Round_l_012
+    2300072: Rocks_Round_s_006
+    2300074: Rocks_Round_s_007
+    3300000: Meseta Isla
+    3300002: mesetas
+    3300004: Rock_Arch_005
+    3300006: Rock_Arch_02
+    3300008: Rock_Arch_04
+    3300010: Rock_Flat_crk_m_005
+    3300012: Rock_Flat_crk_m_006
+    3300014: Rock_Flat_crk_m_007
+    3300016: Rock_Flat_crk_m_008
+    3300018: Rock_Flat_crk_s_006
+    3300020: Rock_Flat_l_007
+    3300022: Rock_Flat_l_008
+    3300024: Rock_Flat_l_009
+    3300026: Rock_Flat_l_010
+    3300028: Rock_Flat_l_011
+    3300030: Rock_Round_crk_m_006
+    3300032: Rock_Round_crk_m_007
+    3300034: Rock_Round_crk_m_008
+    3300036: Rock_Round_l_009
+    3300038: Rock_Round_l_010
+    3300040: Rock_Round_l_011
+    3300042: Rock_Round_l_012
+    3300044: Rock_Round_l_013
+    3300046: Rock_Round_l_014
+    3300048: Rock_Round_l_015
+    3300050: Rock_Round_l_016
+    3300052: Rocks_Flat_m_004
+    3300054: Rocks_Round_l_004
+    3300056: Rocks_Round_l_005
+    3300058: Rocks_Round_l_006
+    3300060: Rocks_Round_l_007
+    3300062: Rocks_Round_l_008
+    3300064: Rocks_Round_l_009
+    3300066: Rocks_Round_l_010
+    3300068: Rocks_Round_l_011
+    3300070: Rocks_Round_l_012
+    3300072: Rocks_Round_s_006
+    3300074: Rocks_Round_s_007
+    4300000: mesetas
+    4300002: Meseta Isla
+    4300004: Rock_Arch_02
+    4300006: Rock_Arch_04
+    4300008: Rocks_Round_l_004
+    4300010: Rock_Round_l_009
+    4300012: Rock_Round_l_010
+    4300014: Rock_Round_l_011
+    4300016: Rock_Round_l_012
+    4300018: Rock_Round_l_013
+    4300020: Rocks_Round_l_005
+    4300022: Rocks_Round_l_006
+    4300024: Rock_Round_l_014
+    4300026: Rock_Round_crk_m_006
+    4300028: Rock_Round_crk_m_007
+    4300030: Rocks_Round_s_006
+    4300032: Rock_Round_l_015
+    4300034: Rocks_Round_l_007
+    4300036: Rocks_Round_l_008
+    4300038: Rocks_Round_l_009
+    4300040: Rocks_Round_l_010
+    4300042: Rocks_Flat_m_004
+    4300044: Rock_Arch_005
+    4300046: Rock_Flat_l_007
+    4300048: Rock_Flat_l_008
+    4300050: Rock_Flat_l_009
+    4300052: Rock_Flat_crk_m_005
+    4300054: Rock_Flat_crk_m_006
+    4300056: Rock_Flat_crk_s_006
+    4300058: Rocks_Round_l_011
+    4300060: Rocks_Round_l_012
+    4300062: Rock_Flat_l_010
+    4300064: Rock_Flat_l_011
+    4300066: Rock_Round_l_016
+    4300068: Rock_Flat_crk_m_007
+    4300070: Rock_Flat_crk_m_008
+    4300072: Rock_Round_crk_m_008
+    4300074: Rocks_Round_s_007
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
