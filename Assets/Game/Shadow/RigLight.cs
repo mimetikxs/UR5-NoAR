@@ -52,7 +52,7 @@ public class RigLight : MonoBehaviour
 
 	public void setActiveHostpot(Hotspot hotspot)
 	{
-		Debug.Log (hotspot.connectedIds.Length);
+		Debug.Log (hotspot.connections);
 
 // debug TODO: coment out for production
 		Transform t = hotspot.transform.Find("Transform").transform;
