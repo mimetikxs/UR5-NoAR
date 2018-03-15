@@ -1,126 +1,116 @@
 fileFormatVersion: 2
 guid: 23ce744a4406f9c43887d28d600dbe4c
-timeCreated: 1519992655
+timeCreated: 1521124299
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: ' Tube002'
     100002: ' Tube003'
-    100004: //RootNode
-    100006: Tube001
-    100008: BOX_MARBLE
-    100010: ' Tube004'
-    100012: Corner
-    100014: box001
-    100016: Box002
-    100018: box002
-    100020: Box003
-    100022: box003
-    100024: Box004
-    100026: box004
-    100028: Box005
-    100030: button
-    100032: button001
-    100034: button002
-    100036: button003
-    100038: corner
-    100040: corner001
-    100042: corner002
-    100044: corner003
+    100004: ' Tube004'
+    100006: box001
+    100008: Box002
+    100010: box002
+    100012: Box003
+    100014: box003
+    100016: Box004
+    100018: box004
+    100020: Box005
+    100022: button
+    100024: button001
+    100026: button002
+    100028: button003
+    100030: corner
+    100032: corner001
+    100034: corner002
+    100036: corner003
+    100038: //RootNode
+    100040: Tube001
     400000: ' Tube002'
     400002: ' Tube003'
-    400004: //RootNode
-    400006: Tube001
-    400008: BOX_MARBLE
-    400010: ' Tube004'
-    400012: Corner
-    400014: box001
-    400016: Box002
-    400018: box002
-    400020: Box003
-    400022: box003
-    400024: Box004
-    400026: box004
-    400028: Box005
-    400030: button
-    400032: button001
-    400034: button002
-    400036: button003
-    400038: corner
-    400040: corner001
-    400042: corner002
-    400044: corner003
+    400004: ' Tube004'
+    400006: box001
+    400008: Box002
+    400010: box002
+    400012: Box003
+    400014: box003
+    400016: Box004
+    400018: box004
+    400020: Box005
+    400022: button
+    400024: button001
+    400026: button002
+    400028: button003
+    400030: corner
+    400032: corner001
+    400034: corner002
+    400036: corner003
+    400038: //RootNode
+    400040: Tube001
     2100000: 01 - Default
-    2100002: No Name
-    2100004: 'Material #88'
-    2100006: 'Material #89'
+    2100002: 'Material #88'
+    2100004: 'Material #89'
     2300000: ' Tube002'
     2300002: ' Tube003'
-    2300004: Tube001
-    2300006: BOX_MARBLE
-    2300008: ' Tube004'
-    2300010: Corner
-    2300012: box001
-    2300014: Box002
-    2300016: box002
-    2300018: Box003
-    2300020: box003
-    2300022: Box004
-    2300024: box004
-    2300026: Box005
-    2300028: button
-    2300030: button001
-    2300032: button002
-    2300034: button003
-    2300036: corner
-    2300038: corner001
-    2300040: corner002
-    2300042: corner003
+    2300004: ' Tube004'
+    2300006: box001
+    2300008: Box002
+    2300010: box002
+    2300012: Box003
+    2300014: box003
+    2300016: Box004
+    2300018: box004
+    2300020: Box005
+    2300022: button
+    2300024: button001
+    2300026: button002
+    2300028: button003
+    2300030: corner
+    2300032: corner001
+    2300034: corner002
+    2300036: corner003
+    2300038: Tube001
     3300000: ' Tube002'
     3300002: ' Tube003'
-    3300004: Tube001
-    3300006: BOX_MARBLE
-    3300008: ' Tube004'
-    3300010: Corner
-    3300012: box001
-    3300014: Box002
-    3300016: box002
-    3300018: Box003
-    3300020: box003
-    3300022: Box004
-    3300024: box004
-    3300026: Box005
-    3300028: button
-    3300030: button001
-    3300032: button002
-    3300034: button003
-    3300036: corner
-    3300038: corner001
-    3300040: corner002
-    3300042: corner003
+    3300004: ' Tube004'
+    3300006: box001
+    3300008: Box002
+    3300010: box002
+    3300012: Box003
+    3300014: box003
+    3300016: Box004
+    3300018: box004
+    3300020: Box005
+    3300022: button
+    3300024: button001
+    3300026: button002
+    3300028: button003
+    3300030: corner
+    3300032: corner001
+    3300034: corner002
+    3300036: corner003
+    3300038: Tube001
     4300000: Tube001
     4300002: ' Tube002'
     4300004: ' Tube003'
-    4300006: BOX_MARBLE
-    4300008: Corner
-    4300010: ' Tube004'
-    4300012: button
-    4300014: corner
-    4300016: button001
-    4300018: button002
-    4300020: corner001
-    4300022: corner002
-    4300024: Box002
-    4300026: Box003
-    4300028: Box004
-    4300030: box001
-    4300032: box002
-    4300034: box003
-    4300036: button003
-    4300038: corner003
-    4300040: Box005
-    4300042: box004
+    4300006: ' Tube004'
+    4300008: button
+    4300010: corner
+    4300012: button001
+    4300014: button002
+    4300016: corner001
+    4300018: corner002
+    4300020: Box002
+    4300022: Box003
+    4300024: Box004
+    4300026: box001
+    4300028: box002
+    4300030: box003
+    4300032: button003
+    4300034: corner003
+    4300036: Box005
+    4300038: box004
+    7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -152,7 +142,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 100
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -160,9 +150,9 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 0
+    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
@@ -177,7 +167,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -193,10 +183,10 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
