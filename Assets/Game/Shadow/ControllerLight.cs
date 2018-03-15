@@ -60,25 +60,6 @@ public class ControllerLight : MonoBehaviour
 
 	private void Update() 
 	{		
-		// user input
-		// --------------
-//		if (Input.GetKeyDown ("space")) 
-//		{
-//			rig.SwitchOn ();
-//		} 
-//		else if (Input.GetKeyUp ("space")) 
-//		{
-//			rig.SwitchOff ();
-//		}
-
-		if (Input.GetMouseButtonDown (0)) 
-		{
-			IntersectHotspots (Input.mousePosition);
-		}
-
-		// update player
-		// -------------
-		// TODO
 	}
 
 
@@ -108,20 +89,7 @@ public class ControllerLight : MonoBehaviour
 	}
 
 
-	private void IntersectHotspots(Vector3 sreenPosition) 
-	{		
-		Ray ray = camera.ScreenPointToRay(sreenPosition);
-		RaycastHit hit;
-		if (Physics.Raycast (ray, out hit, 1000f, layerHostpots))
-		{
-			Vector3 p = hit.transform.position;
-			Quaternion r = hit.transform.rotation;
 
-			rig.SetToolTransform (p, r);
-
-			robot.setTargetTransform (p, r);
-		}
-	}
 
 
 	private void IncreaseCount()
@@ -135,15 +103,6 @@ public class ControllerLight : MonoBehaviour
 
 	private void FinishGame()
 	{
-//		enabled = false; // stop updates
-//
-//		rig.SwitchOff ();
-//
-//		RemoveListeners ();
-//
-//		bottomBar.SetActive (false);
-//
-//		ShowScorePopup ();
 	}
 
 
@@ -166,5 +125,11 @@ public class ControllerLight : MonoBehaviour
 		//		popup.SetTitle();
 		//		popup.SetMessage();
 		popup.Show ();
+	}
+
+
+	public void OnDrag(Vector3 screenCursor)
+	{
+		rig.SetHotspotPosition (screenCursor, Vector3.zero);
 	}
 }

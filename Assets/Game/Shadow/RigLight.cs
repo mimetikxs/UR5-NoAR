@@ -9,9 +9,18 @@ using UnityEngine;
 
 public class RigLight : MonoBehaviour 
 {
-	//private Collider worldSphere;
-	private Transform toolTarget;
+	public Camera camera;
+
+	public float topPointOffsetY = 10f;
+
+	private Transform hotspot;
 	private FresnelTool fresnelTool;
+
+	private Collider worldSphere;
+	private Vector3 playerPos;
+	private Vector3 playerTopPoint;
+	private Plane groundPlane;
+
 
 	private bool isOn;
 
@@ -19,46 +28,50 @@ public class RigLight : MonoBehaviour
 	private void Awake()
 	{
 		fresnelTool = transform.Find ("Tool").GetComponent<FresnelTool> ();
-		toolTarget = transform.Find ("ToolTarget");
-		//worldSphere = transform.Find ("WorldSphere").GetComponent<Collider> ();
+		hotspot = transform.Find ("Hotspots/Hotspot");
+		worldSphere = transform.Find ("WorldSphere").GetComponent<Collider> ();
+
+		groundPlane = new Plane (Vector3.up, Vector3.zero);
+
+		SwitchOff ();
 	}
 
 
 	private void Start() 
 	{
-		SwitchOff ();
 	}
 
 
 	private void Update() 
 	{
-		// update sphere scale
-		//worldSphere.transform.localScale = new Vector3 (sphereScale, sphereScale, sphereScale);
-
-		if (isOn) {
-			// detect collision of water stream with a fire cluster
-			// if colliding, begin substracting damage from tree
-		} 
+		DrawDebug ();
 	}
 
 
-	public void SetToolTransform(Vector3 globalPosition, Quaternion globalRotation) 
-	{
-		toolTarget.position = globalPosition;
-		toolTarget.rotation = globalRotation;
+	private void DrawDebug() {
+//		Vector3 spotPosition = light.transform.position;
+//
+//		Debug.DrawLine (spotPosition, hitTop, Color.white);
+//		Debug.DrawLine (spotPosition, hitBottom, Color.green);
+//		Debug.DrawLine (spotPosition, hitLeft, Color.green);
+//		Debug.DrawLine (spotPosition, hitRight, Color.green);
+//		Debug.DrawLine (spotPosition, hitCenter, Color.white);
+
+		Debug.Log (playerTopPoint);
+
+		Debug.DrawLine (playerPos, playerTopPoint, Color.yellow);		
 	}
 
 
-	public Transform GetToolTransform()
+	public Transform GetHotspotTansform()
 	{
-		return toolTarget.transform;
+		return hotspot;
 	}
 
 
 	public void SwitchOn() 
 	{
 		isOn = true;
-
 		fresnelTool.SwitchOn ();
 	}
 
@@ -66,7 +79,32 @@ public class RigLight : MonoBehaviour
 	public void SwitchOff() 
 	{
 		isOn = false;
-
 		fresnelTool.SwitchOff ();
+	}
+
+
+	// calculate position of hotspot form the screen cursor
+	public void SetHotspotPosition(Vector3 screenCursor, Vector3 playerPosition)
+	{
+		playerPos = playerPosition;
+		playerTopPoint = playerPos + Vector3.up * topPointOffsetY;
+
+		Ray ray = camera.ScreenPointToRay(screenCursor);
+		RaycastHit hit;
+		if (worldSphere.Raycast (ray, out hit, 1000f))
+		{
+			// calculate orientation
+			// y axys is forward, z is down
+			Quaternion rotation = hotspot.transform.rotation;
+			Vector3 currDirection = Vector3.Normalize (rotation * Vector3.up);
+			Vector3 targetDirection = Vector3.Normalize (playerTopPoint - hit.point);
+
+//			rotation.SetFromToRotation(
+
+			hotspot.position = hit.point;
+//			hotspot.rotation.SetFromToRotation (currDirection, targetDirection);
+
+			hotspot.LookAt (playerTopPoint);
+		}
 	}
 }
