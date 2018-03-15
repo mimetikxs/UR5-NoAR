@@ -10,12 +10,10 @@ using UnityEngine;
 public class RigLight : MonoBehaviour 
 {
 	public Camera camera;
+	public Hotspot[] connections;
 
 	private FresnelTool fresnelTool;
-
 	private Hotspot selectedHotspot = null;
-
-	public Hotspot[] connections;
 
 
 	private void Awake()
@@ -23,12 +21,6 @@ public class RigLight : MonoBehaviour
 		fresnelTool = transform.Find ("Tool").GetComponent<FresnelTool> ();
 
 		SwitchOn ();
-	}
-
-
-	private void initHostpots()
-	{
-		
 	}
 
 
@@ -42,12 +34,13 @@ public class RigLight : MonoBehaviour
 		if (selectedHotspot == null)
 			return;
 
-		Vector3 selectedPos = selectedHotspot.transform.GetChild(1).position;
-		connections = selectedHotspot.connectedHostspots;
-
-		foreach (Hotspot hs in connections) 
+		//connections = selectedHotspot.connectedHostspots;
+		foreach (Hotspot connenction in connections) 
 		{
-			Debug.DrawLine (selectedPos, hs.transform.GetChild(1).position, Color.green);
+			Debug.DrawLine (
+				selectedHotspot.GetGroundPosition(), 
+				connenction.GetGroundPosition(), 
+				Color.green);
 		}
 	}
 
@@ -67,6 +60,20 @@ public class RigLight : MonoBehaviour
 	public void setActiveHostpot(Hotspot hotspot)
 	{
 		selectedHotspot = hotspot;
+		connections = selectedHotspot.connectedHostspots;
+
+		// disable all
+		Transform node = transform.Find("Hotspots");
+		foreach (Transform item in node) 
+		{
+			item.GetComponent<Hotspot> ().Hide ();
+		}
+
+		// enable selected
+		foreach (Hotspot connection in connections) 
+		{
+			connection.Show ();
+		}
 
 		// debug TODO: coment out for production
 		Transform t = hotspot.transform.Find("Transform").transform;

@@ -56,4 +56,21 @@ public class Hotspot : MonoBehaviour
 	void Update () 
 	{
 	}
+
+	public Vector3 GetGroundPosition()
+	{
+		return transform.GetChild(1).position;
+	}
+
+
+	public void Hide()
+	{
+		gameObject.SetActive (false);
+	}
+
+
+	public void Show()
+	{
+		gameObject.SetActive (true);
+	}
 }
