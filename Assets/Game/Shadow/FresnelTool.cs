@@ -48,13 +48,13 @@ public class FresnelTool : MonoBehaviour {
 	public void SwitchOn()
 	{
 		isOn = true;
-		spotLight.enabled = true;
+		//spotLight.enabled = true;
 	}
 
 
 	public void SwitchOff() 
 	{
 		isOn = false;
-		spotLight.enabled = false;
+		//spotLight.enabled = false;
 	}
 }

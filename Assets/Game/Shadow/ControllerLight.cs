@@ -22,7 +22,7 @@ public class ControllerLight : MonoBehaviour
 	public int startTime = 60;
 
 	private RigLight rig;
-	//private LanderBehaviour player;
+	private Explorer player;
 	private LayerMask layerHostpots;
 
 	// UI
@@ -36,7 +36,7 @@ public class ControllerLight : MonoBehaviour
 	private void Awake()
 	{
 		rig = gameWorld.Find ("RigLight").GetComponent<RigLight> ();
-		//player = gameWorld.Find ("Player").GetComponent<LanderBehaviour> ();
+		player = gameWorld.Find ("Player").GetComponent<Explorer> ();
 
 		layerHostpots = 1 << LayerMask.NameToLayer ("Hotspots");	
 
@@ -89,9 +89,6 @@ public class ControllerLight : MonoBehaviour
 	}
 
 
-
-
-
 	private void IncreaseCount()
 	{
 		itemCounter.count += 1;
@@ -128,8 +125,23 @@ public class ControllerLight : MonoBehaviour
 	}
 
 
-	public void OnDrag(Vector3 screenCursor)
+	public void OnActionDown()
 	{
-		rig.SetHotspotPosition (screenCursor, Vector3.zero);
+	}
+
+
+	public void OnActionUp()
+	{
+	}
+
+
+	public void OnHotspotClicked(Transform hotspotTransform)
+	{
+		Vector3 p = hotspotTransform.position;
+		Quaternion r = hotspotTransform.rotation;
+
+		rig.setActiveHostpot (hotspotTransform.parent.GetComponent<Hotspot>());
+
+		robot.setTargetTransform (p, r);
 	}
 }

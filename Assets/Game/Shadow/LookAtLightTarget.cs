@@ -51,4 +51,12 @@ public class LookAtLightTarget : MonoBehaviour
 	{
 		lightEnabled = val;
 	}
+
+
+	public void EnableLookAt(bool val)
+	{
+		lookAtEnabled = val;
+
+		//target.gameObject.SetActive (val);
+	}
 }
