@@ -10,7 +10,7 @@ using UnityEngine.EventSystems;
  * Manages the main game logic.
  */
 
-public class ControllerLightPc : MonoBehaviour 
+public class ControllerLight : MonoBehaviour 
 {
 	public Transform gameWorld;
 	public UR5Controller robot;
@@ -62,14 +62,14 @@ public class ControllerLightPc : MonoBehaviour
 	{		
 		// user input
 		// --------------
-		if (Input.GetKeyDown ("space")) 
-		{
-			rig.SwitchOn ();
-		} 
-		else if (Input.GetKeyUp ("space")) 
-		{
-			rig.SwitchOff ();
-		}
+//		if (Input.GetKeyDown ("space")) 
+//		{
+//			rig.SwitchOn ();
+//		} 
+//		else if (Input.GetKeyUp ("space")) 
+//		{
+//			rig.SwitchOff ();
+//		}
 
 		if (Input.GetMouseButtonDown (0)) 
 		{
