@@ -468,17 +468,31 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114698979332173548, guid: 4f998b33c8f6e4f359dece77dec81a34,
-        type: 2}
-      propertyPath: tcp
-      value: 
-      objectReference: {fileID: 1396750830}
     - target: {fileID: 114197742250800226, guid: 4f998b33c8f6e4f359dece77dec81a34,
         type: 2}
       propertyPath: camera
       value: 
       objectReference: {fileID: 1618961462}
-    m_RemovedComponents: []
+    - target: {fileID: 114698979332173548, guid: 4f998b33c8f6e4f359dece77dec81a34,
+        type: 2}
+      propertyPath: tcp
+      value: 
+      objectReference: {fileID: 1396750830}
+    - target: {fileID: 4958146021857016, guid: 4f998b33c8f6e4f359dece77dec81a34, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4933959535632916, guid: 4f998b33c8f6e4f359dece77dec81a34, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 123786677665971854, guid: 4f998b33c8f6e4f359dece77dec81a34,
+        type: 2}
+      propertyPath: m_FadeSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 123706265829961680, guid: 4f998b33c8f6e4f359dece77dec81a34, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 4f998b33c8f6e4f359dece77dec81a34, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &667574087
@@ -2240,7 +2254,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1227036860545236, guid: 0691e869f52334a39b8cc28eaefbcfd3, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1288112367688372, guid: 0691e869f52334a39b8cc28eaefbcfd3, type: 2}
       propertyPath: m_IsActive
@@ -2282,7 +2296,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1538968117915254, guid: 0691e869f52334a39b8cc28eaefbcfd3, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1985163163396240, guid: 0691e869f52334a39b8cc28eaefbcfd3, type: 2}
       propertyPath: m_IsActive
@@ -2491,7 +2505,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.9117647, g: 0.9117647, b: 0.9117647, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0

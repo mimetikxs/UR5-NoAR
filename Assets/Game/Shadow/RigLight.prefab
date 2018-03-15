@@ -69,10 +69,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4958146021857016}
-  - component: {fileID: 108143392565801492}
-  - component: {fileID: 123706265829961680}
+  - component: {fileID: 123786677665971854}
   m_Layer: 0
-  m_Name: Spotlight
+  m_Name: Flare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -849,6 +848,23 @@ GameObject:
   - component: {fileID: 23380648882936904}
   m_Layer: 8
   m_Name: LightTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1588749170504124
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4374704217136466}
+  - component: {fileID: 108143392565801492}
+  - component: {fileID: 123706265829961680}
+  m_Layer: 0
+  m_Name: Spotlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1933,6 +1949,19 @@ Transform:
   m_Father: {fileID: 4140123773670506}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4374704217136466
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1588749170504124}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -0.09, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4658921940588216}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &4385031668711822
 Transform:
   m_ObjectHideFlags: 1
@@ -2257,8 +2286,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4958146021857016}
+  - {fileID: 4374704217136466}
   - {fileID: 4933959535632916}
+  - {fileID: 4958146021857016}
   m_Father: {fileID: 4340053241733266}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
@@ -2558,12 +2588,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1046233335468392}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.09, z: 0}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.66400003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4658921940588216}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &4969189451260824
 Transform:
@@ -3877,7 +3907,7 @@ Light:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1046233335468392}
+  m_GameObject: {fileID: 1588749170504124}
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 0
@@ -4392,7 +4422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   connections: 1 8
-  connectedIds: 
+  connectedHostspots: []
 --- !u!114 &114145390683894164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4419,7 +4449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 8
   connections: 0 6
-  connectedIds: 
+  connectedHostspots: []
 --- !u!114 &114197742250800226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4432,6 +4462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 0}
+  connections: []
 --- !u!114 &114209720996057372
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4458,7 +4489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 7
   connections: 6 9
-  connectedIds: 
+  connectedHostspots: []
 --- !u!114 &114267616972580108
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4485,7 +4516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 12
   connections: 4 10 11
-  connectedIds: 
+  connectedHostspots: []
 --- !u!114 &114365106568674624
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4512,7 +4543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 4
   connections: 3 12
-  connectedIds: 
+  connectedHostspots: []
 --- !u!114 &114398826011482498
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4552,7 +4583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   connections: 0 2
-  connectedIds: 
+  connectedHostspots: []
 --- !u!114 &114453332113199104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4566,7 +4597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 9
   connections: 7 10
-  connectedIds: 
+  connectedHostspots: []
 --- !u!114 &114498635938837908
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4580,7 +4611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   connections: 2 4
-  connectedIds: 
+  connectedHostspots: []
 --- !u!114 &114653293783239408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4594,7 +4625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 5
   connections: 2 6 5
-  connectedIds: 
+  connectedHostspots: []
 --- !u!114 &114656664128009252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4608,7 +4639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   connections: 1 3 5
-  connectedIds: 
+  connectedHostspots: []
 --- !u!114 &114681997831029358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4622,7 +4653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 10
   connections: 9 11 12
-  connectedIds: 
+  connectedHostspots: []
 --- !u!114 &114682747154218548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4636,7 +4667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 11
   connections: 5 10 12
-  connectedIds: 
+  connectedHostspots: []
 --- !u!114 &114698979332173548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4662,7 +4693,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 6
   connections: 5 7 8
-  connectedIds: 
+  connectedHostspots: []
 --- !u!114 &114723049147876496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4729,6 +4760,21 @@ MonoBehaviour:
   lightEnabled: 0
   lookAtEnabled: 0
 --- !u!123 &123706265829961680
+LensFlare:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1588749170504124}
+  m_Enabled: 1
+  m_Flare: {fileID: 12100000, guid: f3cd23d6d3e3d490cb471c69069c97a1, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Brightness: 0.25
+  m_FadeSpeed: 2
+  m_IgnoreLayers:
+    serializedVersion: 2
+    m_Bits: 6
+  m_Directional: 0
+--- !u!123 &123786677665971854
 LensFlare:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

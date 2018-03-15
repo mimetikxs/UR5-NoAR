@@ -13,6 +13,10 @@ public class RigLight : MonoBehaviour
 
 	private FresnelTool fresnelTool;
 
+	private Hotspot selectedHotspot = null;
+
+	public Hotspot[] connections;
+
 
 	private void Awake()
 	{
@@ -35,6 +39,16 @@ public class RigLight : MonoBehaviour
 
 	private void Update() 
 	{
+		if (selectedHotspot == null)
+			return;
+
+		Vector3 selectedPos = selectedHotspot.transform.GetChild(1).position;
+		connections = selectedHotspot.connectedHostspots;
+
+		foreach (Hotspot hs in connections) 
+		{
+			Debug.DrawLine (selectedPos, hs.transform.GetChild(1).position, Color.green);
+		}
 	}
 
 
@@ -52,9 +66,9 @@ public class RigLight : MonoBehaviour
 
 	public void setActiveHostpot(Hotspot hotspot)
 	{
-		Debug.Log (hotspot.connections);
+		selectedHotspot = hotspot;
 
-// debug TODO: coment out for production
+		// debug TODO: coment out for production
 		Transform t = hotspot.transform.Find("Transform").transform;
 		fresnelTool.transform.position = t.position;
 		fresnelTool.transform.rotation = t.rotation;
