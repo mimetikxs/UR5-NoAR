@@ -759,12 +759,48 @@ Prefab:
     - target: {fileID: 198203545588209230, guid: 2580326ac52124beba660e363ece0281,
         type: 2}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 198203545588209230, guid: 2580326ac52124beba660e363ece0281,
         type: 2}
       propertyPath: randomSeed
-      value: 257405918
+      value: 878032060
+      objectReference: {fileID: 0}
+    - target: {fileID: 1067356440208342, guid: 2580326ac52124beba660e363ece0281, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198386240927804016, guid: 2580326ac52124beba660e363ece0281,
+        type: 2}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: -13.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 198386240927804016, guid: 2580326ac52124beba660e363ece0281,
+        type: 2}
+      propertyPath: randomSeed
+      value: 1082778527
+      objectReference: {fileID: 0}
+    - target: {fileID: 198386240927804016, guid: 2580326ac52124beba660e363ece0281,
+        type: 2}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 199786306773519306, guid: 2580326ac52124beba660e363ece0281,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 118f064e584eff84b854d0301bff8f4f, type: 3}
+    - target: {fileID: 4310934760563886, guid: 2580326ac52124beba660e363ece0281, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.847
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310934760563886, guid: 2580326ac52124beba660e363ece0281, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.004
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964814470824872, guid: 2580326ac52124beba660e363ece0281, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.014
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2580326ac52124beba660e363ece0281, type: 2}
@@ -859,6 +895,40 @@ Prefab:
     - target: {fileID: 4638815431003444, guid: 1fce929e1c7a48e49b16573228e51c6d, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198414304610800344, guid: 1fce929e1c7a48e49b16573228e51c6d,
+        type: 2}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1040935122030920, guid: 1fce929e1c7a48e49b16573228e51c6d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198414304610800344, guid: 1fce929e1c7a48e49b16573228e51c6d,
+        type: 2}
+      propertyPath: ShapeModule.radius.value
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 198414304610800344, guid: 1fce929e1c7a48e49b16573228e51c6d,
+        type: 2}
+      propertyPath: InitialModule.startSize.scalar
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 198414304610800344, guid: 1fce929e1c7a48e49b16573228e51c6d,
+        type: 2}
+      propertyPath: randomSeed
+      value: -1897203462
+      objectReference: {fileID: 0}
+    - target: {fileID: 198414304610800344, guid: 1fce929e1c7a48e49b16573228e51c6d,
+        type: 2}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198414304610800344, guid: 1fce929e1c7a48e49b16573228e51c6d,
+        type: 2}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1fce929e1c7a48e49b16573228e51c6d, type: 2}
