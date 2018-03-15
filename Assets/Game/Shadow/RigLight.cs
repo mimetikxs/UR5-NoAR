@@ -4,10 +4,7 @@ using UnityEngine;
 
 
 /*
- * Handles logic to extinguish fires.
- * Controls the state of the virtual tool.
- * 
- * TODO: control position of hotspots
+ * Controls the state of the virtual light.
  */
 
 public class RigLight : MonoBehaviour 
