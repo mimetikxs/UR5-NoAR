@@ -97,6 +97,7 @@ public class ControllerLight : MonoBehaviour
 
 	private void ShowActiveHotspot()
 	{
+		Debug.Log ("Target reached!");
 		rig.SetActiveHostpot (selectedHotspot);
 	}
 

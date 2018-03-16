@@ -9,13 +9,13 @@ public class Explorer : MonoBehaviour
 	private Vector3 target;
 
 	// delegated:
-	// triggered when waste is collected
 	public delegate void TargetReachedAction();			
 	public event TargetReachedAction OnTargetReached;
 	public delegate void OrbCollectedAction();
 	public event OrbCollectedAction OnOrbCollected;
 
 	public float distance;
+	private bool targetReached = false;
 
 
 	private void Awake()
@@ -40,12 +40,18 @@ public class Explorer : MonoBehaviour
 		Vector3 delta = target - position;
 		distance = Vector3.Magnitude (delta);
 
-		if (distance < 0.1f) 
+		if (distance < 2f) 
 		{
-			if (OnTargetReached != null)
-				OnTargetReached ();
+			if (!targetReached) 
+			{
+				targetReached = true;
+
+				if (OnTargetReached != null)
+					OnTargetReached ();
+			}
 		}
-		else 
+
+		if (distance > 0.1f) 
 		{
 			position += delta * speed;
 
@@ -72,5 +78,6 @@ public class Explorer : MonoBehaviour
 	public void SetTarget(Vector3 point)
 	{
 		target = point;
+		targetReached = false;
 	}
 }
