@@ -83,7 +83,7 @@ Transform:
   m_GameObject: {fileID: 1166191669610354}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.0260363, y: 2.026035, z: 2.026035}
   m_Children: []
   m_Father: {fileID: 4965397422464888}
   m_RootOrder: 1
@@ -95,8 +95,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1198479484187176}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0187101, y: 1.0187103, z: 1.0187103}
+  m_LocalPosition: {x: -0.6, y: 1.21, z: -1.54}
+  m_LocalScale: {x: 0.2372544, y: 0.23725446, z: 0.23725446}
   m_Children:
   - {fileID: 4133982835622578}
   - {fileID: 4146531003574416}
@@ -155,7 +155,7 @@ Light:
   m_Type: 2
   m_Color: {r: 0.99158216, g: 0.728, b: 0.3897059, a: 1}
   m_Intensity: 8.27
-  m_Range: 4.09
+  m_Range: 6.63
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -187,10 +187,10 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1198479484187176}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.93
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198633909017331108
 ParticleSystem:
@@ -252,7 +252,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1311560301
+  randomSeed: 1562680913
   InitialModule:
     serializedVersion: 3
     enabled: 1

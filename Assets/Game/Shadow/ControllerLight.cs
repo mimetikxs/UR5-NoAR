@@ -24,6 +24,7 @@ public class ControllerLight : MonoBehaviour
 	private RigLight rig;
 	private Explorer player;
 	private LayerMask layerHostpots;
+	private Hotspot selectedHotspot;
 
 	// UI
 	private GameObject scorePopup;
@@ -46,12 +47,15 @@ public class ControllerLight : MonoBehaviour
 		bottomBar = gameUI.Find ("BottomBar").gameObject;
 		itemCounter = bottomBar.transform.Find ("ItemCounter").GetComponent<ItemCounter> ();
 		countDown = bottomBar.transform.Find ("CountDown").GetComponent<CountDown> ();
+
+
+		selectedHotspot = rig.transform.Find ("Hotspots/Hotspot (5)").GetComponent<Hotspot> ();
 	}
 
 
 	private void Start() 
 	{
-		itemCountGoal = 5; //gameWorld.Find ("Waste").childCount;
+		itemCountGoal = gameWorld.Find ("Orbs").childCount;
 
 		countDown.startCount = startTime;
 		countDown.Play ();
@@ -77,15 +81,23 @@ public class ControllerLight : MonoBehaviour
 
 	private void AddListeners()
 	{
-		//player.OnWasteCollected += IncreaseCount;
+		player.OnTargetReached += ShowActiveHotspot;
+		player.OnOrbCollected += IncreaseCount;
 		countDown.OnCountdownFinished += FinishGame;
 	}
 
 
 	private void RemoveListeners()
 	{
-		//player.OnWasteCollected -= IncreaseCount;
+		player.OnTargetReached -= ShowActiveHotspot;
+		player.OnOrbCollected -= IncreaseCount;
 		countDown.OnCountdownFinished -= FinishGame;
+	}
+
+
+	private void ShowActiveHotspot()
+	{
+		rig.SetActiveHostpot (selectedHotspot);
 	}
 
 
@@ -100,6 +112,7 @@ public class ControllerLight : MonoBehaviour
 
 	private void FinishGame()
 	{
+		// TODO
 	}
 
 
@@ -127,11 +140,13 @@ public class ControllerLight : MonoBehaviour
 
 	public void OnActionDown()
 	{
+		// noop
 	}
 
 
 	public void OnActionUp()
 	{
+		// noop
 	}
 
 
@@ -143,7 +158,9 @@ public class ControllerLight : MonoBehaviour
 
 		player.SetTarget (hotspot.GetGroundPosition ());
 
-		rig.setActiveHostpot (hotspot);
+		rig.DisableHotspots ();
+
+		selectedHotspot = hotspot;
 
 		robot.setTargetTransform (p, r);
 	}
