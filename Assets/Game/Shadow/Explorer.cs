@@ -15,6 +15,8 @@ public class Explorer : MonoBehaviour
 	public delegate void OrbCollectedAction();
 	public event OrbCollectedAction OnOrbCollected;
 
+	public float distance;
+
 
 	private void Awake()
 	{
@@ -36,11 +38,20 @@ public class Explorer : MonoBehaviour
 	{
 		Vector3 position = transform.position;
 		Vector3 delta = target - position;
+		distance = Vector3.Magnitude (delta);
 
-		position += delta * speed;
+		if (distance < 0.1f) 
+		{
+			if (OnTargetReached != null)
+				OnTargetReached ();
+		}
+		else 
+		{
+			position += delta * speed;
 
-		transform.position = position;
-		transform.LookAt (target);
+			transform.position = position;
+			transform.LookAt (target);
+		}
 	}
 
 
@@ -51,8 +62,7 @@ public class Explorer : MonoBehaviour
 			other.GetComponent<WasteBehaviour> ().Remove ();
 
 			//collectedSound.Play ();
-
-			// trigger delegated 
+			
 			if (OnOrbCollected != null) 
 				OnOrbCollected();
 		}

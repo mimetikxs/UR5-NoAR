@@ -20,7 +20,7 @@ public class RigLight : MonoBehaviour
 	{
 		fresnelTool = transform.Find ("Tool").GetComponent<FresnelTool> ();
 
-		setActiveHostpot (transform.Find ("Hotspots/Hotspot (5)").GetComponent<Hotspot> ());
+		DisableHotspots ();
 
 		SwitchOn ();
 	}
@@ -33,9 +33,6 @@ public class RigLight : MonoBehaviour
 
 	private void Update() 
 	{
-//		if (selectedHotspot == null)
-//			return;
-
 		foreach (Hotspot connenction in connections) 
 		{
 			Debug.DrawLine (
@@ -56,21 +53,23 @@ public class RigLight : MonoBehaviour
 	{
 		fresnelTool.SwitchOff ();
 	}
+		
 
-
-	public void setActiveHostpot(Hotspot hotspot)
+	public void DisableHotspots()
 	{
-		selectedHotspot = hotspot;
-		connections = selectedHotspot.connectedHostspots;
-
-		// disable all
 		Transform node = transform.Find("Hotspots");
 		foreach (Transform item in node) 
 		{
 			item.GetComponent<Hotspot> ().Hide ();
 		}
+	}
 
-		// enable selected
+
+	public void SetActiveHostpot(Hotspot hotspot)
+	{
+		selectedHotspot = hotspot;
+		connections = selectedHotspot.connectedHostspots;
+
 		foreach (Hotspot connection in connections) 
 		{
 			connection.Show ();
