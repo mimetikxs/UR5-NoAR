@@ -576,7 +576,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1320864313247388}
   m_LocalRotation: {x: -0.010947859, y: -0.7071066, z: -0.70702195, w: 0.00059416005}
-  m_LocalPosition: {x: -0.01, y: 2.46, z: -0.07}
+  m_LocalPosition: {x: -0.004, y: 2.847, z: -0.07}
   m_LocalScale: {x: 1.3766148, y: 1.3766136, z: 1.376614}
   m_Children: []
   m_Father: {fileID: 4658921940588216}
@@ -855,7 +855,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1067356440208342}
   m_LocalRotation: {x: 0.0000061392793, y: -0.70710677, z: -0.70710677, w: -0.0000061392793}
-  m_LocalPosition: {x: -0.022, y: 1.51, z: -0.076}
+  m_LocalPosition: {x: -0.022, y: 1.014, z: -0.076}
   m_LocalScale: {x: 0.14285713, y: 0.1428572, z: 0.1428572}
   m_Children: []
   m_Father: {fileID: 4658921940588216}
@@ -1523,7 +1523,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 257405918
+  randomSeed: 594648687
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -2083,7 +2083,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 0
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4884,14 +4884,14 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1082778527
+  randomSeed: 1129708454
   InitialModule:
     serializedVersion: 3
     enabled: 1
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 2.2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4932,7 +4932,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -5
+      scalar: -13.28
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -8288,7 +8288,7 @@ ParticleSystemRenderer:
   m_Pivot: {x: 0, y: 0, z: 0}
   m_UseCustomVertexStreams: 0
   m_VertexStreams: 00010304
-  m_Mesh: {fileID: 4300000, guid: 7ee9c4c309f521641b753017b717ebed, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 118f064e584eff84b854d0301bff8f4f, type: 3}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
