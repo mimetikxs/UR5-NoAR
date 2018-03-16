@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4505029905594446}
   - component: {fileID: 33836709396345978}
-  - component: {fileID: 135729574157860896}
   - component: {fileID: 23995016443703834}
   m_Layer: 0
   m_Name: Bola_Azul
@@ -36,8 +35,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1079074580949560}
   m_LocalRotation: {x: -0, y: -0.9199074, z: -0, w: 0.3921358}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.4577346, y: 5.457739, z: 5.457739}
+  m_LocalPosition: {x: 0, y: 4.3, z: 0}
+  m_LocalScale: {x: 0.7796768, y: 0.7796769, z: 0.77967745}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -83,15 +82,3 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1079074580949560}
   m_Mesh: {fileID: 4300000, guid: e31f9854446e8214e866f8ec7193b7db, type: 3}
---- !u!135 &135729574157860896
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1079074580949560}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.33
-  m_Center: {x: 0, y: 0, z: 0}
