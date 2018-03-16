@@ -8,10 +8,16 @@ public class Explorer : MonoBehaviour
 
 	private Vector3 target;
 
+	// delegated:
+	// triggered when waste is collected
+	public delegate void TargetReachedAction();			
+	public event TargetReachedAction OnTargetReached;
+	public delegate void OrbCollectedAction();
+	public event OrbCollectedAction OnOrbCollected;
+
 
 	private void Awake()
 	{
-		//rb = transform.GetComponent<Rigidbody> ();
 		target = transform.position;
 	}
 
@@ -26,7 +32,7 @@ public class Explorer : MonoBehaviour
 	}
 
 
-	void FixedUpdate() 
+	private void FixedUpdate() 
 	{
 		Vector3 position = transform.position;
 		Vector3 delta = target - position;
@@ -35,6 +41,21 @@ public class Explorer : MonoBehaviour
 
 		transform.position = position;
 		transform.LookAt (target);
+	}
+
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.tag == "Waste") 
+		{
+			other.GetComponent<WasteBehaviour> ().Remove ();
+
+			//collectedSound.Play ();
+
+			// trigger delegated 
+			if (OnOrbCollected != null) 
+				OnOrbCollected();
+		}
 	}
 
 
