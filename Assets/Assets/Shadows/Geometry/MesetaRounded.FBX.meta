@@ -44,6 +44,9 @@ ModelImporter:
     100072: Rocks_Round_l_012
     100074: Rocks_Round_s_006
     100076: Rocks_Round_s_007
+    100078: Object001
+    100080: Object002
+    100082: Object003
     400000: Meseta Isla
     400002: //RootNode
     400004: mesetas
@@ -83,6 +86,9 @@ ModelImporter:
     400072: Rocks_Round_l_012
     400074: Rocks_Round_s_006
     400076: Rocks_Round_s_007
+    400078: Object001
+    400080: Object002
+    400082: Object003
     2100000: 01 - Default
     2100002: No Name
     2300000: Meseta Isla
@@ -123,6 +129,9 @@ ModelImporter:
     2300070: Rocks_Round_l_012
     2300072: Rocks_Round_s_006
     2300074: Rocks_Round_s_007
+    2300076: Object001
+    2300078: Object002
+    2300080: Object003
     3300000: Meseta Isla
     3300002: mesetas
     3300004: Rock_Arch_005
@@ -161,6 +170,9 @@ ModelImporter:
     3300070: Rocks_Round_l_012
     3300072: Rocks_Round_s_006
     3300074: Rocks_Round_s_007
+    3300076: Object001
+    3300078: Object002
+    3300080: Object003
     4300000: mesetas
     4300002: Meseta Isla
     4300004: Rock_Arch_02
@@ -199,6 +211,9 @@ ModelImporter:
     4300070: Rock_Flat_crk_m_008
     4300072: Rock_Round_crk_m_008
     4300074: Rocks_Round_s_007
+    4300076: Object001
+    4300078: Object002
+    4300080: Object003
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
