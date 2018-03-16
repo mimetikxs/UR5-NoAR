@@ -15,7 +15,6 @@ public class ControllerLight : MonoBehaviour
 	public Transform gameWorld;
 	public UR5Controller robot;
 	public Transform gameUI;
-	public Camera camera;
 
 	// game parameters
 	private int itemCountGoal;
@@ -97,7 +96,6 @@ public class ControllerLight : MonoBehaviour
 
 	private void ShowActiveHotspot()
 	{
-		Debug.Log ("Target reached!");
 		rig.SetActiveHostpot (selectedHotspot);
 	}
 
