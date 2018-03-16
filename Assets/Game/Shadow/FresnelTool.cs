@@ -34,8 +34,8 @@ public class FresnelTool : MonoBehaviour {
 	void Update() 
 	{
 		// TODO: re-enable for production
-		this.transform.position = tcp.position;
-		this.transform.rotation = tcp.rotation;
+//		this.transform.position = tcp.position;
+//		this.transform.rotation = tcp.rotation;
 	}
 
 

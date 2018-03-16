@@ -139,8 +139,11 @@ public class ControllerLight : MonoBehaviour
 	{
 		Vector3 p = hotspotTransform.position;
 		Quaternion r = hotspotTransform.rotation;
+		Hotspot hotspot = hotspotTransform.parent.GetComponent<Hotspot> ();
 
-		rig.setActiveHostpot (hotspotTransform.parent.GetComponent<Hotspot>());
+		player.SetTarget (hotspot.GetGroundPosition ());
+
+		rig.setActiveHostpot (hotspot);
 
 		robot.setTargetTransform (p, r);
 	}

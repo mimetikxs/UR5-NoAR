@@ -12,6 +12,9 @@ public class HotspotsDebug : MonoBehaviour
 	public bool autoLookAt = true;
 	private bool wasAutoLookAt = true;
 
+	public bool drawDirection = true;
+	private bool wasDrawDiretion = true;
+
 
 	void Start() 
 	{		
@@ -31,6 +34,12 @@ public class HotspotsDebug : MonoBehaviour
 		{
 			gameObject.BroadcastMessage ("EnableLookAt", autoLookAt);
 			wasAutoLookAt = autoLookAt;
+		}
+
+		if (drawDirection != wasDrawDiretion) 
+		{
+			gameObject.BroadcastMessage ("EnableDrawLine", drawDirection);
+			wasDrawDiretion = drawDirection;
 		}
 	}
 }

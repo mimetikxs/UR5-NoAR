@@ -20,6 +20,8 @@ public class RigLight : MonoBehaviour
 	{
 		fresnelTool = transform.Find ("Tool").GetComponent<FresnelTool> ();
 
+		setActiveHostpot (transform.Find ("Hotspots/Hotspot (5)").GetComponent<Hotspot> ());
+
 		SwitchOn ();
 	}
 
@@ -31,10 +33,9 @@ public class RigLight : MonoBehaviour
 
 	private void Update() 
 	{
-		if (selectedHotspot == null)
-			return;
+//		if (selectedHotspot == null)
+//			return;
 
-		//connections = selectedHotspot.connectedHostspots;
 		foreach (Hotspot connenction in connections) 
 		{
 			Debug.DrawLine (
@@ -76,8 +77,8 @@ public class RigLight : MonoBehaviour
 		}
 
 		// debug TODO: coment out for production
-//		Transform t = hotspot.transform.Find("Transform").transform;
-//		fresnelTool.transform.position = t.position;
-//		fresnelTool.transform.rotation = t.rotation;
+		Transform t = hotspot.transform.Find("Transform").transform;
+		fresnelTool.transform.position = t.position;
+		fresnelTool.transform.rotation = t.rotation;
 	}
 }

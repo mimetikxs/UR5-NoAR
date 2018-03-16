@@ -14,6 +14,8 @@ public class LookAtLightTarget : MonoBehaviour
 
 	public bool lookAtEnabled = true;
 
+	public bool drawDirection = true;
+
 	private Transform target;
 	private GameObject debugLight;
 
@@ -44,6 +46,15 @@ public class LookAtLightTarget : MonoBehaviour
 			transform.LookAt (target.position);
 			transform.Rotate (90f, 0f, 0f);
 		}
+
+		if (drawDirection) 
+		{
+			Debug.DrawLine (
+				debugLight.transform.position,
+				target.position,
+				Color.yellow
+			);
+		}
 	}
 
 
@@ -56,7 +67,11 @@ public class LookAtLightTarget : MonoBehaviour
 	public void EnableLookAt(bool val)
 	{
 		lookAtEnabled = val;
+	}
 
-		//target.gameObject.SetActive (val);
+
+	public void EnableDrawLine(bool val)
+	{
+		drawDirection = val;
 	}
 }
