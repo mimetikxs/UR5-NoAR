@@ -28,8 +28,8 @@ public class Bouncer : MonoBehaviour
 
 		other.AddForce(contact.normal * (-strength));
 
-		//Instantiate (fxPrefab, transform.position, Quaternion.identity);
-		Instantiate(fxPrefab, this.transform);
+		if (fxPrefab != null)
+			Instantiate(fxPrefab, this.transform);
 	}
 
 

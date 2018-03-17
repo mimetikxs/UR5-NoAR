@@ -93,7 +93,7 @@ public class Ball : MonoBehaviour
 
 	private void EvaluateBin(string binName)
 	{
-		rb.constraints = RigidbodyConstraints.FreezeAll;
+		rb.isKinematic = true;
 		rb.velocity = Vector3.zero;
 		rb.angularVelocity = Vector3.zero;
 
@@ -117,12 +117,15 @@ public class Ball : MonoBehaviour
 
 	public void Reset()
 	{
+		rb.isKinematic = true;
+		rb.velocity = Vector3.zero;
+		rb.angularVelocity = Vector3.zero;
+
 		timeInBin = 0f;
 		isFinished = false;
 
 		// randomize target bin
 		targetBin = binNames[(int)(Random.Range(0, binNames.Length))];
-
 		switch (targetBin) {
 		case "BlueBin":
 			SetColor (new Color (8f, 134f, 186f));
@@ -139,9 +142,6 @@ public class Ball : MonoBehaviour
 
 	public void Release()
 	{
-		rb.velocity = Vector3.zero;
-		rb.angularVelocity = Vector3.zero;
-
-		rb.constraints = RigidbodyConstraints.None;
+		rb.isKinematic = false;
 	}
 }

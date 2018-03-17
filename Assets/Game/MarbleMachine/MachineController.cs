@@ -6,14 +6,18 @@ public class MachineController : MonoBehaviour
 {
 	// game parameters
 	public int startTime = 60;
-	private int itemCountGoal;
+	private int itemCountGoal = 5;
 	public Vector3 gravity = new Vector3();
 
 	// game objects
+	public Bins bins;
 	public Ball ball;
-//	public PickerTool tool;
-	public UR5Controller robot;
+	public RigPicker rig;
 	public Transform gameUI;
+
+	// state
+	private enum State { Idle, Transporting };
+	private State state;
 
 	// UI
 	private GameObject scorePopup;
@@ -30,9 +34,6 @@ public class MachineController : MonoBehaviour
 	{
 		Physics.gravity = gravity;
 
-		// testing
-		ballInitialPos = ball.transform.position;
-
 		// ui references
 		scorePopup = gameUI.Find("ScorePopup").gameObject;
 		lostTrackingPopup = gameUI.Find ("LostTrackingPopup").gameObject;
@@ -44,14 +45,33 @@ public class MachineController : MonoBehaviour
 
 	private void Start() 
 	{
+		itemCounter.count = 0;
+
+		countDown.startCount = startTime;
+		countDown.Play ();
+
+		// game specific
+		rig.GoToHome ();
+		ResetBall ();
 	}
 
 
 	private void Update() 
 	{
-		// check if ball felt outside the machine
-		if (ball.transform.position.y < 0f) {
-			ResetBall ();
+	}
+
+
+	private void FixedUpdate()
+	{
+		if (state == State.Transporting) 
+		{
+			ball.transform.position = rig.GetPickerPosition ();
+		}
+		else 
+		{
+			// check if ball felt outside the machine
+			if (ball.transform.position.y < 0f)
+				ResetBall ();
 		}
 	}
 
@@ -72,6 +92,8 @@ public class MachineController : MonoBehaviour
 	{
 		ball.OnGoodBin += OnGoodBin;
 		ball.OnBadBin += OnBadBin;
+
+		rig.OnTargetReached += ReleaseBall;
 	}
 
 
@@ -79,33 +101,65 @@ public class MachineController : MonoBehaviour
 	{
 		ball.OnGoodBin -= OnGoodBin;
 		ball.OnBadBin -= OnBadBin;
+
+		rig.OnTargetReached -= ReleaseBall;
+	}
+
+
+	private void IncreaseCounter()
+	{
+		itemCounter.count += 1;
+
+		if (itemCounter.count == itemCountGoal)
+			FinishGame ();
 	}
 
 
 	private void OnGoodBin()
 	{
-		Debug.Log ("GOOD");
+		IncreaseCounter ();
+		PlayBinFx (true);
 
-		itemCounter.count += 1;
-
-		if (itemCounter.count == itemCountGoal)
-			FinishGame ();
-
-
+		Invoke("ResetBall", 1.5f);
 	}
 
 
 	private void OnBadBin()
 	{
-		Debug.Log ("BAD");
+		PlayBinFx (false);
+
+		Invoke("ResetBall", 1.5f);
+	}
+
+
+	private void PlayBinFx(bool isGood)
+	{
+		Color color = new Color ();
+
+		bins.Blink (isGood, 5);
 	}
 
 
 	private void ResetBall()
 	{
-		ball.transform.position = ballInitialPos;
+		// put the ball into the picker
+		state = State.Transporting;
 		ball.Reset ();
-		ball.Release ();
+		rig.EnableHotspots();
+	}
+
+
+	private void ReleaseBall()
+	{
+		state = State.Idle;
+		ball.Release();
+		Invoke("SendRigHome", 1.5f);
+	}
+
+
+	private void SendRigHome()
+	{
+		rig.GoToHome ();
 	}
 
 
@@ -117,22 +171,20 @@ public class MachineController : MonoBehaviour
 
 	public void OnActionDown()
 	{
-		//magnetTool.SwitchOn ();
-		ResetBall();
+		// noop
 	}
 
 
 	public void OnActionUp()
 	{
-		//magnetTool.SwitchOff ();
+		// noop
 	}
 
 
 	public void OnHotspotClicked(Transform hotspotTransform)
 	{
-//		Vector3 p = hotspotTransform.position;
-//		Quaternion r = hotspotTransform.rotation;
-//
-//		robot.setTargetTransform (p, r);
+		Vector3 p = hotspotTransform.position;
+		Quaternion r = hotspotTransform.rotation;
+		rig.SetTargetTransform (p, r);
 	}
 }
