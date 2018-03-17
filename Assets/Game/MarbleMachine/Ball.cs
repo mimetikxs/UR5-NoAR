@@ -21,12 +21,18 @@ public class Ball : MonoBehaviour
 	public delegate void BadBinAction();			
 	public event BadBinAction OnBadBin;
 
+	// sounds
+	public AudioClip[] pinballSounds;
+	private AudioSource audio;
+
 	// testing
 	Vector3 initialPos;
 
 
 	void Awake()
 	{
+		audio = GetComponent<AudioSource> ();
+
 		rb = transform.GetComponent<Rigidbody> ();
 
 		initialPos = transform.position;
@@ -80,6 +86,17 @@ public class Ball : MonoBehaviour
 
 				EvaluateBin (collider.name);
 			}
+		}
+	}
+
+
+	void OnCollisionEnter(Collision collision)
+	{
+		if (collision.transform.tag == "Bouncer") 
+		{
+			int ran = Random.Range (0, 3);
+			audio.clip = pinballSounds [ran];
+			audio.Play ();
 		}
 	}
 

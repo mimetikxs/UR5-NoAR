@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Bouncer : MonoBehaviour 
 {
+	public ParticleSystem fxPrefab;
+
 	private float strength = 2000f;
 	private Collider collider;
 
@@ -33,6 +35,8 @@ public class Bouncer : MonoBehaviour
 
 		other.AddForce(contact.normal * (-strength));
 
+		//Instantiate (fxPrefab, transform.position, Quaternion.identity);
+		Instantiate(fxPrefab, this.transform);
 	}
 
 

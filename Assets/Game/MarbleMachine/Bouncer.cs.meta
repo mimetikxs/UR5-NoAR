@@ -5,7 +5,9 @@ licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - fxPrefab: {fileID: 198236534690738110, guid: c3185d5c08361458fa6cb0492c9a3bcc,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
