@@ -158,14 +158,6 @@ Prefab:
       propertyPath: attractor
       value: 
       objectReference: {fileID: 936313872}
-    - target: {fileID: 4845471201910710, guid: fb56998ff25944ea0b23bbfde1a1c1ad, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4845471201910710, guid: fb56998ff25944ea0b23bbfde1a1c1ad, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fb56998ff25944ea0b23bbfde1a1c1ad, type: 2}
   m_IsPrefabParent: 0
@@ -1408,7 +1400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff7d9deea9604a4a97a9b065c7eeca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 3000
+  strength: 2500
   minDist: 10
   maxDist: 500
 --- !u!1001 &970426133
