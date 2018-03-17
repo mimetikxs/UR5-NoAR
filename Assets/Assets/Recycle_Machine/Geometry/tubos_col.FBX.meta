@@ -10,11 +10,13 @@ ModelImporter:
     100004: ' Tube004_col'
     100006: Tube001_col
     100008: //RootNode
+    100010: Borde
     400000: ' Tube002_col'
     400002: ' Tube003_col'
     400004: ' Tube004_col'
     400006: Tube001_col
     400008: //RootNode
+    400010: Borde
     2100000: 01 - Default
     2100002: 'Material #88'
     2100004: 'Material #89'
@@ -22,14 +24,17 @@ ModelImporter:
     2300002: ' Tube003_col'
     2300004: ' Tube004_col'
     2300006: Tube001_col
+    2300008: Borde
     3300000: ' Tube002_col'
     3300002: ' Tube003_col'
     3300004: ' Tube004_col'
     3300006: Tube001_col
+    3300008: Borde
     4300000: Tube001_col
     4300002: ' Tube002_col'
     4300004: ' Tube003_col'
     4300006: ' Tube004_col'
+    4300008: Borde
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
