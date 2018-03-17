@@ -51,7 +51,7 @@ public class MachineController : MonoBehaviour
 	{
 		// check if ball felt outside the machine
 		if (ball.transform.position.y < 0f) {
-			OnActionDown ();
+			ResetBall ();
 		}
 	}
 
@@ -77,13 +77,15 @@ public class MachineController : MonoBehaviour
 
 	private void RemoveListeners()
 	{
-		ball.OnGoodBin -= IncreaseCount;
+		ball.OnGoodBin -= OnGoodBin;
 		ball.OnBadBin -= OnBadBin;
 	}
 
 
 	private void OnGoodBin()
 	{
+		Debug.Log ("GOOD");
+
 		itemCounter.count += 1;
 
 		if (itemCounter.count == itemCountGoal)
@@ -95,7 +97,7 @@ public class MachineController : MonoBehaviour
 
 	private void OnBadBin()
 	{
-
+		Debug.Log ("BAD");
 	}
 
 
@@ -116,6 +118,7 @@ public class MachineController : MonoBehaviour
 	public void OnActionDown()
 	{
 		//magnetTool.SwitchOn ();
+		ResetBall();
 	}
 
 

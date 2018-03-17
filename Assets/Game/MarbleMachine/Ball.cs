@@ -94,6 +94,8 @@ public class Ball : MonoBehaviour
 	private void EvaluateBin(string binName)
 	{
 		rb.constraints = RigidbodyConstraints.FreezeAll;
+		rb.velocity = Vector3.zero;
+		rb.angularVelocity = Vector3.zero;
 
 		if (binName == targetBin) {
 			if (OnGoodBin != null)
@@ -138,6 +140,8 @@ public class Ball : MonoBehaviour
 	public void Release()
 	{
 		rb.velocity = Vector3.zero;
+		rb.angularVelocity = Vector3.zero;
+
 		rb.constraints = RigidbodyConstraints.None;
 	}
 }
