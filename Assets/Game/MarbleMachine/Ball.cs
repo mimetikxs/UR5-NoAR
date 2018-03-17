@@ -25,9 +25,6 @@ public class Ball : MonoBehaviour
 	public AudioClip[] pinballSounds;
 	private AudioSource audio;
 
-	// testing
-	Vector3 initialPos;
-
 
 	void Awake()
 	{
@@ -35,18 +32,11 @@ public class Ball : MonoBehaviour
 
 		rb = transform.GetComponent<Rigidbody> ();
 
-		initialPos = transform.position;
-
 		Reset ();
 	}
 
 
 	void Start() 
-	{
-	}
-
-
-	void Update() 
 	{
 	}
 
@@ -80,7 +70,7 @@ public class Ball : MonoBehaviour
 		{
 			timeInBin += Time.deltaTime;
 
-			if (timeInBin > 3f  &&  !isFinished) 
+			if (timeInBin > 2f  &&  !isFinished) 
 			{
 				isFinished = true;
 
@@ -142,16 +132,11 @@ public class Ball : MonoBehaviour
 			SetColor (new Color (12f, 143f, 1f));
 			break;
 		}
-
-		// testing
-		Release();
 	}
 
 
 	public void Release()
 	{
-		transform.position = initialPos;
-
 		rb.velocity = Vector3.zero;
 		rb.constraints = RigidbodyConstraints.None;
 	}

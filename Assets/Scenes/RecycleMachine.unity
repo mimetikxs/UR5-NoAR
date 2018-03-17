@@ -174,7 +174,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -198,7 +198,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!1001 &20202570
 Prefab:
   m_ObjectHideFlags: 0
@@ -1113,6 +1113,7 @@ GameObject:
   - component: {fileID: 736244406}
   - component: {fileID: 736244405}
   - component: {fileID: 736244407}
+  - component: {fileID: 736244408}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1158,6 +1159,86 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 1618961462}
+--- !u!82 &736244408
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 736244404}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &744522245
 GameObject:
   m_ObjectHideFlags: 0
@@ -1391,7 +1472,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &894776334
 GameObject:
   m_ObjectHideFlags: 0
@@ -1562,46 +1643,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1079346353}
     m_Modifications:
-    - target: {fileID: 114007007689032624, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114253749166103708, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114241691670665202, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114472719905609262, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114817831348675642, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114549561337647964, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114027634503728898, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114730968161127896, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4370906807231192, guid: 0fb90ecc82177a844b566abbd25e52f1, type: 2}
       propertyPath: m_LocalPosition.x
       value: -0.011889
@@ -1633,158 +1674,6 @@ Prefab:
     - target: {fileID: 4370906807231192, guid: 0fb90ecc82177a844b566abbd25e52f1, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114007007689032624, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 701aa724978b2429cbd9406b331e5def, type: 3}
-    - target: {fileID: 114253749166103708, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 701aa724978b2429cbd9406b331e5def, type: 3}
-    - target: {fileID: 114241691670665202, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 701aa724978b2429cbd9406b331e5def, type: 3}
-    - target: {fileID: 114472719905609262, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 701aa724978b2429cbd9406b331e5def, type: 3}
-    - target: {fileID: 114817831348675642, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 701aa724978b2429cbd9406b331e5def, type: 3}
-    - target: {fileID: 114549561337647964, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 701aa724978b2429cbd9406b331e5def, type: 3}
-    - target: {fileID: 114007007689032624, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 410ef067e49f842d2aae69c474ee46a6, type: 3}
-    - target: {fileID: 114253749166103708, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 410ef067e49f842d2aae69c474ee46a6, type: 3}
-    - target: {fileID: 114241691670665202, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 410ef067e49f842d2aae69c474ee46a6, type: 3}
-    - target: {fileID: 114472719905609262, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 410ef067e49f842d2aae69c474ee46a6, type: 3}
-    - target: {fileID: 114817831348675642, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 410ef067e49f842d2aae69c474ee46a6, type: 3}
-    - target: {fileID: 114549561337647964, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 410ef067e49f842d2aae69c474ee46a6, type: 3}
-    - target: {fileID: 114007007689032624, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 8afb0b64e9bd94509ba3bbbcec7ba1f8, type: 3}
-    - target: {fileID: 114253749166103708, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 8afb0b64e9bd94509ba3bbbcec7ba1f8, type: 3}
-    - target: {fileID: 114241691670665202, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 8afb0b64e9bd94509ba3bbbcec7ba1f8, type: 3}
-    - target: {fileID: 114472719905609262, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 8afb0b64e9bd94509ba3bbbcec7ba1f8, type: 3}
-    - target: {fileID: 114817831348675642, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 8afb0b64e9bd94509ba3bbbcec7ba1f8, type: 3}
-    - target: {fileID: 114549561337647964, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 8afb0b64e9bd94509ba3bbbcec7ba1f8, type: 3}
-    - target: {fileID: 114027634503728898, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 701aa724978b2429cbd9406b331e5def, type: 3}
-    - target: {fileID: 114730968161127896, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 701aa724978b2429cbd9406b331e5def, type: 3}
-    - target: {fileID: 114027634503728898, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 410ef067e49f842d2aae69c474ee46a6, type: 3}
-    - target: {fileID: 114730968161127896, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 410ef067e49f842d2aae69c474ee46a6, type: 3}
-    - target: {fileID: 114027634503728898, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 8afb0b64e9bd94509ba3bbbcec7ba1f8, type: 3}
-    - target: {fileID: 114730968161127896, guid: 0fb90ecc82177a844b566abbd25e52f1,
-        type: 2}
-      propertyPath: pinballSounds.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 8afb0b64e9bd94509ba3bbbcec7ba1f8, type: 3}
-    - target: {fileID: 1577574568214222, guid: 0fb90ecc82177a844b566abbd25e52f1, type: 2}
-      propertyPath: m_TagString
-      value: Bouncer
-      objectReference: {fileID: 0}
-    - target: {fileID: 1708560056246976, guid: 0fb90ecc82177a844b566abbd25e52f1, type: 2}
-      propertyPath: m_TagString
-      value: Bouncer
-      objectReference: {fileID: 0}
-    - target: {fileID: 1956716051974588, guid: 0fb90ecc82177a844b566abbd25e52f1, type: 2}
-      propertyPath: m_TagString
-      value: Bouncer
-      objectReference: {fileID: 0}
-    - target: {fileID: 1529916640989932, guid: 0fb90ecc82177a844b566abbd25e52f1, type: 2}
-      propertyPath: m_TagString
-      value: Bouncer
-      objectReference: {fileID: 0}
-    - target: {fileID: 1203452792671768, guid: 0fb90ecc82177a844b566abbd25e52f1, type: 2}
-      propertyPath: m_TagString
-      value: Bouncer
-      objectReference: {fileID: 0}
-    - target: {fileID: 1131746589101540, guid: 0fb90ecc82177a844b566abbd25e52f1, type: 2}
-      propertyPath: m_TagString
-      value: Bouncer
-      objectReference: {fileID: 0}
-    - target: {fileID: 1693125108036202, guid: 0fb90ecc82177a844b566abbd25e52f1, type: 2}
-      propertyPath: m_TagString
-      value: Bouncer
-      objectReference: {fileID: 0}
-    - target: {fileID: 1571942340159222, guid: 0fb90ecc82177a844b566abbd25e52f1, type: 2}
-      propertyPath: m_TagString
-      value: Bouncer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0fb90ecc82177a844b566abbd25e52f1, type: 2}
@@ -2229,91 +2118,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4092906586070976, guid: 0691e869f52334a39b8cc28eaefbcfd3,
     type: 2}
   m_PrefabInternal: {fileID: 1363546601}
---- !u!1 &1479537869 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1813660551071070, guid: 0fb90ecc82177a844b566abbd25e52f1,
-    type: 2}
-  m_PrefabInternal: {fileID: 970426133}
---- !u!82 &1479537871
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1479537869}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c5c869bbab9524af3926d13f4c49dc33, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!114 &1536942846 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114499054989129240, guid: fb56998ff25944ea0b23bbfde1a1c1ad,

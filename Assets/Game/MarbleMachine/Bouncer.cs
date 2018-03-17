@@ -18,13 +18,6 @@ public class Bouncer : MonoBehaviour
 
 	void Start() 
 	{
-		
-	}
-	
-
-	void Update() 
-	{
-		
 	}
 
 
