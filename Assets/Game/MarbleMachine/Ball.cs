@@ -70,7 +70,7 @@ public class Ball : MonoBehaviour
 		{
 			timeInBin += Time.deltaTime;
 
-			if (timeInBin > 2f  &&  !isFinished) 
+			if (timeInBin > 1f  &&  !isFinished) 
 			{
 				isFinished = true;
 

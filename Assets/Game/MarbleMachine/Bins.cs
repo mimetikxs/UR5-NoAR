@@ -44,8 +44,6 @@ public class Bins : MonoBehaviour
 
 	private IEnumerator DoBlink()
 	{
-		Debug.Log (blinkCount);
-
 		while (blinkCount < totalBlinks)
 		{
 			Color c = (blinkCount % 2 == 0) ? blinkColor : initialEmissiveColor;
