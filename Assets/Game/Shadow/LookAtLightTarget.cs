@@ -10,10 +10,7 @@ using UnityEngine;
 public class LookAtLightTarget : MonoBehaviour 
 {
 	public bool lightEnabled = false;
-	private bool wasLightEnabled = true;
-
 	public bool lookAtEnabled = true;
-
 	public bool drawDirection = true;
 
 	private Transform target;
@@ -29,18 +26,12 @@ public class LookAtLightTarget : MonoBehaviour
 
 	void Start () 
 	{
+		debugLight.SetActive (lightEnabled);
 	}
 	
 
 	void Update () 
 	{
-		// only act when dirty
-		if (lightEnabled != wasLightEnabled) 
-		{
-			debugLight.SetActive (lightEnabled);
-			wasLightEnabled = lightEnabled;
-		}
-
 		if (lookAtEnabled) 
 		{
 			transform.LookAt (target.position);
@@ -58,9 +49,19 @@ public class LookAtLightTarget : MonoBehaviour
 	}
 
 
+	void OnValidate()
+	{
+		if (debugLight)
+			debugLight.SetActive (lightEnabled);
+	}
+
+
 	public void EnableLight(bool val)
 	{
 		lightEnabled = val;
+
+		if (debugLight)
+			debugLight.SetActive (lightEnabled);
 	}
 
 

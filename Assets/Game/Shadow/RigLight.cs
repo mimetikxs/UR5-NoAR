@@ -75,9 +75,11 @@ public class RigLight : MonoBehaviour
 			connection.Show ();
 		}
 
-		// debug TODO: coment out for production
+		// debug /////////////
+		// TODO: coment out for production
 		Transform t = hotspot.transform.Find("Transform").transform;
 		fresnelTool.transform.position = t.position;
 		fresnelTool.transform.rotation = t.rotation;
+		/////////////////////
 	}
 }
