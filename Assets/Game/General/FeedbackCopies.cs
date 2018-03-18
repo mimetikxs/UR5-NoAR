@@ -5,8 +5,8 @@ using UnityEngine;
 public class FeedbackCopies {
 
 	private static string[] titles = {
-		"Sorry, not very well",
-		"Not bad :)",
+		"Not very well",
+		"Not bad",
 		"Well done!"
 	};
 		
@@ -82,7 +82,7 @@ public class FeedbackCopies {
 
 	public static string GetTitle (int stars)
 	{
-		int index;
+		int index = 0;
 		if (stars <= 2)
 			index = 0;
 		else if (stars <= 4)

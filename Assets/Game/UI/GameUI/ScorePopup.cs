@@ -10,28 +10,48 @@ using TMPro;
 
 public class ScorePopup : MonoBehaviour 
 {
-//	public void SetTitle(string title)
-//	{
-//	}
+	//public Sprite starImageLine;
+	public Sprite starImageFill;
 
 
-	public void SetScore(float score)
+	void Start() 
 	{
-		// TODO: render stars based on score
-		// 		 set the title
 	}
 
 
-	public void SetMessage(string message)
+	void Update() 
 	{
-		
+	}
+
+
+	public void SetTitle(string text)
+	{
+		TextMeshProUGUI textTitle = transform.Find("Title").GetComponent<TextMeshProUGUI> ();
+		textTitle.text = text;
+	}
+
+
+	public void SetMessage(string text)
+	{
+		TextMeshProUGUI textMessage = transform.Find("Message").GetComponent<TextMeshProUGUI> ();
+		textMessage.text = text;
+	}
+
+
+	public void SetStars(int numStars)
+	{
+		Transform stars = transform.Find ("Stars");
+		for (int i = 0; i < 5; i++) {
+			if (i < numStars) {
+				stars.GetChild (i).GetComponent<Image> ().sprite = starImageFill;
+			}
+		}
 	}
 
 
 	public void Show() 
 	{
 		this.gameObject.SetActive (true);
-
 		// TODO: fadein
 	}
 
