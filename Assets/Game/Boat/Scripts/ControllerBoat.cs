@@ -102,15 +102,13 @@ public class ControllerBoat : MonoBehaviour
 
 	private void FinishGame()
 	{
-//		enabled = false; // stop updates
-//
-//		rig.SwitchOff ();
-//
-//		RemoveListeners ();
-//
-//		bottomBar.SetActive (false);
-//
-//		ShowScorePopup ();
+		RemoveListeners ();
+
+		gameWorld.gameObject.SetActive (false); // disable game node
+
+		bottomBar.SetActive (false);
+
+		ShowScorePopup ();
 	}
 
 
@@ -124,14 +122,14 @@ public class ControllerBoat : MonoBehaviour
 		float timePerformance = countDown.GetCount() / countDown.startCount;
 		float collectionPerformance = itemCounter.count / itemCountGoal;
 		float score = timePerformance * timeWeight + collectionPerformance * collectionWeight;
+		int stars = (int)(score * 5f);
 
-		// TODO: logic to set the text based on score. Read text from an xml
-		string title;
-		string message;
+		string title = FeedbackCopies.GetTitle (stars);
+		string message = FeedbackCopies.GetFeedback ("LIGHT", stars);
 
-		popup.SetScore (score);
-		//		popup.SetTitle();
-		//		popup.SetMessage();
+		popup.SetStars (stars);
+		popup.SetTitle(title);
+		popup.SetMessage(message);
 		popup.Show ();
 	}
 
