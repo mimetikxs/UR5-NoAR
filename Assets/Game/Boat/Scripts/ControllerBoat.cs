@@ -119,10 +119,13 @@ public class ControllerBoat : MonoBehaviour
 		//set the score
 		float timeWeight = 0.2f;
 		float collectionWeight = 0.8f;
-		float timePerformance = countDown.GetCount() / countDown.startCount;
-		float collectionPerformance = itemCounter.count / itemCountGoal;
+		float timePerformance = (float)countDown.GetCount() / (float)countDown.startCount;
+		float collectionPerformance = (float)itemCounter.count / (float)itemCountGoal;
 		float score = timePerformance * timeWeight + collectionPerformance * collectionWeight;
 		int stars = (int)(score * 5f);
+
+		Debug.Log (itemCounter.count);
+		Debug.Log (itemCountGoal);
 
 		string title = FeedbackCopies.GetTitle (stars);
 		string message = FeedbackCopies.GetFeedback ("LIGHT", stars);
