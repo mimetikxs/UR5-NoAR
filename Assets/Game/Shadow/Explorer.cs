@@ -7,6 +7,7 @@ public class Explorer : MonoBehaviour
 	public float speed = 0.02f;
 
 	private Vector3 target;
+	private AudioSource collectedSound;
 
 	// delegated:
 	public delegate void TargetReachedAction();			
@@ -21,6 +22,8 @@ public class Explorer : MonoBehaviour
 	private void Awake()
 	{
 		target = transform.position;
+
+		collectedSound = GetComponent<AudioSource>();
 	}
 
 
@@ -65,9 +68,9 @@ public class Explorer : MonoBehaviour
 	{
 		if (other.tag == "Waste") 
 		{
-			other.GetComponent<WasteBehaviour> ().Remove ();
+			other.GetComponent<Orb> ().Remove ();
 
-			//collectedSound.Play ();
+			collectedSound.Play ();
 			
 			if (OnOrbCollected != null) 
 				OnOrbCollected();

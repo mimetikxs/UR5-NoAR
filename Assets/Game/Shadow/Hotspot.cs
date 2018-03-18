@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Hotspot : MonoBehaviour 
 {
 	public int id;
@@ -73,4 +74,10 @@ public class Hotspot : MonoBehaviour
 	{
 		gameObject.SetActive (true);
 	}
+
+
+//	public void EnableDrawTargets(bool val)
+//	{
+//		transform.Find ("LightTarget").gameObject.SetActive (val);
+//	}
 }
