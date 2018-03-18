@@ -54,6 +54,8 @@ public class ControllerMagnet : MonoBehaviour
 
 	private void Start() 
 	{
+		initItemCounter ();
+
 		countDown.startCount = startTime;
 		countDown.Play ();
 	}
@@ -131,6 +133,13 @@ public class ControllerMagnet : MonoBehaviour
 
 	private void FinishGame()
 	{
+		RemoveListeners ();
+
+		gameWorld.gameObject.SetActive (false); // disable game node
+
+		bottomBar.SetActive (false);
+
+		ShowScorePopup ();
 	}
 
 
@@ -141,17 +150,20 @@ public class ControllerMagnet : MonoBehaviour
 		//set the score
 		float timeWeight = 0.2f;
 		float collectionWeight = 0.8f;
-		float timePerformance = countDown.GetCount() / countDown.startCount;
-		float collectionPerformance = itemCounter.count / itemCountGoal;
+		float timePerformance = (float)countDown.GetCount() / (float)countDown.startCount;
+		float collectionPerformance = (float)itemCounter.count / (float)itemCountGoal;
 		float score = timePerformance * timeWeight + collectionPerformance * collectionWeight;
-		int stars = (int) (5f * score);
-		// TODO: logic to set the text based on score. Read text from an xml
-		string title;
-		string message;
+		int stars = (int)(score * 5f);
 
-		popup.SetScore (stars);
-//		popup.SetTitle(FeedbackCopies.GetTitle(stars));
-		//		popup.SetMessage();
+		Debug.Log (itemCounter.count);
+		Debug.Log (itemCountGoal);
+
+		string title = FeedbackCopies.GetTitle (stars);
+		string message = FeedbackCopies.GetFeedback ("LIGHT", stars);
+
+		popup.SetStars (stars);
+		popup.SetTitle(title);
+		popup.SetMessage(message);
 		popup.Show ();
 	}
 
