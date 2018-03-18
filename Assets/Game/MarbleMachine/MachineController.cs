@@ -63,7 +63,7 @@ public class MachineController : MonoBehaviour
 	private void Update() 
 	{
 	}
-	private int c = 0;
+
 
 	private void FixedUpdate()
 	{
@@ -101,6 +101,8 @@ public class MachineController : MonoBehaviour
 		ball.OnBadBin += OnBadBin;
 
 		rig.OnTargetReached += ReleaseBall;
+
+		countDown.OnCountdownFinished += FinishGame;
 	}
 
 
@@ -110,6 +112,8 @@ public class MachineController : MonoBehaviour
 		ball.OnBadBin -= OnBadBin;
 
 		rig.OnTargetReached -= ReleaseBall;
+
+		countDown.OnCountdownFinished -= FinishGame;
 	}
 
 
@@ -178,7 +182,31 @@ public class MachineController : MonoBehaviour
 
 	private void FinishGame()
 	{
-		// TODO
+		RemoveListeners ();
+
+		rig.transform.parent.gameObject.SetActive (false); // disable game node
+
+		bottomBar.SetActive (false);
+
+		ShowScorePopup ();
+	}
+
+
+	private void ShowScorePopup()
+	{
+		ScorePopup popup = scorePopup.GetComponent<ScorePopup> ();
+
+		//set the score
+		float score = (float)itemCounter.count / (float)itemCountGoal;
+		int stars = (int)(score * 5f);
+
+		string title = FeedbackCopies.GetTitle (stars);
+		string message = FeedbackCopies.GetFeedback ("MACHINE", stars);
+
+		popup.SetStars (stars);
+		popup.SetTitle(title);
+		popup.SetMessage(message);
+		popup.Show ();
 	}
 
 

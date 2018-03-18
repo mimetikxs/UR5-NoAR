@@ -48,7 +48,7 @@ public class FeedbackCopies {
 		"Solar energy prevents global warming.",
 		"The operating cost of renewable energies is much lower than that of conventional energies.",
 		"It is estimated that 79% of waste ends up in natural environments. Only 12% is incinerated and 9% recycled.",
-		"Recycle, reuse and reduce waste are key to care for the environment.",
+		"Recycle, reuse and reduce waste are key to preserve the environment.",
 		"Separating waste at its source to recover reusable or recyclable materials entails environmental, economic and social benefits.",
 		"Waste that is not properly processed contaminates air, water and land; becoming a danger to the health of plants, animals and humans.",
 		"With only eight boxes of cereals you can create a book, with 80 cans of soda, a car tire, or with 40 PET plastic bottles used in water bottles, you can make a fleece.",
@@ -67,9 +67,9 @@ public class FeedbackCopies {
 			index = 0;
 		if  (scene.Equals("SHOWER"))
 			index = 1;
-		if  (scene.Equals("LIGHT"))
-			index = 2;
 		if  (scene.Equals("MAGNET"))
+			index = 2;
+		if  (scene.Equals("LIGHT"))
 			index = 3;
 		if  (scene.Equals("MACHINE"))
 			index = 4;

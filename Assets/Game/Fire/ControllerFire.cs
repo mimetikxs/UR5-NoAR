@@ -126,7 +126,13 @@ public class ControllerFire : MonoBehaviour
 
 	private void FinishGame()
 	{
-		// TODO
+		RemoveListeners ();
+
+		gameWorld.gameObject.SetActive (false); // disable game node
+
+		bottomBar.SetActive (false);
+
+		ShowScorePopup ();
 	}
 
 
@@ -135,19 +141,15 @@ public class ControllerFire : MonoBehaviour
 		ScorePopup popup = scorePopup.GetComponent<ScorePopup> ();
 
 		//set the score
-		float timeWeight = 0.2f;
-		float collectionWeight = 0.8f;
-		float timePerformance = countDown.GetCount() / countDown.startCount;
-		float collectionPerformance = itemCounter.count / itemCountTotal;
-		float score = timePerformance * timeWeight + collectionPerformance * collectionWeight;
-		int stars = (int) (5f * score);
-		// logic to set the text based on score.
-		string title;
-		string message;
+		float score = (float)itemCounter.count / (float)itemCountTotal;;
+		int stars = (int)(score * 5f);
 
-		popup.SetScore (stars);
-//		popup.SetTitle(FeedbackCopies.GetTitle(stars));
-		//		popup.SetMessage();
+		string title = FeedbackCopies.GetTitle (stars);
+		string message = FeedbackCopies.GetFeedback ("SHOWER", stars);
+
+		popup.SetStars (stars);
+		popup.SetTitle(title);
+		popup.SetMessage(message);
 		popup.Show ();
 	}
 

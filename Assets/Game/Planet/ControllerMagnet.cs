@@ -155,11 +155,8 @@ public class ControllerMagnet : MonoBehaviour
 		float score = timePerformance * timeWeight + collectionPerformance * collectionWeight;
 		int stars = (int)(score * 5f);
 
-		Debug.Log (itemCounter.count);
-		Debug.Log (itemCountGoal);
-
 		string title = FeedbackCopies.GetTitle (stars);
-		string message = FeedbackCopies.GetFeedback ("LIGHT", stars);
+		string message = FeedbackCopies.GetFeedback ("MAGNET", stars);
 
 		popup.SetStars (stars);
 		popup.SetTitle(title);

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TreeCluster : MonoBehaviour 
 {
-	public float temp = 0f;		// 0..1
+	public float temp = 0f;		// 0..1 // use a negative number to delay the heatup
 	public float heatingSpeed = 0.01f;  // 0..1 // how much the temp rises
 
 	// slider 
@@ -70,20 +70,22 @@ public class TreeCluster : MonoBehaviour
 	{
 		slider.value += (temp - slider.value) * 0.1f;
 
-		if (temp < 0.4f) 
-		{
-			sliderImage.color = lowTempColor;
-		} 
-		else if (temp > 0.6f) 
-		{
-			sliderImage.color = highTempColor;
-		} 
-		else 
-		{
-			float val = (temp - 0.4f) / 0.2f;
-			//val = Mathf.Clamp (val, 0f, 1f);
-			sliderImage.color = Color.Lerp (lowTempColor, highTempColor, val);
-		}
+//		if (temp < 0.4f) 
+//		{
+//			sliderImage.color = lowTempColor;
+//		} 
+//		else if (temp > 0.6f) 
+//		{
+//			sliderImage.color = highTempColor;
+//		} 
+//		else 
+//		{
+//			float val = (temp - 0.4f) / 0.2f;
+//			//val = Mathf.Clamp (val, 0f, 1f);
+//			sliderImage.color = Color.Lerp (lowTempColor, highTempColor, val);
+//		}
+
+		sliderImage.color = (temp < 0.5f) ? lowTempColor : highTempColor;
 	}
 
 
@@ -183,5 +185,6 @@ public class TreeCluster : MonoBehaviour
 	public void Cooldown(float amount)
 	{
 		temp -= amount;
+		temp = Mathf.Max (temp, 0f);
 	}
 }
