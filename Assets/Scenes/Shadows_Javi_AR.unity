@@ -530,7 +530,7 @@ MonoBehaviour:
   gameWorld: {fileID: 1079346353}
   robot: {fileID: 2044213815}
   gameUI: {fileID: 1077144772}
-  startTime: 60
+  startTime: 90
 --- !u!4 &736244406
 Transform:
   m_ObjectHideFlags: 0

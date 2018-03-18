@@ -133,7 +133,6 @@ public class ControllerLight : MonoBehaviour
 		float score = timePerformance * timeWeight + collectionPerformance * collectionWeight;
 		int stars = (int)(score * 5f);
 
-		// TODO: logic to set the text based on score. Read text from an xml
 		string title = FeedbackCopies.GetTitle (stars);
 		string message = FeedbackCopies.GetFeedback ("LIGHT", stars);
 
