@@ -15,6 +15,11 @@ public class MachineController : MonoBehaviour
 	public RigPicker rig;
 	public Transform gameUI;
 
+	// sound
+	public AudioClip soundGood;
+	public AudioClip soundBad;
+	private AudioSource audio;
+
 	// state
 	private enum State { Idle, Transporting };
 	private State state;
@@ -26,13 +31,12 @@ public class MachineController : MonoBehaviour
 	private ItemCounter itemCounter;
 	private CountDown countDown;
 
-	// testing
-	Vector3 ballInitialPos;
-
 
 	private void Awake()
 	{
 		Physics.gravity = gravity;
+
+		audio = GetComponent<AudioSource> ();
 
 		// ui references
 		scorePopup = gameUI.Find("ScorePopup").gameObject;
@@ -59,7 +63,7 @@ public class MachineController : MonoBehaviour
 	private void Update() 
 	{
 	}
-
+	private int c = 0;
 
 	private void FixedUpdate()
 	{
@@ -70,8 +74,11 @@ public class MachineController : MonoBehaviour
 		else 
 		{
 			// check if ball felt outside the machine
-			if (ball.transform.position.y < 0f)
+			if (ball.transform.position.y < 0f) 
+			{
 				ResetBall ();
+				PlayPointSound (false);
+			}
 		}
 	}
 
@@ -119,7 +126,7 @@ public class MachineController : MonoBehaviour
 	{
 		IncreaseCounter ();
 		PlayBinFx (true);
-
+		PlayPointSound (true);
 		Invoke("ResetBall", 1.5f);
 	}
 
@@ -127,16 +134,21 @@ public class MachineController : MonoBehaviour
 	private void OnBadBin()
 	{
 		PlayBinFx (false);
-
+		PlayPointSound (false);
 		Invoke("ResetBall", 1.5f);
 	}
 
 
 	private void PlayBinFx(bool isGood)
 	{
-		Color color = new Color ();
-
 		bins.Blink (isGood, 5);
+	}
+
+
+	private void PlayPointSound(bool isGood)
+	{
+		audio.clip = isGood ? soundGood : soundBad;
+		audio.Play ();
 	}
 
 
@@ -153,6 +165,7 @@ public class MachineController : MonoBehaviour
 	{
 		state = State.Idle;
 		ball.Release();
+		rig.DisableHotspots ();
 		Invoke("SendRigHome", 1.5f);
 	}
 

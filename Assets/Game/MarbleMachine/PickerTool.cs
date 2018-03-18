@@ -14,8 +14,11 @@ public class PickerTool : MonoBehaviour
 
 	void Update() 
 	{
+		// debugging ///////
+		// comment this for debugging without robot
 //		this.transform.position = tcp.position;
 //		this.transform.rotation = tcp.rotation;
+		////////////////////
 	}
 
 	public void Open()

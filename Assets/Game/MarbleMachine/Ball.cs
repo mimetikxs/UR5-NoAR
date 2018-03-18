@@ -91,11 +91,17 @@ public class Ball : MonoBehaviour
 	}
 
 
-	private void EvaluateBin(string binName)
+	private void FreezeBall()
 	{
 		rb.isKinematic = true;
 		rb.velocity = Vector3.zero;
 		rb.angularVelocity = Vector3.zero;
+	}
+
+
+	private void EvaluateBin(string binName)
+	{
+		FreezeBall ();
 
 		if (binName == targetBin) {
 			if (OnGoodBin != null)
@@ -117,9 +123,7 @@ public class Ball : MonoBehaviour
 
 	public void Reset()
 	{
-		rb.isKinematic = true;
-		rb.velocity = Vector3.zero;
-		rb.angularVelocity = Vector3.zero;
+		FreezeBall ();
 
 		timeInBin = 0f;
 		isFinished = false;

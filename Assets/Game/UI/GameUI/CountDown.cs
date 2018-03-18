@@ -6,6 +6,8 @@ using TMPro;
 
 public class CountDown : MonoBehaviour 
 {
+	public Color warningColor = Color.red;
+
 	private int _startCount = 60;
 	private int _count;
 	private TextMeshProUGUI m_text; 
@@ -42,10 +44,16 @@ public class CountDown : MonoBehaviour
 		{
 			_count -= 1;
 
-			if (_count > 9)
+			if (_count > 9) 
+			{
 				m_text.text = _count.ToString ();
-			else
+				m_text.color = Color.white; 
+			} 
+			else 
+			{
 				m_text.text = "0" + _count;
+				m_text.color = warningColor; 
+			}
 
 			yield return new WaitForSeconds(1f);
 		}
@@ -91,7 +99,8 @@ public class CountDown : MonoBehaviour
 		get { return _startCount; }
 		set {
 			_startCount = value;
-			if (_count > _startCount)
+
+			//if (_count > _startCount)
 				_count = _startCount;
 		}
 	}

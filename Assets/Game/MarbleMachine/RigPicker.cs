@@ -28,11 +28,11 @@ public class RigPicker : MonoBehaviour
 
 	private void Start() 
 	{
-		
+		targetReached = false;
 	}
-	
 
-	private void Update() 
+
+	private void FixedUpdate()
 	{
 		// check if picker has reached the target position
 		Vector3 delta = targetPosition - picker.position;
@@ -45,7 +45,7 @@ public class RigPicker : MonoBehaviour
 	}
 		
 
-	private void DisableHotspots()
+	public void DisableHotspots()
 	{
 		Transform node = transform.Find("Hotspots");
 		foreach (Transform item in node) 
@@ -72,10 +72,11 @@ public class RigPicker : MonoBehaviour
 
 		robot.setTargetTransform (p, r);
 
-		// testing
+		// debugging ///////
 		// this is updated every frame by PickerTool 
 		picker.position = p;
 		picker.rotation = r;
+		////////////////////
 	}
 
 
@@ -83,12 +84,11 @@ public class RigPicker : MonoBehaviour
 	{
 		robot.setTargetTransform (homeTransform.position, homeTransform.rotation);
 
-		DisableHotspots ();
-
-		// testing
+		// debugging ///////
 		// this is updated every frame by PickerTool 
 		picker.position = homeTransform.position;
 		picker.rotation = homeTransform.rotation;
+		////////////////////
 	}
 
 
