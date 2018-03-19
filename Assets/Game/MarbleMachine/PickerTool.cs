@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PickerTool : MonoBehaviour 
 {
+	public bool isDebugging = true;
+
 	public Transform tcp;
 
 
@@ -14,11 +16,11 @@ public class PickerTool : MonoBehaviour
 
 	void Update() 
 	{
-		// debugging ///////
-		// comment this for debugging without robot
-//		this.transform.position = tcp.position;
-//		this.transform.rotation = tcp.rotation;
-		////////////////////
+		if (!isDebugging) 
+		{
+			this.transform.position = tcp.position;
+			this.transform.rotation = tcp.rotation;
+		}
 	}
 
 	public void Open()

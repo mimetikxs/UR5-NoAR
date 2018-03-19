@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class RigPicker : MonoBehaviour 
 {
+	public bool isDebugging = true;
+
 	public UR5Controller robot;
 
 	private Transform picker;
+	private Transform pickerBallTransform;
 	private Vector3 targetPosition;
 	private Transform homeTransform;
 
@@ -23,22 +26,27 @@ public class RigPicker : MonoBehaviour
 		picker = transform.Find ("Tool");
 		homeTransform = transform.Find ("HotspotHome/transform");
 		targetPosition = Vector3.zero;
+
+		pickerBallTransform = picker.transform.Find ("BallPos");
 	}
 
 
 	private void Start() 
 	{
 		targetReached = false;
+
+		picker.GetComponent<PickerTool> ().isDebugging = isDebugging;
 	}
 
 
 	private void FixedUpdate()
 	{
 		// check if picker has reached the target position
-		Vector3 delta = targetPosition - picker.position;
-		float dist = Vector3.Magnitude (delta);
-		if (dist < 0.1f  &&  !targetReached) 
+		float dist = Vector3.Magnitude (targetPosition - picker.position);
+		if (dist < 0.3f  &&  !targetReached) 
 		{
+			targetReached = true;
+
 			if (OnTargetReached != null)
 				OnTargetReached ();
 		}
@@ -72,11 +80,11 @@ public class RigPicker : MonoBehaviour
 
 		robot.setTargetTransform (p, r);
 
-		// debugging ///////
-		// this is updated every frame by PickerTool 
-		picker.position = p;
-		picker.rotation = r;
-		////////////////////
+		if (isDebugging) 
+		{
+			picker.position = p;
+			picker.rotation = r;
+		}
 	}
 
 
@@ -84,17 +92,29 @@ public class RigPicker : MonoBehaviour
 	{
 		robot.setTargetTransform (homeTransform.position, homeTransform.rotation);
 
-		// debugging ///////
-		// this is updated every frame by PickerTool 
-		picker.position = homeTransform.position;
-		picker.rotation = homeTransform.rotation;
-		////////////////////
+		if (isDebugging) 
+		{
+			picker.position = homeTransform.position;
+			picker.rotation = homeTransform.rotation;
+		}
+	}
+
+
+	public void ReleaseHand()
+	{
+		Transform fingers = picker.Find ("Picker");
+		foreach (Transform finger in fingers) 
+		{
+			Animation anim = finger.GetComponent<Animation> ();
+			//anim["Take 001"].wrapMode = WrapMode.Once;
+			anim.Play ("Take 001");
+		}
 	}
 
 
 	public Vector3 GetPickerPosition()
 	{
-		return picker.position;
+		return pickerBallTransform.position;
 	}
 
 

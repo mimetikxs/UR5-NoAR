@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MachineController : MonoBehaviour 
 {
+	public bool isDebugging = true;
+
 	// game parameters
 	public int startTime = 60;
 	private int itemCountGoal = 5;
@@ -53,6 +55,9 @@ public class MachineController : MonoBehaviour
 
 		countDown.startCount = startTime;
 		countDown.Play ();
+
+		// debugging
+		rig.isDebugging = isDebugging;
 
 		// game specific
 		rig.GoToHome ();
@@ -170,6 +175,7 @@ public class MachineController : MonoBehaviour
 		state = State.Idle;
 		ball.Release();
 		rig.DisableHotspots ();
+		rig.ReleaseHand ();
 		Invoke("SendRigHome", 1.5f);
 	}
 
@@ -226,6 +232,7 @@ public class MachineController : MonoBehaviour
 	{
 		Vector3 p = hotspotTransform.position;
 		Quaternion r = hotspotTransform.rotation;
+
 		rig.SetTargetTransform (p, r);
 	}
 }
