@@ -46,6 +46,9 @@ public class MachineController : MonoBehaviour
 		bottomBar = gameUI.Find ("BottomBar").gameObject;
 		itemCounter = bottomBar.transform.Find ("ItemCounter").GetComponent<ItemCounter> ();
 		countDown = bottomBar.transform.Find ("CountDown").GetComponent<CountDown> ();
+
+		// debugging
+		rig.isDebugging = isDebugging;
 	}
 
 
@@ -55,9 +58,6 @@ public class MachineController : MonoBehaviour
 
 		countDown.startCount = startTime;
 		countDown.Play ();
-
-		// debugging
-		rig.isDebugging = isDebugging;
 
 		// game specific
 		rig.GoToHome ();

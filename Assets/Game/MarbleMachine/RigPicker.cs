@@ -28,14 +28,15 @@ public class RigPicker : MonoBehaviour
 		targetPosition = Vector3.zero;
 
 		pickerBallTransform = picker.transform.Find ("BallPos");
+
+		// debug
+		picker.GetComponent<PickerTool> ().isDebugging = isDebugging;
 	}
 
 
 	private void Start() 
 	{
 		targetReached = false;
-
-		picker.GetComponent<PickerTool> ().isDebugging = isDebugging;
 	}
 
 

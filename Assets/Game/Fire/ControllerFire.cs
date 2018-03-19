@@ -141,7 +141,7 @@ public class ControllerFire : MonoBehaviour
 		ScorePopup popup = scorePopup.GetComponent<ScorePopup> ();
 
 		//set the score
-		float score = (float)itemCounter.count / (float)itemCountTotal;;
+		float score = (float)itemCounter.count / 6f; //(float)itemCountTotal;;
 		int stars = (int)(score * 5f);
 
 		string title = FeedbackCopies.GetTitle (stars);
