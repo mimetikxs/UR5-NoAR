@@ -34,6 +34,8 @@ public class ControllerLight : MonoBehaviour
 	private ItemCounter itemCounter;
 	private CountDown countDown;
 
+	public Hotspot inititalHotspot;
+
 
 	private void Awake()
 	{
@@ -51,6 +53,7 @@ public class ControllerLight : MonoBehaviour
 
 
 //		selectedHotspot = rig.transform.Find ("Hotspots/Hotspot (5)").GetComponent<Hotspot> ();
+		selectedHotspot = inititalHotspot;
 	}
 
 
@@ -63,8 +66,6 @@ public class ControllerLight : MonoBehaviour
 
 		// debugging
 		//rig.isDebugging = isDebugging;
-
-		selectedHotspot = rig.transform.Find ("Hotspots/Hotspot (5)").GetComponent<Hotspot> ();
 	}
 	
 
