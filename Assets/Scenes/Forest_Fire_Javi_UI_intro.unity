@@ -329,7 +329,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Water the tress before the fires burn the forest.
+  m_text: Water the trees before the fires burn the forest.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2b217cd8e9cc54e5db1bace16505f01f, type: 2}
   m_sharedMaterial: {fileID: 21995484105572560, guid: 2b217cd8e9cc54e5db1bace16505f01f,
