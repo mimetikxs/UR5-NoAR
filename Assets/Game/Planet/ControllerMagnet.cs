@@ -129,8 +129,6 @@ public class ControllerMagnet : MonoBehaviour
 		if (itemCounter.count == itemCountGoal)
 			FinishGame ();
 
-		Debug.Log (spaceObjects.childCount);
-
 		if (spaceObjects.childCount <= 1) 
 			FinishGame ();
 	}
