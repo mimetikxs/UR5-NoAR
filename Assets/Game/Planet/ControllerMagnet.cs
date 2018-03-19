@@ -37,6 +37,9 @@ public class ControllerMagnet : MonoBehaviour
 	private ItemCounter itemCounter;
 	private CountDown countDown;
 
+	// hack
+	public Transform initialTransform;
+
 
 	private void Awake()
 	{
@@ -58,6 +61,9 @@ public class ControllerMagnet : MonoBehaviour
 
 		countDown.startCount = startTime;
 		countDown.Play ();
+
+		// send robot to initial pose
+		//OnHotspotClicked (initialTransform);
 	}
 
 

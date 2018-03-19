@@ -101,8 +101,6 @@ public class SpaceObject : MonoBehaviour
 		Vector3 delta = attractor.transform.position - _object.position;
 		float distance = Vector3.Magnitude (delta);
 
-		Debug.Log ("---> " + distance);
-
 		if (distance > attractor.maxDist)
 			return;
 

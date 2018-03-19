@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+#if (UNITY_EDITOR)
 [ExecuteInEditMode]
+#endif
 public class HotspotsDebug : MonoBehaviour 
 {
 	public bool lightEnabled = false;
@@ -14,18 +15,22 @@ public class HotspotsDebug : MonoBehaviour
 
 	void Start() 
 	{		
+		#if (UNITY_EDITOR)
 		gameObject.BroadcastMessage ("EnableLight", lightEnabled);
 		gameObject.BroadcastMessage ("EnableLookAt", autoLookAt);
 		gameObject.BroadcastMessage ("EnableDrawLine", drawDirection);
 //		gameObject.BroadcastMessage ("EnableDrawTargets", drawTargets);
+		#endif
 	}
 
 
 	void OnValidate()
 	{
+		#if (UNITY_EDITOR)
 		gameObject.BroadcastMessage ("EnableLight", lightEnabled);
 		gameObject.BroadcastMessage ("EnableLookAt", autoLookAt);
 		gameObject.BroadcastMessage ("EnableDrawLine", drawDirection);
 //		gameObject.BroadcastMessage ("EnableDrawTargets", drawTargets);
+		#endif
 	}
 }

@@ -257,6 +257,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &690070545 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4759812369576700, guid: 2580326ac52124beba660e363ece0281,
+    type: 2}
+  m_PrefabInternal: {fileID: 1345729742}
 --- !u!1 &736244404
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,10 +295,11 @@ MonoBehaviour:
   gameUI: {fileID: 739094270}
   springStrength: 0.082
   springDamping: 0.894
-  attractorStrength: 115.2
+  attractorStrength: 108
   attractorMinDist: 4.64
   attractorMaxDist: 48.18
   startTime: 60
+  initialTransform: {fileID: 690070545}
 --- !u!4 &736244406
 Transform:
   m_ObjectHideFlags: 0

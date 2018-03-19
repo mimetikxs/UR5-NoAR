@@ -2038,7 +2038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abb9699d4fce84069b72c5fe6e8a27fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temp: -1
+  temp: -0.8
   heatingSpeed: 0.01
   tempMeterPrefab: {fileID: 223038352033687440, guid: 1cef03773f4794aa4a1475fa1e78ea21,
     type: 2}

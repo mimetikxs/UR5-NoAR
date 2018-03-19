@@ -62,6 +62,7 @@ public class FeedbackCopies {
 	public static string GetFeedback (string scene, int stars) 
 	{
 		int index = 0;
+		float performance = (float)stars / 5f;
 
 		if  (scene.Equals("FAN"))
 			index = 0;
@@ -74,7 +75,7 @@ public class FeedbackCopies {
 		if  (scene.Equals("MACHINE"))
 			index = 4;
 
-		index = (index * 9) + (stars * 3) + Random.Range(0, 3);
+		index = (index * 9) + (int)(performance * 3) + Random.Range(0, 3);
 
 		return feedbacks[index];
 	}

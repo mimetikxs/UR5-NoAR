@@ -424,10 +424,11 @@ MonoBehaviour:
   gameUI: {fileID: 535652420}
   springStrength: 0.082
   springDamping: 0.894
-  attractorStrength: 115.2
+  attractorStrength: 108
   attractorMinDist: 4.64
   attractorMaxDist: 48.18
   startTime: 60
+  initialTransform: {fileID: 885159705}
 --- !u!4 &736244406
 Transform:
   m_ObjectHideFlags: 0
@@ -759,6 +760,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2580326ac52124beba660e363ece0281, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &885159705 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4515263219151362, guid: 2580326ac52124beba660e363ece0281,
+    type: 2}
+  m_PrefabInternal: {fileID: 885159704}
 --- !u!1001 &982424845
 Prefab:
   m_ObjectHideFlags: 0

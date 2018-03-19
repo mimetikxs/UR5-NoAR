@@ -5,8 +5,9 @@ using UnityEngine;
 
 // This script is intended for debugging only
 // Helps visualize and set the positions and orientations of the hotspots' transform
-
+#if (UNITY_EDITOR)
 [ExecuteInEditMode]
+#endif
 public class LookAtLightTarget : MonoBehaviour 
 {
 	public bool lightEnabled = false;
@@ -55,7 +56,7 @@ public class LookAtLightTarget : MonoBehaviour
 			debugLight.SetActive (lightEnabled);
 	}
 
-
+	#if (UNITY_EDITOR)
 	public void EnableLight(bool val)
 	{
 		lightEnabled = val;
@@ -75,4 +76,5 @@ public class LookAtLightTarget : MonoBehaviour
 	{
 		drawDirection = val;
 	}
+	#endif
 }
