@@ -585,6 +585,11 @@ Transform:
   m_Father: {fileID: 1929471067}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &654628777 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4756937803968444, guid: 0691e869f52334a39b8cc28eaefbcfd3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1363546601}
 --- !u!1 &668365906
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,7 +876,7 @@ Prefab:
         type: 2}
       propertyPath: tcp
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 654628777}
     - target: {fileID: 114455876982249372, guid: bfb38e6a2e68144cf95c67515053939e,
         type: 2}
       propertyPath: robot
@@ -934,6 +939,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1227036860545236, guid: 0691e869f52334a39b8cc28eaefbcfd3, type: 2}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114957592392681242, guid: 0691e869f52334a39b8cc28eaefbcfd3,
+        type: 2}
+      propertyPath: _dirtyMappings
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
