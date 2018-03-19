@@ -50,7 +50,7 @@ public class ControllerLight : MonoBehaviour
 		countDown = bottomBar.transform.Find ("CountDown").GetComponent<CountDown> ();
 
 
-		selectedHotspot = rig.transform.Find ("Hotspots/Hotspot (5)").GetComponent<Hotspot> ();
+//		selectedHotspot = rig.transform.Find ("Hotspots/Hotspot (5)").GetComponent<Hotspot> ();
 	}
 
 
@@ -62,7 +62,9 @@ public class ControllerLight : MonoBehaviour
 		countDown.Play ();
 
 		// debugging
-		rig.isDebugging = isDebugging;
+		//rig.isDebugging = isDebugging;
+
+		selectedHotspot = rig.transform.Find ("Hotspots/Hotspot (5)").GetComponent<Hotspot> ();
 	}
 	
 
