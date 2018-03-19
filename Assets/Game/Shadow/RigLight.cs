@@ -9,6 +9,8 @@ using UnityEngine;
 
 public class RigLight : MonoBehaviour 
 {
+	public bool isDebugging = true;
+
 	public Camera camera;
 	public Hotspot[] connections;
 
@@ -28,6 +30,7 @@ public class RigLight : MonoBehaviour
 
 	private void Start() 
 	{
+		fresnelTool.isDebugging = true;
 	}
 
 
@@ -75,11 +78,11 @@ public class RigLight : MonoBehaviour
 			connection.Show ();
 		}
 
-		// debug /////////////
-		// TODO: coment out for production
-		Transform t = hotspot.transform.Find("Transform").transform;
-		fresnelTool.transform.position = t.position;
-		fresnelTool.transform.rotation = t.rotation;
-		/////////////////////
+		if (isDebugging) 
+		{
+			Transform t = hotspot.transform.Find("Transform").transform;
+			fresnelTool.transform.position = t.position;
+			fresnelTool.transform.rotation = t.rotation;
+		}
 	}
 }

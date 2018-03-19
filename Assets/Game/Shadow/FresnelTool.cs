@@ -9,7 +9,9 @@ using UnityEngine;
  * Holds state of the virtual tool.
  */
 
-public class FresnelTool : MonoBehaviour {
+public class FresnelTool : MonoBehaviour 
+{
+	public bool isDebugging = true;
 
 	public Transform tcp;
 
@@ -33,9 +35,11 @@ public class FresnelTool : MonoBehaviour {
 
 	void Update() 
 	{
-		// TODO: re-enable for production
-//		this.transform.position = tcp.position;
-//		this.transform.rotation = tcp.rotation;
+		if (isDebugging) 
+		{
+			this.transform.position = tcp.position;
+			this.transform.rotation = tcp.rotation;
+		}
 	}
 
 

@@ -527,6 +527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a14bafc467d1404fa6bb1a023bca42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebugging: 0
   gameWorld: {fileID: 1079346353}
   robot: {fileID: 2044213815}
   gameUI: {fileID: 1077144772}

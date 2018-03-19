@@ -9,6 +9,7 @@ public class SpaceObject : MonoBehaviour
 
 	public float radius = 32f;
 	public float speed = 2f;
+	public float mass = 1f;
 	public float rotOffset = 0f;
 	public bool isGoodGuy = false;
 
@@ -24,7 +25,7 @@ public class SpaceObject : MonoBehaviour
 	private Transform _orbit;
 
 
-	#if UNITY_EDITOR
+#if UNITY_EDITOR
 	void OnValidate()
 	{
 		_object = this.transform.Find ("Object");
@@ -43,7 +44,7 @@ public class SpaceObject : MonoBehaviour
 
 		_object.transform.position = _anchor.position;
 	}
-	#endif
+#endif
 
 
 	private void Awake()
@@ -104,7 +105,7 @@ public class SpaceObject : MonoBehaviour
 			return;
 
 		distance = Mathf.Clamp(distance, attractor.minDist, attractor.maxDist);
-		float attractionStrength = attractor.strength / (distance * distance);
+		float attractionStrength = attractor.strength * 1f * mass / (distance * distance); // assume magnet always has mass = 1
 		Vector3 direction = Vector3.Normalize (delta);
 		Vector3 force = direction * attractionStrength;
 

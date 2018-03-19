@@ -448,7 +448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   y: 0
-  z: 0.1
+  z: -0.1
 --- !u!198 &198414304610800344
 ParticleSystem:
   m_ObjectHideFlags: 1

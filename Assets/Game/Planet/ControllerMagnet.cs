@@ -110,21 +110,21 @@ public class ControllerMagnet : MonoBehaviour
 
 	private void AddListeners()
 	{
-		magnetTool.OnWasteCollected += IncreaseCount;
+		magnetTool.OnWasteCollected += UpdateCount;
 		countDown.OnCountdownFinished += FinishGame;
 	}
 
 
 	private void RemoveListeners()
 	{
-		magnetTool.OnWasteCollected -= IncreaseCount;
+		magnetTool.OnWasteCollected -= UpdateCount;
 		countDown.OnCountdownFinished -= FinishGame;
 	}
 
 
-	private void IncreaseCount()
+	private void UpdateCount(bool isGoodGuy)
 	{
-		itemCounter.count += 1;
+		itemCounter.count += isGoodGuy ? -1 : 1;
 
 		if (itemCounter.count == itemCountGoal)
 			FinishGame ();

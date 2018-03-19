@@ -12,6 +12,8 @@ using UnityEngine.EventSystems;
 
 public class ControllerLight : MonoBehaviour 
 {
+	public bool isDebugging = true;
+
 	public Transform gameWorld;
 	public UR5Controller robot;
 	public Transform gameUI;
@@ -58,6 +60,9 @@ public class ControllerLight : MonoBehaviour
 
 		countDown.startCount = startTime;
 		countDown.Play ();
+
+		// debugging
+		rig.isDebugging = isDebugging;
 	}
 	
 

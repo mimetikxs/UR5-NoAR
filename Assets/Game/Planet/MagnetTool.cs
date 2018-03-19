@@ -17,7 +17,7 @@ public class MagnetTool : MonoBehaviour {
 	private ParticleSystem particles;
 
 	// delegated (triggered when waste is collected)
-	public delegate void WasteCollectAction();			
+	public delegate void WasteCollectAction(bool isGoodGuy);			
 	public event WasteCollectAction OnWasteCollected;
 
 
@@ -44,10 +44,12 @@ public class MagnetTool : MonoBehaviour {
 	{
 		if (other.tag == "Waste") 
 		{
-			other.transform.parent.GetComponent<SpaceObject> ().Remove ();
+			SpaceObject obj = other.transform.parent.GetComponent<SpaceObject> ();
 
 			if (OnWasteCollected != null) 
-				OnWasteCollected ();
+				OnWasteCollected (obj.isGoodGuy);
+
+			obj.Remove ();
 		}
 	}
 
