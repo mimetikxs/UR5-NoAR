@@ -1005,6 +1005,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 381331051}
   m_Script: {fileID: 11500000, guid: 5faf8770d86f74f049496e56d199c3a7, type: 3}
+--- !u!114 &381331053 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114271954538985076, guid: a7ddfa1fba0fd4adcae20f78987a1b19,
+    type: 2}
+  m_PrefabInternal: {fileID: 381331051}
+  m_Script: {fileID: 11500000, guid: 38ba358aa192f44039b8668f24f9350b, type: 3}
 --- !u!21 &391937611
 Material:
   serializedVersion: 6
@@ -1166,6 +1172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popup: {fileID: 381331052}
+  score: {fileID: 381331053}
 --- !u!114 &420610958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5079,7 +5086,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0

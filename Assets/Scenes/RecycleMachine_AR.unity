@@ -552,6 +552,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 505428014}
   m_Script: {fileID: 11500000, guid: 5faf8770d86f74f049496e56d199c3a7, type: 3}
+--- !u!114 &505428016 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114271954538985076, guid: a7ddfa1fba0fd4adcae20f78987a1b19,
+    type: 2}
+  m_PrefabInternal: {fileID: 505428014}
+  m_Script: {fileID: 11500000, guid: 38ba358aa192f44039b8668f24f9350b, type: 3}
 --- !u!114 &541471521 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114499054989129240, guid: fb56998ff25944ea0b23bbfde1a1c1ad,
@@ -1672,6 +1678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popup: {fileID: 505428015}
+  score: {fileID: 505428016}
 --- !u!114 &1929471066
 MonoBehaviour:
   m_ObjectHideFlags: 0

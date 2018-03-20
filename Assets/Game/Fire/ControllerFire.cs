@@ -166,6 +166,8 @@ public class ControllerFire : MonoBehaviour
 		bottomBar.SetActive (false);
 
 		ShowScorePopup ();
+
+		lostTrackingPopup.GetComponent<TrackingPopup> ().Hide ();
 	}
 
 

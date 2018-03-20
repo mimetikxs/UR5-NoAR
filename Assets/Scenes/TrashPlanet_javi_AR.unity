@@ -313,6 +313,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 535652419}
   m_Script: {fileID: 11500000, guid: 5faf8770d86f74f049496e56d199c3a7, type: 3}
+--- !u!114 &535652422 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114271954538985076, guid: a7ddfa1fba0fd4adcae20f78987a1b19,
+    type: 2}
+  m_PrefabInternal: {fileID: 535652419}
+  m_Script: {fileID: 11500000, guid: 38ba358aa192f44039b8668f24f9350b, type: 3}
 --- !u!1 &595784742
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,6 +496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popup: {fileID: 535652421}
+  score: {fileID: 535652422}
 --- !u!114 &816508574
 MonoBehaviour:
   m_ObjectHideFlags: 0

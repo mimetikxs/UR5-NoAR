@@ -618,6 +618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popup: {fileID: 2099132832}
+  score: {fileID: 2099132833}
 --- !u!114 &701073561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1680,3 +1681,9 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 2099132831}
   m_Script: {fileID: 11500000, guid: 5faf8770d86f74f049496e56d199c3a7, type: 3}
+--- !u!114 &2099132833 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114271954538985076, guid: a7ddfa1fba0fd4adcae20f78987a1b19,
+    type: 2}
+  m_PrefabInternal: {fileID: 2099132831}
+  m_Script: {fileID: 11500000, guid: 38ba358aa192f44039b8668f24f9350b, type: 3}

@@ -5,7 +5,8 @@ Copyright (c) 2010-2014 Qualcomm Connected Experiences, Inc.
 All Rights Reserved.
 Confidential and Proprietary - Protected under copyright and other laws.
 ==============================================================================*/
-
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Vuforia;
 
@@ -16,6 +17,8 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 {
 
 	public TrackingPopup popup;
+	public ScorePopup score;
+	private int _count = 0;
 
     #region PRIVATE_MEMBER_VARIABLES
 
@@ -31,6 +34,11 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         if (mTrackableBehaviour)
             mTrackableBehaviour.RegisterTrackableEventHandler(this);
     }
+
+	void OnDisable ()
+	{
+		StopCoroutine("DecreaseCounter");
+	}
 
     #endregion // UNTIY_MONOBEHAVIOUR_METHODS
 
@@ -72,7 +80,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 
     protected virtual void OnTrackingFound()
     {
-		popup.Hide ();
+		HidePopup ();
 
         var rendererComponents = GetComponentsInChildren<Renderer>(true);
         var colliderComponents = GetComponentsInChildren<Collider>(true);
@@ -94,7 +102,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 
     protected virtual void OnTrackingLost()
     {
-		popup.Show ();
+		ShowPopup ();
 
         var rendererComponents = GetComponentsInChildren<Renderer>(true);
         var colliderComponents = GetComponentsInChildren<Collider>(true);
@@ -114,4 +122,38 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
     }
 
     #endregion // PRIVATE_METHODS
+
+
+
+	private IEnumerator DecreaseCounter() 
+	{
+		while (_count > 0) 
+		{
+			_count -= 1;
+
+			yield return new WaitForSeconds(1f);
+		}
+
+		popup.Show ();
+
+		StopCoroutine("DecreaseCounter");
+	}
+
+
+	private void ShowPopup() 
+	{
+		if (score.gameObject.activeSelf)
+			return;
+			
+		// wait two seconds
+		_count = 2; 
+		StartCoroutine ("DecreaseCounter");
+	}
+
+
+	private void HidePopup()
+	{
+		StopCoroutine("DecreaseCounter");
+		popup.Hide ();
+	}
 }

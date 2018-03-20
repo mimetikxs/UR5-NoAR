@@ -128,6 +128,8 @@ public class ControllerLight : MonoBehaviour
 		bottomBar.SetActive (false);
 
 		ShowScorePopup ();
+
+		lostTrackingPopup.GetComponent<TrackingPopup> ().Hide ();
 	}
 
 
