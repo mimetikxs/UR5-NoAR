@@ -119,14 +119,4 @@ public class SpaceObject : MonoBehaviour
 
 		Destroy (gameObject);
 	}
-
-
-//	public bool reverseRotation
-//	{
-//		get { return _reverseRotation; }
-//		set {
-//			_reverseRotation = value;
-//			_rotDirection = _reverseRotation ? -1f : 1f;
-//		}
-//	}
 }

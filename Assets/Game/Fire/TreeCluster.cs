@@ -33,6 +33,10 @@ public class TreeCluster : MonoBehaviour
 	// triggered when waste is collected
 	public delegate void BurntAction();			
 	public event BurntAction OnBurnt;
+	public delegate void BurningStartAction();			
+	public event BurningStartAction OnBurningStart;
+	public delegate void BurningStopAction();			
+	public event BurningStopAction OnBurningStop;
 
 
 	private void Awake()
@@ -112,6 +116,10 @@ public class TreeCluster : MonoBehaviour
 				fine.SetActive (true);
 				burnt.SetActive (false);
 				StopFireFX (); 
+
+				// trigger delegated 
+				if (OnBurningStop != null)
+					OnBurningStop ();
 			}
 		} 
 		else if (temp < 1f) 
@@ -123,6 +131,10 @@ public class TreeCluster : MonoBehaviour
 				fine.SetActive (true);
 				burnt.SetActive (false);
 				StartFireFX ();
+
+				// trigger delegated 
+				if (OnBurningStart != null)
+					OnBurningStart ();
 			}
 		} 
 		else 

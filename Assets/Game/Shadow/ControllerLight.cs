@@ -53,7 +53,6 @@ public class ControllerLight : MonoBehaviour
 
 
 		selectedHotspot = rig.transform.Find ("Hotspots/Hotspot (5)").GetComponent<Hotspot> ();
-		//OnHotspotClicked (selectedHotspot.transform);
 	}
 
 
@@ -66,6 +65,9 @@ public class ControllerLight : MonoBehaviour
 
 		// debugging
 		//rig.isDebugging = isDebugging;
+
+		rig.DisableHotspots ();
+		rig.SetActiveHostpot (selectedHotspot);
 	}
 	
 
@@ -168,9 +170,6 @@ public class ControllerLight : MonoBehaviour
 		Vector3 p = hotspotTransform.position;
 		Quaternion r = hotspotTransform.rotation;
 		Hotspot hotspot = hotspotTransform.parent.GetComponent<Hotspot> ();
-
-
-		Debug.Log (hotspotTransform.parent);
 
 		player.SetTarget (hotspot.GetGroundPosition ());
 

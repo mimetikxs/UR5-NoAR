@@ -21,11 +21,16 @@ public class ShowerTool : MonoBehaviour {
 	private LayerMask layerClusters;
 
 
+	private AudioSource audio;
+
+
 	private void Awake()
 	{
 		particles = this.transform.Find ("Particles").GetComponent<ParticleSystem> ();
 
 		layerClusters = 1 << LayerMask.NameToLayer ("Clusters");
+
+		audio = GetComponent<AudioSource> ();
 	}
 
 
@@ -76,11 +81,13 @@ public class ShowerTool : MonoBehaviour {
 	public void SwitchOn()
 	{
 		isOn = true;
+		audio.Play ();
 	}
 
 
 	public void SwitchOff() 
 	{
 		isOn = false;
+		audio.Stop ();
 	}
 }

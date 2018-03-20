@@ -676,6 +676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a917f0af64a6423093132dab321c15f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  popup: {fileID: 824335141}
 --- !u!114 &543724980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1027,6 +1028,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7ddfa1fba0fd4adcae20f78987a1b19, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &824335141 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114552953801863948, guid: a7ddfa1fba0fd4adcae20f78987a1b19,
+    type: 2}
+  m_PrefabInternal: {fileID: 824335140}
+  m_Script: {fileID: 11500000, guid: 5faf8770d86f74f049496e56d199c3a7, type: 3}
 --- !u!1001 &858225615
 Prefab:
   m_ObjectHideFlags: 0

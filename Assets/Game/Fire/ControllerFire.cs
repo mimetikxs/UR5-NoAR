@@ -29,6 +29,10 @@ public class ControllerFire : MonoBehaviour
 	private ItemCounter itemCounter;
 	private CountDown countDown;
 
+	private int fireCount = 0;
+
+	private AudioSource audio;
+
 
 	private void Awake()
 	{
@@ -41,6 +45,8 @@ public class ControllerFire : MonoBehaviour
 		bottomBar = gameUI.Find ("BottomBar").gameObject;
 		itemCounter = bottomBar.transform.Find ("ItemCounter").GetComponent<ItemCounter> ();
 		countDown = bottomBar.transform.Find ("CountDown").GetComponent<CountDown> ();
+
+		audio = GetComponent<AudioSource> ();
 	}
 
 
@@ -99,6 +105,8 @@ public class ControllerFire : MonoBehaviour
 		{
 			TreeCluster cluster = item.GetComponent<TreeCluster> ();
 			cluster.OnBurnt += DecreaseCount;
+			cluster.OnBurningStart += OnFireStarted;
+			cluster.OnBurningStop += OnFireStoped;
 		}
 	}
 
@@ -111,7 +119,32 @@ public class ControllerFire : MonoBehaviour
 		{
 			TreeCluster cluster = item.GetComponent<TreeCluster> ();
 			cluster.OnBurnt -= DecreaseCount;
+			cluster.OnBurningStart -= OnFireStarted;
+			cluster.OnBurningStop -= OnFireStoped;
 		}
+	}
+
+
+	private void OnFireStarted()
+	{
+		fireCount++;
+		PlayFireSound ();
+	}
+
+
+	private void OnFireStoped()
+	{
+		fireCount--;
+		PlayFireSound ();
+	}
+
+
+	private void PlayFireSound()
+	{
+		if (fireCount > 0)
+			audio.Play ();
+		else
+			audio.Stop ();
 	}
 
 

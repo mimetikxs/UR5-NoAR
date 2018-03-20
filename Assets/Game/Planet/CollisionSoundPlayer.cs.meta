@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 255f008022710468c978f6e5d710cf0c
+timeCreated: 1521560136
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - goodSound: {fileID: 8300000, guid: b8165ea1db50342c6a1a20559005a29c, type: 3}
+  - badSound: {fileID: 8300000, guid: 1c8d97ff277cb48e9a967a2eb281ffbc, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

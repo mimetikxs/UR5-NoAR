@@ -16,6 +16,9 @@ public class MagnetTool : MonoBehaviour {
 	private bool isOn;
 	private ParticleSystem particles;
 
+	private AudioSource audio;
+
+
 	// delegated (triggered when waste is collected)
 	public delegate void WasteCollectAction(bool isGoodGuy);			
 	public event WasteCollectAction OnWasteCollected;
@@ -24,6 +27,8 @@ public class MagnetTool : MonoBehaviour {
 	private void Awake()
 	{
 		particles = this.transform.Find ("FX magnet").GetComponent<ParticleSystem> ();
+
+		audio = GetComponent<AudioSource> ();
 	}
 
 
@@ -46,7 +51,7 @@ public class MagnetTool : MonoBehaviour {
 		{
 			SpaceObject obj = other.transform.parent.GetComponent<SpaceObject> ();
 
-			if (OnWasteCollected != null) 
+			if (OnWasteCollected != null)
 				OnWasteCollected (obj.isGoodGuy);
 
 			obj.Remove ();
@@ -83,12 +88,14 @@ public class MagnetTool : MonoBehaviour {
 	public void SwitchOn()
 	{
 		isOn = true;
+		audio.Play ();
 	}
 
 
 	public void SwitchOff() 
 	{
 		isOn = false;
+		audio.Stop ();
 	}
 
 
