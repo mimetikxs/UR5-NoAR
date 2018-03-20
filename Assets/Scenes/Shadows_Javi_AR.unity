@@ -56,7 +56,7 @@ LightmapSettings:
   m_LightmapEditorSettings:
     serializedVersion: 9
     m_Resolution: 2
-    m_BakeResolution: 8
+    m_BakeResolution: 16
     m_TextureWidth: 1024
     m_TextureHeight: 1024
     m_AO: 1
@@ -66,7 +66,7 @@ LightmapSettings:
     m_Padding: 2
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
-    m_TextureCompression: 1
+    m_TextureCompression: 0
     m_FinalGather: 0
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 0
-  m_LightingDataAsset: {fileID: 112000146, guid: c739240d3be704a72a6cb7b263985244,
+  m_LightingDataAsset: {fileID: 112000174, guid: c739240d3be704a72a6cb7b263985244,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -156,6 +156,10 @@ Prefab:
     - target: {fileID: 1358922257920514, guid: 1e8cb8e7e064c42b79d09b7fc63a27c4, type: 2}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520175741213282, guid: 1e8cb8e7e064c42b79d09b7fc63a27c4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.56
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e8cb8e7e064c42b79d09b7fc63a27c4, type: 2}
@@ -532,7 +536,6 @@ MonoBehaviour:
   robot: {fileID: 2044213815}
   gameUI: {fileID: 1077144772}
   startTime: 90
-  inititalHotspot: {fileID: 2065418844}
 --- !u!4 &736244406
 Transform:
   m_ObjectHideFlags: 0
@@ -834,8 +837,20 @@ Prefab:
       propertyPath: tcp
       value: 
       objectReference: {fileID: 2138494644}
-    m_RemovedComponents:
-    - {fileID: 114047581512779130, guid: 4f998b33c8f6e4f359dece77dec81a34, type: 2}
+    - target: {fileID: 4374704217136466, guid: 4f998b33c8f6e4f359dece77dec81a34, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.538
+      objectReference: {fileID: 0}
+    - target: {fileID: 4374704217136466, guid: 4f998b33c8f6e4f359dece77dec81a34, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.009
+      objectReference: {fileID: 0}
+    - target: {fileID: 108143392565801492, guid: 4f998b33c8f6e4f359dece77dec81a34,
+        type: 2}
+      propertyPath: m_Intensity
+      value: 1.73
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f998b33c8f6e4f359dece77dec81a34, type: 2}
   m_IsPrefabParent: 0
 --- !u!21 &985316892
@@ -1655,12 +1670,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1363546601}
   m_Script: {fileID: 11500000, guid: 7ecef9e11ab72cc498fc423a41f92fa4, type: 3}
---- !u!114 &2065418844 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114653293783239408, guid: 4f998b33c8f6e4f359dece77dec81a34,
-    type: 2}
-  m_PrefabInternal: {fileID: 956293422}
-  m_Script: {fileID: 11500000, guid: 60714af153bea46fbb1644a14e202319, type: 3}
 --- !u!4 &2138494644 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4756937803968444, guid: 0691e869f52334a39b8cc28eaefbcfd3,

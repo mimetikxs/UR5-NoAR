@@ -114,12 +114,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &187543326 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114653293783239408, guid: 4f998b33c8f6e4f359dece77dec81a34,
-    type: 2}
-  m_PrefabInternal: {fileID: 409725954}
-  m_Script: {fileID: 11500000, guid: 60714af153bea46fbb1644a14e202319, type: 3}
 --- !u!4 &217503873 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4851657798212232, guid: 89e8f46e5c1d6d041a5fde232b2bd4ee,
@@ -359,7 +353,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1462233847525500, guid: a7ddfa1fba0fd4adcae20f78987a1b19, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7ddfa1fba0fd4adcae20f78987a1b19, type: 2}
@@ -418,6 +412,45 @@ Prefab:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1618961462}
+    - target: {fileID: 23540790946917402, guid: 4f998b33c8f6e4f359dece77dec81a34,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 135936039092716136, guid: 4f998b33c8f6e4f359dece77dec81a34,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114698979332173548, guid: 4f998b33c8f6e4f359dece77dec81a34,
+        type: 2}
+      propertyPath: isDebugging
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114197742250800226, guid: 4f998b33c8f6e4f359dece77dec81a34,
+        type: 2}
+      propertyPath: isDebugging
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991717968072074, guid: 4f998b33c8f6e4f359dece77dec81a34, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 108706153027299622, guid: 4f998b33c8f6e4f359dece77dec81a34,
+        type: 2}
+      propertyPath: m_DrawHalo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114398826011482498, guid: 4f998b33c8f6e4f359dece77dec81a34,
+        type: 2}
+      propertyPath: lookAtEnabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114398826011482498, guid: 4f998b33c8f6e4f359dece77dec81a34,
+        type: 2}
+      propertyPath: drawDirection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f998b33c8f6e4f359dece77dec81a34, type: 2}
   m_IsPrefabParent: 0
@@ -573,7 +606,6 @@ MonoBehaviour:
   robot: {fileID: 1363546603}
   gameUI: {fileID: 381331052}
   startTime: 90
-  inititalHotspot: {fileID: 187543326}
 --- !u!4 &736244406
 Transform:
   m_ObjectHideFlags: 0

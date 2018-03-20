@@ -10,8 +10,6 @@ using UnityEngine;
 public class RigLight : MonoBehaviour 
 {
 	public bool isDebugging = true;
-
-	public Camera camera;
 	public Hotspot[] connections;
 
 	private FresnelTool fresnelTool;
@@ -22,7 +20,7 @@ public class RigLight : MonoBehaviour
 	{
 		fresnelTool = transform.Find ("Tool").GetComponent<FresnelTool> ();
 
-		DisableHotspots ();
+		//DisableHotspots ();
 
 		SwitchOn ();
 	}
@@ -71,6 +69,7 @@ public class RigLight : MonoBehaviour
 	public void SetActiveHostpot(Hotspot hotspot)
 	{
 		selectedHotspot = hotspot;
+
 		connections = selectedHotspot.connectedHostspots;
 
 		foreach (Hotspot connection in connections) 

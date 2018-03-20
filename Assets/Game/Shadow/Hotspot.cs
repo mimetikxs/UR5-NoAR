@@ -33,9 +33,13 @@ public class Hotspot : MonoBehaviour
 		foreach (Transform item in hotspots) 
 		{
 			Hotspot hs = item.GetComponent<Hotspot> ();
-			foreach (int id in connectedIds) 
+			foreach (int connectedId in connectedIds) 
 			{
-				if (id == hs.id) 
+//				if (id == 5)
+//					Debug.Log (connectedId + "   " + hs.id);
+
+
+				if (connectedId == hs.id) 
 				{
 					connectedHostspots [index] = hs;
 					index++;

@@ -7,6 +7,8 @@ public class TreeCluster : MonoBehaviour
 {
 	public float temp = 0f;		// 0..1 // use a negative number to delay the heatup
 	public float heatingSpeed = 0.01f;  // 0..1 // how much the temp rises
+	public float burningThreshold = 0.25f;
+
 
 	// slider 
 	public Canvas tempMeterPrefab;
@@ -85,7 +87,7 @@ public class TreeCluster : MonoBehaviour
 //			sliderImage.color = Color.Lerp (lowTempColor, highTempColor, val);
 //		}
 
-		sliderImage.color = (temp < 0.5f) ? lowTempColor : highTempColor;
+		sliderImage.color = (temp < burningThreshold) ? lowTempColor : highTempColor;
 	}
 
 
@@ -101,7 +103,7 @@ public class TreeCluster : MonoBehaviour
 
 	private void CheckTemp()
 	{
-		if (temp < 0.5f) 
+		if (temp < burningThreshold) 
 		{
 			if (currentState != State.Fine) 
 			{

@@ -34,7 +34,7 @@ public class ControllerLight : MonoBehaviour
 	private ItemCounter itemCounter;
 	private CountDown countDown;
 
-	public Hotspot inititalHotspot;
+	//public Hotspot inititalHotspot;
 
 
 	private void Awake()
@@ -52,8 +52,8 @@ public class ControllerLight : MonoBehaviour
 		countDown = bottomBar.transform.Find ("CountDown").GetComponent<CountDown> ();
 
 
-//		selectedHotspot = rig.transform.Find ("Hotspots/Hotspot (5)").GetComponent<Hotspot> ();
-		selectedHotspot = inititalHotspot;
+		selectedHotspot = rig.transform.Find ("Hotspots/Hotspot (5)").GetComponent<Hotspot> ();
+		//OnHotspotClicked (selectedHotspot.transform);
 	}
 
 
@@ -168,6 +168,9 @@ public class ControllerLight : MonoBehaviour
 		Vector3 p = hotspotTransform.position;
 		Quaternion r = hotspotTransform.rotation;
 		Hotspot hotspot = hotspotTransform.parent.GetComponent<Hotspot> ();
+
+
+		Debug.Log (hotspotTransform.parent);
 
 		player.SetTarget (hotspot.GetGroundPosition ());
 

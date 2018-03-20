@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44224334, g: 0.4912666, b: 0.57115847, a: 1}
+  m_IndirectSpecularColor: {r: 0.44224274, g: 0.49126607, b: 0.57115763, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -62,12 +62,12 @@ LightmapSettings:
     m_AO: 1
     m_AOMaxDistance: 1
     m_CompAOExponent: 6.31
-    m_CompAOExponentDirect: 4.46
+    m_CompAOExponentDirect: 6.45
     m_Padding: 2
     m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000,
       type: 0}
     m_LightmapsBakeMode: 1
-    m_TextureCompression: 1
+    m_TextureCompression: 0
     m_FinalGather: 0
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
@@ -75,7 +75,7 @@ LightmapSettings:
     m_MixedBakeMode: 2
     m_BakeBackend: 1
     m_PVRSampling: 1
-    m_PVRDirectSampleCount: 8
+    m_PVRDirectSampleCount: 16
     m_PVRSampleCount: 125
     m_PVRBounces: 2
     m_PVRFilterTypeDirect: 0
@@ -825,6 +825,11 @@ Prefab:
       propertyPath: m_Materials.Array.data[3]
       value: 
       objectReference: {fileID: 2100000, guid: f1af5b3cb1b08c5478a037f3e5d46584, type: 2}
+    - target: {fileID: 198726824083188418, guid: 14aa2cfecca5ba04a821bd15e949dddb,
+        type: 2}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: -0.01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 14aa2cfecca5ba04a821bd15e949dddb, type: 2}
   m_IsPrefabParent: 0
@@ -1271,7 +1276,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1363546601}
   m_Script: {fileID: 11500000, guid: 7ecef9e11ab72cc498fc423a41f92fa4, type: 3}
---- !u!1001 &1766850966
+--- !u!1001 &1742527819
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1322,7 +1327,7 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 4340053241733266, guid: 80c3d3603592c4280b1d7ff0151eb7e3,
     type: 2}
-  m_PrefabInternal: {fileID: 1766850966}
+  m_PrefabInternal: {fileID: 1742527819}
 --- !u!4 &1848904977 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4830429135646280, guid: f004838fb81a94220b7770ae41e1db32,
