@@ -42,6 +42,8 @@ public class ControllerMagnet : MonoBehaviour
 
 	private bool isPaused = false;
 
+	private int goodGuysCount;
+
 
 	private void Awake()
 	{
@@ -75,8 +77,11 @@ public class ControllerMagnet : MonoBehaviour
 	{
 		itemCounter.count = 0;	
 
-		foreach (Transform item in spaceObjects)
+		foreach (Transform item in spaceObjects) 
+		{
 			itemCountGoal += (item.GetComponent<SpaceObject> ().isGoodGuy) ? 0 : 1;
+			goodGuysCount = itemCountGoal; 
+		}
 	}
 	
 
@@ -134,9 +139,14 @@ public class ControllerMagnet : MonoBehaviour
 
 	private void UpdateCount(bool isGoodGuy)
 	{
+		goodGuysCount -= isGoodGuy ? 1 : 0;
+
 		itemCounter.count += isGoodGuy ? -1 : 1;
 
 		if (itemCounter.count == itemCountGoal)
+			FinishGame ();
+
+		if (goodGuysCount <= 0)
 			FinishGame ();
 
 		if (spaceObjects.childCount <= 1) 
