@@ -34,6 +34,8 @@ public class ControllerLight : MonoBehaviour
 	private ItemCounter itemCounter;
 	private CountDown countDown;
 
+	private bool isPaused = false;
+
 	//public Hotspot inititalHotspot;
 
 
@@ -68,6 +70,8 @@ public class ControllerLight : MonoBehaviour
 
 		rig.DisableHotspots ();
 		rig.SetActiveHostpot (selectedHotspot);
+
+		isPaused = false;
 	}
 	
 
@@ -180,5 +184,26 @@ public class ControllerLight : MonoBehaviour
 		selectedHotspot = hotspot;
 
 		robot.setTargetTransform (p, r);
+	}
+
+
+	public void Pause()
+	{
+		if (!isPaused) {
+			isPaused = true;
+			countDown.Pause ();
+			bottomBar.SetActive (false);	
+		}
+	}
+
+
+	public void Resume()
+	{
+		if (isPaused) 
+		{
+			isPaused = false;
+			bottomBar.SetActive (true);
+			countDown.Play ();
+		}
 	}
 }

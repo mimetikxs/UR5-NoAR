@@ -56,8 +56,8 @@ public class ScorePopup : MonoBehaviour
 	}
 
 
-//	public void Hide()
-//	{
-//		this.gameObject.SetActive (false);
-//	}
+	public void Hide()
+	{
+		this.gameObject.SetActive (false);
+	}
 }

@@ -30,6 +30,8 @@ public class ControllerBoat : MonoBehaviour
 	private ItemCounter itemCounter;
 	private CountDown countDown;
 
+	private bool isPaused = false;
+
 
 	private void Awake()
 	{
@@ -53,6 +55,8 @@ public class ControllerBoat : MonoBehaviour
 
 		countDown.startCount = startTime;
 		countDown.Play ();
+
+		isPaused = false;
 
 		//Resources.UnloadUnusedAssets ();
 	}
@@ -156,5 +160,26 @@ public class ControllerBoat : MonoBehaviour
 		rig.SetToolTransform (p, r);
 
 		robot.setTargetTransform (p, r);
+	}
+
+
+	public void Pause()
+	{
+		if (!isPaused) {
+			isPaused = true;
+			countDown.Pause ();
+			bottomBar.SetActive (false);	
+		}
+	}
+
+
+	public void Resume()
+	{
+		if (isPaused) 
+		{
+			isPaused = false;
+			bottomBar.SetActive (true);
+			countDown.Play ();
+		}
 	}
 }

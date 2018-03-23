@@ -16,7 +16,8 @@ using Vuforia;
 public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandler
 {
 
-	public TrackingPopup popup;
+	public PauseController pauseController;
+	public TrackingPopup trakingLostPopup;
 	public ScorePopup score;
 	private int _count = 0;
 
@@ -80,8 +81,6 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 
     protected virtual void OnTrackingFound()
     {
-		HidePopup ();
-
         var rendererComponents = GetComponentsInChildren<Renderer>(true);
         var colliderComponents = GetComponentsInChildren<Collider>(true);
         var canvasComponents = GetComponentsInChildren<Canvas>(true);
@@ -97,6 +96,8 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         // Enable canvas':
         foreach (var component in canvasComponents)
             component.enabled = true;
+
+		HidePopup ();
     }
 
 
@@ -134,7 +135,8 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 			yield return new WaitForSeconds(1f);
 		}
 
-		popup.Show ();
+		pauseController.PauseGame ();
+		trakingLostPopup.Show ();
 
 		StopCoroutine("DecreaseCounter");
 	}
@@ -154,6 +156,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 	private void HidePopup()
 	{
 		StopCoroutine("DecreaseCounter");
-		popup.Hide ();
+		trakingLostPopup.Hide ();
+		pauseController.ResumeGame ();
 	}
 }

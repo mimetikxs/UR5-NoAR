@@ -40,6 +40,8 @@ public class ControllerMagnet : MonoBehaviour
 	// hack
 	public Transform initialTransform;
 
+	private bool isPaused = false;
+
 
 	private void Awake()
 	{
@@ -64,6 +66,8 @@ public class ControllerMagnet : MonoBehaviour
 
 		// send robot to initial pose
 		//OnHotspotClicked (initialTransform);
+
+		isPaused = false;
 	}
 
 
@@ -194,5 +198,26 @@ public class ControllerMagnet : MonoBehaviour
 		Quaternion r = hotspotTransform.rotation;
 
 		robot.setTargetTransform (p, r);
+	}
+
+
+	public void Pause()
+	{
+		if (!isPaused) {
+			isPaused = true;
+			countDown.Pause ();
+			bottomBar.SetActive (false);	
+		}
+	}
+
+
+	public void Resume()
+	{
+		if (isPaused) 
+		{
+			isPaused = false;
+			bottomBar.SetActive (true);
+			countDown.Play ();
+		}
 	}
 }

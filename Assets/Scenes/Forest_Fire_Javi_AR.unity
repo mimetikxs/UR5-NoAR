@@ -617,7 +617,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a917f0af64a6423093132dab321c15f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popup: {fileID: 2099132832}
+  pauseController: {fileID: 736244409}
+  trakingLostPopup: {fileID: 2099132832}
   score: {fileID: 2099132833}
 --- !u!114 &701073561
 MonoBehaviour:
@@ -661,6 +662,7 @@ GameObject:
   - component: {fileID: 736244406}
   - component: {fileID: 736244405}
   - component: {fileID: 736244407}
+  - component: {fileID: 736244409}
   - component: {fileID: 736244408}
   m_Layer: 0
   m_Name: GameController
@@ -790,6 +792,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &736244409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 736244404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d8bbbcf3a67540869c9d6bc45545b3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &893184731
 GameObject:
   m_ObjectHideFlags: 0

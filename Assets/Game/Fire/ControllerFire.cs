@@ -33,6 +33,8 @@ public class ControllerFire : MonoBehaviour
 
 	private AudioSource audio;
 
+	private bool isPaused = false;
+
 
 	private void Awake()
 	{
@@ -57,6 +59,8 @@ public class ControllerFire : MonoBehaviour
 
 		countDown.startCount = startTime;
 		countDown.Play ();
+
+		isPaused = false;
 	}
 
 
@@ -207,5 +211,26 @@ public class ControllerFire : MonoBehaviour
 		Quaternion r = hotspotTransform.rotation;
 
 		robot.setTargetTransform (p, r);
+	}
+
+
+	public void Pause()
+	{
+		if (!isPaused) {
+			isPaused = true;
+			countDown.Pause ();
+			bottomBar.SetActive (false);	
+		}
+	}
+
+
+	public void Resume()
+	{
+		if (isPaused) 
+		{
+			isPaused = false;
+			bottomBar.SetActive (true);
+			countDown.Play ();
+		}
 	}
 }

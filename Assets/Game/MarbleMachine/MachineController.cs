@@ -33,6 +33,8 @@ public class MachineController : MonoBehaviour
 	private ItemCounter itemCounter;
 	private CountDown countDown;
 
+	private bool isPaused = false;
+
 
 	private void Awake()
 	{
@@ -62,6 +64,8 @@ public class MachineController : MonoBehaviour
 		// game specific
 		rig.GoToHome ();
 		ResetBall ();
+
+		isPaused = false;
 	}
 
 
@@ -236,5 +240,26 @@ public class MachineController : MonoBehaviour
 		Quaternion r = hotspotTransform.rotation;
 
 		rig.SetTargetTransform (p, r);
+	}
+
+
+	public void Pause()
+	{
+		if (!isPaused) {
+			isPaused = true;
+			countDown.Pause ();
+			bottomBar.SetActive (false);	
+		}
+	}
+
+
+	public void Resume()
+	{
+		if (isPaused) 
+		{
+			isPaused = false;
+			bottomBar.SetActive (true);
+			countDown.Play ();
+		}
 	}
 }
