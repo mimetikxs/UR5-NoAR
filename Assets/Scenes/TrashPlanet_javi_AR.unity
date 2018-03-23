@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 239535751}
   - component: {fileID: 239535750}
   m_Layer: 0
-  m_Name: triangles.Top
+  m_Name: marker.Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,8 +139,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 239535748}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.8, y: 0, z: 0}
-  m_LocalScale: {x: 27.8, y: 1, z: 55.6}
+  m_LocalPosition: {x: -33.33, y: 0, z: 0}
+  m_LocalScale: {x: 33.33, y: 1, z: 70.02101}
   m_Children: []
   m_Father: {fileID: 1435897046}
   m_RootOrder: 1
@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 595784745}
   - component: {fileID: 595784744}
   m_Layer: 0
-  m_Name: triangles.Front
+  m_Name: marker.Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -345,7 +345,7 @@ Transform:
   m_GameObject: {fileID: 595784742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 27.8, y: 1, z: 55.6}
+  m_LocalScale: {x: 33.33, y: 1, z: 70.02101}
   m_Children: []
   m_Father: {fileID: 1435897046}
   m_RootOrder: 0
@@ -508,10 +508,10 @@ MonoBehaviour:
   m_Script: {fileID: 1568443412, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: triangles
+  mTrackableName: marker
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/Multitarget3.xml
+  mDataSetPath: Vuforia/Multi_final.xml
   mExtendedTracking: 0
 --- !u!4 &816508575
 Transform:
@@ -708,7 +708,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: triangles.Top_scaledMaterial
+  m_Name: marker.Top_scaledMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -721,7 +721,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a41df063223340039727a446f48ca13d, type: 3}
+        m_Texture: {fileID: 2800000, guid: c0e6176651f145a9ad75201670b11dd7, type: 3}
         m_Scale: {x: -1, y: -1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -1089,7 +1089,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: triangles.Front_scaledMaterial
+  m_Name: marker.Front_scaledMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -1102,7 +1102,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 7a64358ebeda42188d702d3178126d1f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 678c0c5a78ed499dbfff01d225fd4947, type: 3}
         m_Scale: {x: -1, y: -1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -1114,7 +1114,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: triangles.Bottom_scaledMaterial
+  m_Name: marker.Bottom_scaledMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -1127,7 +1127,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 40caa3c8b69e4158b7ed0ccd84c14688, type: 3}
+        m_Texture: {fileID: 2800000, guid: ceab197256724b4b8dd35e2b89d34231, type: 3}
         m_Scale: {x: -1, y: -1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -1145,7 +1145,7 @@ GameObject:
   - component: {fileID: 2002520606}
   - component: {fileID: 2002520605}
   m_Layer: 0
-  m_Name: triangles.Bottom
+  m_Name: marker.Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1158,8 +1158,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2002520603}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.8, y: 0, z: 0}
-  m_LocalScale: {x: 27.8, y: 1, z: 55.6}
+  m_LocalPosition: {x: 33.33, y: 0, z: 0}
+  m_LocalScale: {x: 33.33, y: 1, z: 70.02101}
   m_Children: []
   m_Father: {fileID: 1435897046}
   m_RootOrder: 2
