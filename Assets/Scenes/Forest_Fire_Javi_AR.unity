@@ -1421,6 +1421,11 @@ Prefab:
       propertyPath: tcp
       value: 
       objectReference: {fileID: 1409940432}
+    - target: {fileID: 114230009575341768, guid: 80c3d3603592c4280b1d7ff0151eb7e3,
+        type: 2}
+      propertyPath: coolingPower
+      value: 0.08
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 80c3d3603592c4280b1d7ff0151eb7e3, type: 2}
   m_IsPrefabParent: 0
